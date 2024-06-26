@@ -30,3 +30,5 @@ Sistema Web para comunidade de Counter Strike.
 </div>
 
 #
+
+### SISTEMA EM DESENVOLVIMENTO
