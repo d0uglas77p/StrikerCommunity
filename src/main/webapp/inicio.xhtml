@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xsi:schemaLocation="http://xmlns.jcp.org/jsf/html">
+
+<head>
+    <title>Striker Community</title>
+</head>
+
+<body>
+<h:form>
+    <h:panelGrid columns="1">
+        <h:outputLabel value="TELA DE INICIO"/>
+        <h:commandLink value="Início" action="#{navegacaoBean.irInicio}"/>
+        <h:commandLink value="Tutorial" action="#{navegacaoBean.irTutorial}"/>
+        <h:commandLink value="Meu Perfil" action="#{navegacaoBean.irMeuPerfil}"/>
+        <h:commandButton value="Sair" action="#{navegacaoBean.irLogin}"/>
+    </h:panelGrid>
+</h:form>
+</body>
+
+</html>

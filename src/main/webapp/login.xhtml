@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<h:head>
+    <title>Striker Community - Login</title>
+    <h:outputStylesheet name="css/login.css"/>
+</h:head>
+
+<body>
+<div>
+    <h:form class="form">
+        <h:panelGrid>
+            <p:graphicImage name="images/ct.png" class="ct" style="margin-left: 272px; margin-top: 10px;"/>
+        </h:panelGrid>
+
+        <h:panelGrid>
+            <p:graphicImage name="images/tr.png" class="tr" style="margin-left: -675px; margin-top: -20px;"/>
+        </h:panelGrid>
+
+        <h:panelGroup styleClass="panel-group">
+            <p:panelGrid columns="3">
+                <h:panelGroup></h:panelGroup>
+                <p:graphicImage name="images/striker_community.gif" alt="Loading Animation" class="gif"
+                                style="margin-left: -40px; margin-top: -100px;"/>
+                <h:panelGroup></h:panelGroup>
+            </p:panelGrid>
+
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Login" styleClass="custom-label" style="margin-left: -90px;"/>
+                <p:inputText maxlength="30" size="30" style="margin-left: -130px; margin-top: -8px;"/>
+
+                <h:panelGroup></h:panelGroup>
+                <h:panelGroup></h:panelGroup>
+
+                <p:outputLabel value="Senha" styleClass="custom-label" style="margin-left: -90px;"/>
+                <p:password maxlength="8" size="30" style="margin-left: -130px; margin-top: -8px;"/>
+
+                <h:panelGroup></h:panelGroup>
+                <h:panelGroup></h:panelGroup>
+            </p:panelGrid>
+
+            <p:panelGrid columns="3">
+                <p:selectBooleanCheckbox id="checkbox" style="margin-left: -35px;"/>
+                <p:outputLabel for="checkbox" value="Manter-me conectado" styleClass="label-conectado"
+                               style="margin-left: -120px;"/>
+                <p:commandLink value="Recuperar Senha" style="margin-left: -55px;"/>
+            </p:panelGrid>
+
+            <p:panelGrid columns="2">
+                <h:panelGroup></h:panelGroup>
+                <h:panelGroup></h:panelGroup>
+
+                <p:commandButton value="Entrar" action="#{navegacaoBean.irInicio}" style="margin-left: 150px;"
+                                 styleClass="rounded-button"/>
+
+                <p:commandButton value="Criar Conta" style="margin-left: 20px;"
+                                 styleClass="rounded-button"
+                                 oncomplete="PF('cadastroDialog').show()"/>
+
+                <!-- Modal para cadastro -->
+                <p:dialog header="Cadastro" widgetVar="cadastroDialog" modal="true" resizable="false" styleClass="custom-dialog">
+                    <!-- Conteúdo do formulário de cadastro -->
+                    <h:panelGrid columns="2">
+                        <p:outputLabel value="Nome" for="nome" styleClass="custom-label" />
+                        <p:inputText id="nome" maxlength="50" size="30" style="margin-left: 10px;"/>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+
+                        <p:outputLabel value="Nick" for="nick" styleClass="custom-label" />
+                        <p:inputText id="nick" maxlength="50" size="30" style="margin-left: 10px;"/>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+
+                        <p:outputLabel value="E-mail" for="email" styleClass="custom-label" />
+                        <p:inputText id="email" maxlength="50" size="30" style="margin-left: 10px;"/>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+
+                        <p:outputLabel value="Login" for="login" styleClass="custom-label" />
+                        <p:inputText id="login" maxlength="50" size="30" style="margin-left: 10px;"/>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+
+                        <p:outputLabel value="Senha" for="senha" styleClass="custom-label"/>
+                        <p:password id="senha" maxlength="8" size="30" style="margin-left: 10px;"/>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+
+                        <p:outputLabel value="Repetir Senha" for="repetirSenha" styleClass="custom-label"/>
+                        <p:password id="repetirSenha" maxlength="8" size="30" style="margin-left: 10px;"/>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+                        <h:panelGroup></h:panelGroup><h:panelGroup></h:panelGroup>
+
+                        <h:panelGroup></h:panelGroup>
+                        <p:commandButton value="Cadastrar" styleClass="rounded-button" style="margin-left: -50px;"
+                                         oncomplete="if (!args.validationFailed) {PF('cadastroDialog').hide(); PF('sucessoDialog').show();}"/>
+                    </h:panelGrid>
+                </p:dialog>
+            </p:panelGrid>
+
+            <p:panelGrid columns="3">
+                <h:panelGroup></h:panelGroup>
+                <h:panelGroup></h:panelGroup>
+                <h:panelGroup></h:panelGroup>
+                <h:panelGroup></h:panelGroup>
+                <h:panelGroup></h:panelGroup>
+                <h:panelGroup></h:panelGroup>
+            </p:panelGrid>
+
+            <p:dialog header="" widgetVar="sucessoDialog" modal="true" resizable="false" >
+                <h:panelGrid>
+                    <p:outputLabel value="Cadastro efetuado com sucesso!" styleClass="custom-label-green"/>
+                    <p:outputLabel value="Seja bem-vindo a Comunidade de Counter Striker!"/>
+                </h:panelGrid>
+            </p:dialog>
+
+        </h:panelGroup>
+    </h:form>
+</div>
+</body>
+</html>
