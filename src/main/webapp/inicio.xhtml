@@ -1,23 +1,52 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xsi:schemaLocation="http://xmlns.jcp.org/jsf/html">
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
+<h:head>
     <title>Striker Community</title>
-</head>
+    <h:outputStylesheet name="css/inicio.css"/>
+</h:head>
 
 <body>
-<h:form>
-    <h:panelGrid columns="1">
-        <h:outputLabel value="TELA DE INICIO"/>
-        <h:commandLink value="Início" action="#{navegacaoBean.irInicio}"/>
-        <h:commandLink value="Tutorial" action="#{navegacaoBean.irTutorial}"/>
-        <h:commandLink value="Meu Perfil" action="#{navegacaoBean.irMeuPerfil}"/>
-        <h:commandButton value="Sair" action="#{navegacaoBean.irLogin}"/>
-    </h:panelGrid>
-</h:form>
+<div>
+    <h:form>
+        <p:panelGrid columns="2">
+            <h:panelGrid style="margin-left: 60px;">
+                <p:graphicImage name="images/logo.png" width="340" height="60"/>
+            </h:panelGrid>
+
+            <h:panelGrid style="margin-left: -70px;">
+                <p:megaMenu orientation="horizontal" autoDisplay="false">
+                    <p:menuitem value="Início"
+                                action="#{navegacaoBean.irInicio}"/>
+
+                    <p:menuitem value="Aprenda"
+                                action="#{navegacaoBean.irAprenda}"/>
+
+                    <p:menuitem value="Fórum"
+                                action="#{navegacaoBean.irForum}"/>
+
+                    <p:menuitem value="Ranking"
+                                action="#{navegacaoBean.irRanking}"/>
+
+                    <p:menuitem value="Vip"
+                                action="#{navegacaoBean.irVip}"/>
+
+                    <p:menuitem value="Meu Perfil"
+                                action="#{navegacaoBean.irMeuPerfil}"/>
+
+                </p:megaMenu>
+
+                <p:panelGrid style="margin-left: 480px; margin-top: -61px;">
+                    <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
+                                     action="#{navegacaoBean.irLogin}"/>
+                </p:panelGrid>
+
+            </h:panelGrid>
+        </p:panelGrid>
+    </h:form>
+</div>
 </body>
 
 </html>

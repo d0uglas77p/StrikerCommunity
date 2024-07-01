@@ -27,10 +27,10 @@ body {
     padding: 10px; /* Espaçamento interno */
 }
 
-/* Estiliza um gif */
-.gif {
-    width: 200px; /* Largura do gif */
-    height: 200px; /* Altura do gif */
+
+.logo {
+    width: 380px;
+    height: 70px;
     margin-bottom: 20px; /* Margem inferior */
     position: relative; /* Posicionamento relativo ao elemento pai */
     z-index: 10; /* Ordem de empilhamento (z-index) */

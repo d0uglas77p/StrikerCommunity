@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* Estiliza o corpo da página */
+body {
+    display: flex; /* Usa flexbox para posicionamento */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    height: 100vh; /* Ocupa toda a altura da viewport */
+    margin: 0; /* Remove margem externa padrão */
+    padding: 0; /* Remove padding interno padrão */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o corpo */
+}
+
+/* Estiliza o formulário */
+.form {
+    display: flex; /* Usa flexbox para posicionamento */
+    flex-direction: column; /* Direção da coluna para os itens dentro */
+    text-align: center; /* Centraliza o texto dentro do container */
+    width: 450px; /* Largura do formulário */
+    margin: 600px; /* Margem externa do formulário */
+}
+
+/* Estiliza um grupo de painéis */
+.panel-group {
+    border-radius: 10px; /* Borda arredondada */
+    border: 2px solid; /* Borda sólida com largura de 2px */
+    padding: 10px; /* Espaçamento interno */
+}
+
+
+.logo {
+    width: 380px;
+    height: 70px;
+    margin-bottom: 20px; /* Margem inferior */
+    position: relative; /* Posicionamento relativo ao elemento pai */
+    z-index: 10; /* Ordem de empilhamento (z-index) */
+}
+
+.ct {
+    width: 405px; /* Largura do elemento */
+    height: 554px; /* Altura do elemento */
+    position: absolute; /* Posicionamento absoluto */
+    z-index: 10; /* Ordem de empilhamento (z-index) */
+}
+
+.tr {
+    width: 350px; /* Largura do elemento */
+    height: 575px; /* Altura do elemento */
+    position: absolute; /* Posicionamento absoluto */
+    z-index: 10; /* Ordem de empilhamento (z-index) */
+}
+
+.label-conectado {
+    color: #f5d784; /* Cor do texto */
+}
+
+.custom-label {
+    font-family: Arial, sans-serif; /* Fonte do texto */
+    font-size: 14px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+}
+
+.custom-label-green {
+    font-family: Arial, sans-serif; /* Fonte do texto */
+    font-size: 14px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: #00ff0d;
+}
+
+.custom-dialog {
+    width: 470px !important; /* Ajuste o valor conforme necessário */
+}
