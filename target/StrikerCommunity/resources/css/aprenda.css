@@ -1,0 +1,18 @@
+.panel {
+    width: 890px;
+}
+
+.image-grid-border {
+    border-radius: 20px;
+    border: 4px solid;
+    padding: 0px;
+    transition: filter 0.3s ease;
+}
+
+.image-filter {
+    transition: filter 0.3s ease;
+}
+
+.image-filter:hover {
+    filter: brightness(70%);
+}

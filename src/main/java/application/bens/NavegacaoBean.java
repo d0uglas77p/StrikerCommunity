@@ -19,8 +19,8 @@ public class NavegacaoBean implements Serializable{
         return "/login.xhtml?faces-redirect=true";
     }
 
-    public String irAprenda() {
-        return "/aprenda.xhtml?faces-redirect=true";
+    public String irUtilitario() {
+        return "/utilitario.xhtml?faces-redirect=true";
     }
 
     public String irForum() {
