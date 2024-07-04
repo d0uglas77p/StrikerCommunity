@@ -18,7 +18,7 @@ Sistema Web para comunidade de Counter Strike.
 ### 1 - Login.
 <div>
 <img align="center"
-<img src="\screens\login.png" />
+<img src="\screens\1.login.png" />
 </div>
 
 #
@@ -26,9 +26,31 @@ Sistema Web para comunidade de Counter Strike.
 ### 2 - Cadastro.
 <div>
 <img align="center"
-<img src="\screens\cadastro.png" />
+<img src="\screens\2.cadastro.png" />
 </div>
 
 #
+
+### 3 - Lado.
+<div>
+<img align="center"
+<img src="\screens\3.lado.png" />
+</div>
+
+#
+
+### 4 - Lado CT.
+<div>
+<img align="center"
+<img src="\screens\4.ladoCt.png" />
+</div>
+
+#
+
+### 5 - Lado TR.
+<div>
+<img align="center"
+<img src="\screens\5.ladoTr.png" />
+</div>
 
 ### SISTEMA EM DESENVOLVIMENTO
