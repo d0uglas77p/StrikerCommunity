@@ -1,2 +1,4 @@
-application\bens\NavegacaoBean.class
 application\bens\UtilitarioPanelBean.class
+application\bens\MapaVideoTrBean.class
+application\bens\CarouselMapaBean.class
+application\bens\NavegacaoBean.class

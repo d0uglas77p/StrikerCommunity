@@ -1,0 +1,25 @@
+.carousel {
+    width: 1200px; /* Ajuste a largura conforme necessário */
+    height: 400px; /* Ajuste a altura conforme necessário */
+    margin: 0 auto; /* Centralizar o carousel */
+}
+
+.mapa {
+    width: 150px;
+    height: 150px;
+}
+
+.mapa-label {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.card-item .card-item-content {
+    border: 1px solid var(--surface-d);
+    border-radius: 3px;
+    margin: .3rem;
+    text-align: center;
+    padding: 2rem 0;
+}

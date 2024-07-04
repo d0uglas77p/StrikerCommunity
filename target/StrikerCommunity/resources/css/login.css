@@ -36,20 +36,6 @@ body {
     z-index: 10; /* Ordem de empilhamento (z-index) */
 }
 
-.ct {
-    width: 405px; /* Largura do elemento */
-    height: 554px; /* Altura do elemento */
-    position: absolute; /* Posicionamento absoluto */
-    z-index: 10; /* Ordem de empilhamento (z-index) */
-}
-
-.tr {
-    width: 350px; /* Largura do elemento */
-    height: 575px; /* Altura do elemento */
-    position: absolute; /* Posicionamento absoluto */
-    z-index: 10; /* Ordem de empilhamento (z-index) */
-}
-
 .label-conectado {
     color: #f5d784; /* Cor do texto */
 }
