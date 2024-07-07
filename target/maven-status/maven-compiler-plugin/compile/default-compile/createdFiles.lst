@@ -1,4 +1,6 @@
-application\bens\UtilitarioPanelBean.class
-application\bens\MapaVideoTrBean.class
-application\bens\CarouselMapaBean.class
-application\bens\NavegacaoBean.class
+application\bean\CarouselMapaBean.class
+application\bean\MapaPanelTrBean.class
+application\bean\terrorista\smoke\dust\VideoSmokeDustBean.class
+application\bean\UtilitarioPanelBean.class
+application\model\Video.class
+application\bean\NavegacaoBean.class

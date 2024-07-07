@@ -6,6 +6,7 @@
 <h:head>
     <title>Striker Community</title>
     <h:outputStylesheet name="css/mapa.css"/>
+    <h:outputStylesheet name="css/video.css"/>
 </h:head>
 
 <body>
@@ -50,12 +51,12 @@
         <br></br>
 
         <p:tag value="Escolha um Mapa"
-               style="font-size: 20px; margin-left: 581px; margin-bottom: 20px;"
+               style="font-size: 20px; margin-left: 576px; margin-bottom: 20px;"
                severity="success"/>
 
         <br></br>
 
-        <p:outputPanel id="PanelMapa" rendered="#{mapaVideoTrBean.exibirPanelMapaTr}">
+        <p:outputPanel id="PanelMapa" rendered="#{mapaPanelTrBean.exibirPanelMapaTr}">
             <div>
                 <p:carousel value="#{carouselMapaBean.imagesMapa}"
                             var="image"
@@ -71,7 +72,7 @@
                             </div>
                             <br/>
                             <div>
-                                <p:commandLink action="#{mapaVideoTrBean.exibirPanelPorNome(image)}"
+                                <p:commandLink action="#{mapaPanelTrBean.exibirPanelPorNome(image)}"
                                                update="@form">
                                     <p:graphicImage library="images"
                                                     name="#{image}.png"
@@ -88,25 +89,42 @@
         <br></br>
         <br></br>
 
-        <!-- PAINEL ESCOLHER DUST TR-->
+        <!-- PAINEL ESCOLHER DUST TR -->
         <p:outputPanel id="DustTr">
-            <p:panel id="paneDustTrContent"
-                     rendered="#{mapaVideoTrBean.exibirPanelDustTr}"
+            <p:panel id="panelDustTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelDustTr}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
+                <p:tag value="SMOKE TR DUST"
+                       severity="warning"
+                       style="font-size: 12px; margin-left: 525px;"/>
+                <br/><br/>
 
-                <p:tag value="SMOKE DUST"
-                       severity="success"/>
+                <p:carousel id="videoCarousel"
+                            value="#{videoSmokeDustBean.videos}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
 
             </p:panel>
+            <br/><br/>
         </p:outputPanel>
-        <!-- PAINEL ESCOLHER DUST TR-->
+        <!-- PAINEL ESCOLHER DUST TR -->
 
         <!-- PAINEL ESCOLHER MIRAGE TR-->
         <p:outputPanel id="MirageTr">
-            <p:panel id="paneMirageTrContent"
-                     rendered="#{mapaVideoTrBean.exibirPanelMirageTr}"
+            <p:panel id="panelMirageTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelMirageTr}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
@@ -120,8 +138,8 @@
 
         <!-- PAINEL ESCOLHER INFERNO TR-->
         <p:outputPanel id="InfernoTr">
-            <p:panel id="paneInfernoTrContent"
-                     rendered="#{mapaVideoTrBean.exibirPanelInfernoTr}"
+            <p:panel id="panelInfernoTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelInfernoTr}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
@@ -135,8 +153,8 @@
 
         <!-- PAINEL ESCOLHER NUKE TR-->
         <p:outputPanel id="NukeTr">
-            <p:panel id="paneNukeTrContent"
-                     rendered="#{mapaVideoTrBean.exibirPanelNukeTr}"
+            <p:panel id="panelNukeTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelNukeTr}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
@@ -150,8 +168,8 @@
 
         <!-- PAINEL ESCOLHER OVERPASS TR-->
         <p:outputPanel id="OverpassTr">
-            <p:panel id="paneOverpassTrTrContent"
-                     rendered="#{mapaVideoTrBean.exibirPanelOverpassTr}"
+            <p:panel id="panelOverpassTrTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelOverpassTr}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
@@ -165,8 +183,8 @@
 
         <!-- PAINEL ESCOLHER VERTIGO TR-->
         <p:outputPanel id="VertigoTr">
-            <p:panel id="paneVertigoTrContent"
-                     rendered="#{mapaVideoTrBean.exibirPanelVertigoTr}"
+            <p:panel id="panelVertigoTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelVertigoTr}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
@@ -180,8 +198,8 @@
 
         <!-- PAINEL ESCOLHER ANCIENT TR-->
         <p:outputPanel id="AncientTr">
-            <p:panel id="paneAncientTrContent"
-                     rendered="#{mapaVideoTrBean.exibirPanelAncientTr}"
+            <p:panel id="panelAncientTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelAncientTr}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
@@ -195,8 +213,8 @@
 
         <!-- PAINEL ESCOLHER ANUBIS TR-->
         <p:outputPanel id="AnubisTr">
-            <p:panel id="paneAnubisTrContent"
-                     rendered="#{mapaVideoTrBean.exibirPanelAnubisTr}"
+            <p:panel id="panelAnubisTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelAnubisTr}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>

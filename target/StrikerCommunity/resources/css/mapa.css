@@ -5,8 +5,8 @@
 }
 
 .mapa {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 }
 
 .mapa-label {
@@ -22,4 +22,8 @@
     margin: .3rem;
     text-align: center;
     padding: 2rem 0;
+}
+
+.panel-video {
+    width: 1200px;
 }
