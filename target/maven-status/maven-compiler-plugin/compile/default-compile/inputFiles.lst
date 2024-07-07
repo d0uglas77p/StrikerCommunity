@@ -1,6 +1,6 @@
-C:\Workspace\StrikerCommunity\src\main\java\application\bens\MapaPanelTrBean.java
-C:\Workspace\StrikerCommunity\src\main\java\application\bens\VideoSmokeDustBean.java
-C:\Workspace\StrikerCommunity\src\main\java\application\bens\CarouselMapaBean.java
-C:\Workspace\StrikerCommunity\src\main\java\application\bens\UtilitarioPanelBean.java
-C:\Workspace\StrikerCommunity\src\main\java\application\bens\NavegacaoBean.java
-C:\Workspace\StrikerCommunity\src\main\java\application\bens\VideoBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\bean\CarouselMapaBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\bean\NavegacaoBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\bean\terrorista\smoke\dust\VideoSmokeDustBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\bean\UtilitarioPanelBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\bean\MapaPanelTrBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\model\Video.java

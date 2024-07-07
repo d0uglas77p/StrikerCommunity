@@ -1,7 +1,7 @@
 .carousel {
-    width: 1200px; /* Ajuste a largura conforme necessário */
-    height: 400px; /* Ajuste a altura conforme necessário */
-    margin: 0 auto; /* Centralizar o carousel */
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
 }
 
 .mapa {
