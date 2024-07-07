@@ -53,4 +53,12 @@ Sistema Web para comunidade de Counter Strike.
 <img src="\screens\5.ladoTr.png" />
 </div>
 
+#
+
+### 6 - Mapa TR.
+<div>
+<img align="center"
+<img src="\screens\6.mapaTr.png" />
+</div>
+
 ### SISTEMA EM DESENVOLVIMENTO
