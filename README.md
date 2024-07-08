@@ -4,7 +4,7 @@ Sistema Web para comunidade de Counter Strike.
 
 ### Ferramentas
 - Intellij IDEA Community, 2023.2.7 (Community Edition)
-- Java, JDK - 20.0 Amazon Correto
+- Java, JDK - 20.0 Amazon Corretto
 - Maven. 4.0.0
 - Maven, plugin 3.3.0
 - TomCat 7, plugin 2.2
