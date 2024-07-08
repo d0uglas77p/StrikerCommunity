@@ -61,7 +61,8 @@
                 <p:carousel value="#{carouselMapaBean.imagesMapa}"
                             var="image"
                             numVisible="3"
-                            styleClass="carousel">
+                            styleClass="carousel"
+                            numScroll="3">
 
                     <div class="card-item">
                         <div class="card-item-content">
@@ -73,7 +74,7 @@
                             <br/>
                             <div>
                                 <p:commandLink action="#{mapaPanelTrBean.exibirPanelPorNome(image)}"
-                                               update="@form">
+                                               update="formVideos">
                                     <p:graphicImage library="images"
                                                     name="#{image}.png"
                                                     styleClass="mapa"/>
@@ -84,11 +85,14 @@
                 </p:carousel>
             </div>
         </p:outputPanel>
+    </h:form>
 
         <br></br>
         <br></br>
         <br></br>
 
+
+        <h:form id="formVideos">
         <!-- PAINEL ESCOLHER DUST TR -->
         <p:outputPanel id="DustTr">
             <p:panel id="panelDustTrContent"
@@ -101,8 +105,8 @@
                        style="font-size: 12px; margin-left: 525px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoCarousel"
-                            value="#{videoSmokeDustTRBean.videos}"
+                <p:carousel id="videoSmokeDustTR"
+                            value="#{videoSmokeDustTRBean.videosSmokeDust}"
                             var="video">
                     <div class="video-container">
                         <iframe src="#{video.url}"
@@ -115,9 +119,7 @@
                         </div>
                     </div>
                 </p:carousel>
-
             </p:panel>
-            <br/><br/>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER DUST TR -->
 
@@ -128,10 +130,25 @@
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
-
                 <p:tag value="SMOKE MIRAGE"
-                       severity="success"/>
+                       severity="warning"
+                       style="font-size: 12px; margin-left: 525px;"/>
+                <br/><br/>
 
+                <p:carousel id="videoSmokeMirageTR"
+                            value="#{videoSmokeMirageTRBean.videosSmokeMirage}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
             </p:panel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER MIRAGE TR-->
@@ -145,8 +162,24 @@
                 <br/>
 
                 <p:tag value="SMOKE INFERNO"
-                       severity="success"/>
+                       severity="warning"
+                       style="font-size: 12px; margin-left: 525px;"/>
+                <br/><br/>
 
+                <p:carousel id="videoSmokeInfernoTR"
+                            value="#{videoSmokeInfernoTRBean.videosSmokeInferno}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
             </p:panel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER INFERNO TR-->
@@ -160,8 +193,24 @@
                 <br/>
 
                 <p:tag value="SMOKE NUKE"
-                       severity="success"/>
+                       severity="warning"
+                       style="font-size: 12px; margin-left: 525px;"/>
+                <br/><br/>
 
+                <p:carousel id="videoSmokeNukeTR"
+                            value="#{videoSmokeNukeTRBean.videosSmokeNuke}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
             </p:panel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER NUKE TR-->
@@ -175,8 +224,24 @@
                 <br/>
 
                 <p:tag value="SMOKE OVERPASS"
-                       severity="success"/>
+                       severity="warning"
+                       style="font-size: 12px; margin-left: 525px;"/>
+                <br/><br/>
 
+                <p:carousel id="videoSmokeOverpassTR"
+                            value="#{videoSmokeOverpassTRBean.videosSmokeOverpass}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
             </p:panel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER OVERPASS TR-->
@@ -190,8 +255,24 @@
                 <br/>
 
                 <p:tag value="SMOKE VERTIGO"
-                       severity="success"/>
+                       severity="warning"
+                       style="font-size: 12px; margin-left: 525px;"/>
+                <br/><br/>
 
+                <p:carousel id="videoSmokeVertigoTR"
+                            value="#{videoSmokeVertigoTRBean.videosSmokeVertigo}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
             </p:panel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER VERTIGO TR-->
@@ -205,8 +286,24 @@
                 <br/>
 
                 <p:tag value="SMOKE ANCIENT"
-                       severity="success"/>
+                       severity="warning"
+                       style="font-size: 12px; margin-left: 525px;"/>
+                <br/><br/>
 
+                <p:carousel id="videoSmokeAncientTR"
+                            value="#{videoSmokeAncientTRBean.videosSmokeAncient}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
             </p:panel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER ANCIENT TR-->
@@ -220,11 +317,28 @@
                 <br/>
 
                 <p:tag value="SMOKE ANUBIS"
-                       severity="success"/>
+                       severity="warning"
+                       style="font-size: 12px; margin-left: 525px;"/>
+                <br/><br/>
 
+                <p:carousel id="videoSmokeAnubisTR"
+                            value="#{videoSmokeAnubisTRBean.videosSmokeAnubis}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
             </p:panel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER ANUBIS TR-->
+
     </h:form>
 </div>
 </body>
