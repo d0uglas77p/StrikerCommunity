@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 @ViewScoped
 public class MapaPanelTrBean implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOGGER = Logger.getLogger(UtilitarioPanelBean.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(MapaPanelTrBean.class.getName());
 
     private boolean exibirPanelMapaTr;
     private boolean exibirPanelDustTr;

@@ -34,6 +34,7 @@ application\bean\tr\he\VideoHeAncientTRBean.class
 application\bean\tr\molotov\VideoMolotovDustTRBean.class
 application\bean\tr\molotov\VideoMolotovInfernoTRBean.class
 application\bean\ct\molotov\VideoMolotovNukeCTBean.class
+application\bean\MapaPanelCtBean.class
 application\bean\ct\flash\VideoFlashOverpassCTBean.class
 application\bean\tr\smoke\VideoSmokeNukeTRBean.class
 application\bean\ct\he\VideoHeInfernoCTBean.class
