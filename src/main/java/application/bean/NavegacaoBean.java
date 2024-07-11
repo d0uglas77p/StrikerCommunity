@@ -25,16 +25,8 @@ public class NavegacaoBean implements Serializable{
         return "/comandos.xhtml?faces-redirect=true";
     }
 
-    public String irForum() {
-        return "/forum.xhtml?faces-redirect=true";
-    }
-
-    public String irRanking() {
-        return "/ranking.xhtml?faces-redirect=true";
-    }
-
-    public String irVip() {
-        return "/vip.xhtml?faces-redirect=true";
+    public String irComunidade() {
+        return "/comunidade.xhtml?faces-redirect=true";
     }
 
     public String irMeuPerfil() {
