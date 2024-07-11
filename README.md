@@ -58,7 +58,31 @@ Sistema Web para comunidade de Counter Strike.
 ### 6 - Mapa TR.
 <div>
 <img align="center"
-<img src="\screens\6.mapaTr.png" />
+<img src="\screens\6.escolherMapa.png" />
+</div>
+
+#
+
+### 7 - Video Utilitários.
+<div>
+<img align="center"
+<img src="\screens\7.videoUtilitarios.png" />
+</div>
+
+#
+
+### 8 - Comandos.
+<div>
+<img align="center"
+<img src="\screens\8.comandos.png" />
+</div>
+
+#
+
+### 9 - Video CFG.
+<div>
+<img align="center"
+<img src="\screens\9.videoCFG.png" />
 </div>
 
 ### SISTEMA EM DESENVOLVIMENTO
