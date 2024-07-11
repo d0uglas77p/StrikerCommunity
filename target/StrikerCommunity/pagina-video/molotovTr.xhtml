@@ -6,6 +6,7 @@
 <h:head>
     <title>Striker Community</title>
     <h:outputStylesheet name="css/mapa.css"/>
+    <h:outputStylesheet name="css/video.css"/>
 </h:head>
 
 <body>
@@ -14,32 +15,39 @@
         <!-- MENU DE NAVEGAÇÃO -->
         <p:panelGrid columns="2">
             <h:panelGrid style="margin-left: 60px;">
-                <p:graphicImage name="images/logo.png"
-                                width="340"
-                                height="60"/>
+                <p:graphicImage name="images/logo.png" width="340" height="60"/>
             </h:panelGrid>
 
             <h:panelGrid style="margin-left: -70px;">
-                <p:megaMenu orientation="horizontal"
-                            autoDisplay="false">
+                <p:megaMenu orientation="horizontal" autoDisplay="false">
                     <p:menuitem value="Início"
                                 action="#{navegacaoBean.irInicio}"/>
-                    <p:menuitem value="Utilitários"
-                                action="#{navegacaoBean.irUtilitario}"/>
+
+
+                    <p:submenu label="Counter Strike 2">
+                        <p:column>
+                            <p:submenu label="Táticas">
+                                <p:menuitem value="Utilitários" action="#{navegacaoBean.irUtilitario}"/>
+                            </p:submenu>
+                        </p:column>
+                    </p:submenu>
+
                     <p:menuitem value="Fórum"
                                 action="#{navegacaoBean.irForum}"/>
+
                     <p:menuitem value="Ranking"
                                 action="#{navegacaoBean.irRanking}"/>
+
                     <p:menuitem value="Vip"
                                 action="#{navegacaoBean.irVip}"/>
+
                     <p:menuitem value="Meu Perfil"
                                 action="#{navegacaoBean.irMeuPerfil}"/>
+
                 </p:megaMenu>
 
-                <p:panelGrid style="margin-left: 480px; margin-top: -61px;">
-                    <p:commandButton value="Sair"
-                                     icon="pi pi-fw pi-sign-out"
-                                     styleClass="ui-button-info"
+                <p:panelGrid style="margin-left: 535px; margin-top: -61px;">
+                    <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
                                      action="#{navegacaoBean.irLogin}"/>
                 </p:panelGrid>
             </h:panelGrid>
@@ -50,34 +58,286 @@
         <br></br>
 
         <p:tag value="Escolha um Mapa"
-               style="font-size: 20px; margin-left: 581px; margin-bottom: 20px;"
+               style="font-size: 20px; margin-left: 576px; margin-bottom: 20px;"
                severity="success"/>
 
         <br></br>
-        <br></br>
 
-        <div>
-            <p:carousel value="#{carouselMapaBean.imagesMapa}" var="image" numVisible="3" styleClass="carousel">
-                <div class="card-item">
-                    <div class="card-item-content">
-                        <div>
+        <p:outputPanel id="PanelMapa" rendered="#{mapaPanelTrBean.exibirPanelMapaTr}">
+            <div>
+                <p:carousel value="#{carouselMapaBean.imagesMapa}"
+                            var="image"
+                            numVisible="3"
+                            styleClass="carousel"
+                            numScroll="3">
+
+                    <div class="card-item">
+                        <div class="card-item-content">
                             <div>
                                 <p:tag value="#{image}"
-                                       severity="warnig"
-                                       style="font-size: 20px;"/>
+                                       style="font-size: 20px;"
+                                       severity="warnig"/>
+                            </div>
+                            <br/>
+                            <div>
+                                <p:commandLink action="#{mapaPanelTrBean.exibirPanelPorNome(image)}"
+                                               update="formVideos">
+                                    <p:graphicImage library="images"
+                                                    name="#{image}.png"
+                                                    styleClass="mapa"/>
+                                </p:commandLink>
                             </div>
                         </div>
-                        <br></br>
-                        <div>
-                            <p:commandLink>
-                                <p:graphicImage name="images/#{image}.png"
-                                                styleClass="mapa"/>
-                            </p:commandLink>
+                    </div>
+                </p:carousel>
+            </div>
+        </p:outputPanel>
+    </h:form>
+
+    <br></br>
+    <br></br>
+    <br></br>
+
+    <h:form id="formVideos">
+        <!-- PAINEL ESCOLHER DUST TR -->
+        <p:outputPanel id="DustTr">
+            <p:panel id="panelDustTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelDustTr}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="MOLOTOV TR DUST"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 50px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoMolotovDustTR"
+                            value="#{videoMolotovDustTRBean.videosMolotovDust}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
                         </div>
                     </div>
-                </div>
-            </p:carousel>
-        </div>
+                </p:carousel>
+            </p:panel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER DUST TR -->
+
+        <!-- PAINEL ESCOLHER MIRAGE TR -->
+        <p:outputPanel id="MirageTr">
+            <p:panel id="panelMirageTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelMirageTr}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="MOLOTOV TR MIRAGE"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 50px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoMolotovMirageTR"
+                            value="#{videoMolotovMirageTRBean.videosMolotovMirage}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
+            </p:panel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER MIRAGE TR -->
+
+        <!-- PAINEL ESCOLHER INFERNO TR -->
+        <p:outputPanel id="InfernoTr">
+            <p:panel id="panelInfernoTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelInfernoTr}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="MOLOTOV TR INFERNO"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 50px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoMolotovInfernoTR"
+                            value="#{videoMolotovInfernoTRBean.videosMolotovInferno}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
+            </p:panel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER INFERNO TR -->
+
+        <!-- PAINEL ESCOLHER NUKE TR -->
+        <p:outputPanel id="NukeTr">
+            <p:panel id="panelNukeTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelNukeTr}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="MOLOTOV TR NUKE"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 50px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoMolotovNukeTR"
+                            value="#{videoMolotovNukeTRBean.videosMolotovNuke}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
+            </p:panel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER NUKE TR -->
+
+        <!-- PAINEL ESCOLHER OVERPASS TR -->
+        <p:outputPanel id="OverpassTr">
+            <p:panel id="panelOverpassTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelOverpassTr}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="MOLOTOV TR OVERPASS"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 50px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoMolotovOverpassTR"
+                            value="#{videoMolotovOverpassTRBean.videosMolotovOverpass}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
+            </p:panel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER OVERPASS TR -->
+
+        <!-- PAINEL ESCOLHER VERTIGO TR -->
+        <p:outputPanel id="VertigoTr">
+            <p:panel id="panelVertigoTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelVertigoTr}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="MOLOTOV TR VERTIGO"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 50px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoMolotovVertigoTR"
+                            value="#{videoMolotovVertigoTRBean.videosMolotovVertigo}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
+            </p:panel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER VERTIGO TR -->
+
+        <!-- PAINEL ESCOLHER ANCIENT TR -->
+        <p:outputPanel id="AncientTr">
+            <p:panel id="panelAncientTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelAncientTr}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="MOLOTOV TR ANCIENT"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 50px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoMolotovAncientTR"
+                            value="#{videoMolotovAncientTRBean.videosMolotovAncient}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
+            </p:panel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER ANCIENT TR -->
+
+        <!-- PAINEL ESCOLHER ANUBIS TR -->
+        <p:outputPanel id="AnubisTr">
+            <p:panel id="panelAnubisTrContent"
+                     rendered="#{mapaPanelTrBean.exibirPanelAnubisTr}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="MOLOTOV TR ANUBIS"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 50px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoMolotovAnubisTR"
+                            value="#{videoMolotovAnubisTRBean.videosMolotovAnubis}"
+                            var="video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <div class="ui-carousel-footer"
+                             style="margin-left: 370px;">
+                            #{video.titulo}
+                        </div>
+                    </div>
+                </p:carousel>
+            </p:panel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER ANUBIS TR -->
     </h:form>
 </div>
 </body>

@@ -5,7 +5,6 @@
 
 <h:head>
     <title>Striker Community</title>
-    <h:outputStylesheet name="css/inicio.css"/>
 </h:head>
 
 <body>
@@ -17,12 +16,14 @@
             </h:panelGrid>
 
             <h:panelGrid style="margin-left: -70px;">
-                <p:megaMenu orientation="horizontal" autoDisplay="false">
+                <p:menubar orientation="horizontal" autoDisplay="false">
                     <p:menuitem value="Início"
                                 action="#{navegacaoBean.irInicio}"/>
 
-                    <p:menuitem value="Utilitários"
-                                action="#{navegacaoBean.irUtilitario}"/>
+                    <p:submenu label="Counter Strike 2">
+                                <p:menuitem value="Utilitários" action="#{navegacaoBean.irUtilitario}"/>
+                                <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
+                    </p:submenu>
 
                     <p:menuitem value="Fórum"
                                 action="#{navegacaoBean.irForum}"/>
@@ -36,9 +37,9 @@
                     <p:menuitem value="Meu Perfil"
                                 action="#{navegacaoBean.irMeuPerfil}"/>
 
-                </p:megaMenu>
+                </p:menubar>
 
-                <p:panelGrid style="margin-left: 480px; margin-top: -61px;">
+                <p:panelGrid style="margin-left: 535px; margin-top: -61px;">
                     <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
                                      action="#{navegacaoBean.irLogin}"/>
                 </p:panelGrid>
