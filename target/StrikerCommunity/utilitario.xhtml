@@ -27,21 +27,15 @@
                         <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
                     </p:submenu>
 
-                    <p:menuitem value="Fórum"
-                                action="#{navegacaoBean.irForum}"/>
-
-                    <p:menuitem value="Ranking"
-                                action="#{navegacaoBean.irRanking}"/>
-
-                    <p:menuitem value="Vip"
-                                action="#{navegacaoBean.irVip}"/>
+                    <p:menuitem value="Comunidade"
+                                action="#{navegacaoBean.irComunidade}"/>
 
                     <p:menuitem value="Meu Perfil"
                                 action="#{navegacaoBean.irMeuPerfil}"/>
 
                 </p:menubar>
 
-                <p:panelGrid style="margin-left: 535px; margin-top: -61px;">
+                <p:panelGrid style="margin-left: 460px; margin-top: -61px;">
                     <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
                                      action="#{navegacaoBean.irLogin}"/>
                 </p:panelGrid>
@@ -49,7 +43,7 @@
         </p:panelGrid>
         <!-- MENU DE NAVEGAÇÃO -->
 
-        <br/>
+        <br></br>
 
         <!-- PAINEL ESCOLHER O LADO -->
         <p:outputPanel id="Lado">
@@ -57,9 +51,8 @@
                      rendered="#{utilitarioPanelBean.exibirPanelLado}"
                      class="panel"
                      style="margin-left: 220px;">
-                <br/>
                 <p:tag value="Escolha um lado"
-                       style="font-size: 20px; margin-left: 335px; margin-bottom: 20px;"
+                       style="font-size: 20px; margin-left: 335px; margin-bottom: 10px; margin-top: 5px;"
                        severity="success"/>
 
                 <p:panelGrid columns="2">
@@ -68,7 +61,7 @@
                         <p:graphicImage name="images/ct-lado.png"
                                         class="image-grid-border image-filter"
                                         width="210"
-                                        height="400"
+                                        height="360"
                                         style="margin-left: 90px;"/>
                     </p:commandLink>
 
@@ -77,13 +70,22 @@
                         <p:graphicImage name="images/tr-lado.png"
                                         class="image-grid-border image-filter"
                                         width="210"
-                                        height="400"
+                                        height="360"
                                         style="margin-left: 80px;"/>
                     </p:commandLink>
+
+                    <p:tag value="Contra-terrorista"
+                           style="font-size: 20px; margin-left: 110px;"
+                           severity="info"/>
+
+                    <p:tag value="Terrorista"
+                           style="font-size: 20px; margin-left: 135px;"
+                           severity="warning"/>
                 </p:panelGrid>
             </p:panel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER O LADO -->
+
 
         <!-- PAINEL ESCOLHER UTILITARIO CT-->
         <p:outputPanel id="UtilitarioCt">
@@ -91,7 +93,6 @@
                      rendered="#{utilitarioPanelBean.exibirPanelUtilitarioCt}"
                      class="panel"
                      style="margin-left: 220px;">
-                <br/>
 
                 <p:commandButton
                         value="Voltar"
@@ -100,7 +101,7 @@
                         update="@form"/>
 
                 <p:tag value="Escolha um utilitário CT"
-                       style="font-size: 20px; margin-left: 240px; margin-bottom: 20px;"
+                       style="font-size: 20px; margin-left: 240px; margin-bottom: 10px; margin-top: 5px;"
                        severity="success"/>
 
                 <p:panelGrid columns="4">
@@ -146,7 +147,7 @@
 
                     <p:graphicImage name="images/ladoCt.png"
                                     width="410"
-                                    height="228"
+                                    height="244"
                                     style="margin-left: 180px;"/>
                 </p:panelGrid>
             </p:panel>
@@ -159,7 +160,6 @@
                      rendered="#{utilitarioPanelBean.exibirPanelUtilitarioTr}"
                      class="panel"
                      style="margin-left: 220px;">
-                <br/>
 
                 <p:commandButton
                         value="Voltar"
@@ -168,7 +168,7 @@
                         update="@form"/>
 
                 <p:tag value="Escolha um utilitário TR"
-                       style="font-size: 20px; margin-left: 240px; margin-bottom: 20px;"
+                       style="font-size: 20px; margin-left: 240px; margin-bottom: 10px; margin-top: 5px;"
                        severity="success"/>
 
                 <p:panelGrid columns="4">
@@ -215,7 +215,7 @@
 
                 <p:graphicImage name="images/ladoTr.png"
                                 width="400"
-                                height="246"
+                                height="262"
                                 style="margin-left: 400px;"/>
             </p:panel>
         </p:outputPanel>

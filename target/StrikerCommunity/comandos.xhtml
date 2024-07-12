@@ -5,10 +5,12 @@
 
 <h:head>
     <title>Striker Community</title>
+    <h:outputStylesheet name="css/comandos.css"/>
 </h:head>
 
 <body>
 <div>
+    <!-- MENU DE NAVEGAÇÃO -->
     <h:form>
         <p:panelGrid columns="2">
             <h:panelGrid style="margin-left: 60px;">
@@ -25,89 +27,307 @@
                         <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
                     </p:submenu>
 
-                    <p:menuitem value="Fórum"
-                                action="#{navegacaoBean.irForum}"/>
-
-                    <p:menuitem value="Ranking"
-                                action="#{navegacaoBean.irRanking}"/>
-
-                    <p:menuitem value="Vip"
-                                action="#{navegacaoBean.irVip}"/>
+                    <p:menuitem value="Comunidade"
+                                action="#{navegacaoBean.irComunidade}"/>
 
                     <p:menuitem value="Meu Perfil"
                                 action="#{navegacaoBean.irMeuPerfil}"/>
 
                 </p:menubar>
 
-                <p:panelGrid style="margin-left: 535px; margin-top: -61px;">
+                <p:panelGrid style="margin-left: 460px; margin-top: -61px;">
                     <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
                                      action="#{navegacaoBean.irLogin}"/>
                 </p:panelGrid>
             </h:panelGrid>
         </p:panelGrid>
     </h:form>
-
+    <!-- MENU DE NAVEGAÇÃO -->
     <h:form>
         <br></br>
-        <p:panel header="Sessão de Treinamento" style="margin-bottom:10px;">
-            <p:dataTable>
-                <p:column headerText="Code">
-                    <h:outputText value="123" />
-                </p:column>
-
-                <p:column headerText="Name">
-                    <h:outputText value="Teste 1" />
-                </p:column>
-
-                <p:column headerText="Code">
-                    <h:outputText value="456" />
-                </p:column>
-
-                <p:column headerText="Name">
-                    <h:outputText value="Teste 2" />
-                </p:column>
-            </p:dataTable>
-        </p:panel>
-
-
         <br></br>
-
-        <p:panel header="Configuração dos Bots" style="margin-bottom:10px;">
-            <h:panelGrid columns="1" cellpadding="5">
-                <p:outputLabel value="Country: "/>
-                <p:outputLabel value="City: "/>
-            </h:panelGrid>
+        <p:panel header="COMANDOS NO CONSOLE"
+                 style="margin-bottom:10px;"
+                 class="panel">
+            <p:panelGrid columns="1">
+                <p:outputLabel styleClass="console-text"
+                               value="Os comandos no console do Counter-Strike permitem que os jogadores personalizem
+            e ajustem diversos aspectos do jogo, desde configurações básicas até comandos avançados de treinamento.
+            Abaixo, você encontrará uma lista de comandos úteis para melhorar sua experiência de jogo e aprimorar suas
+            habilidades durante as sessões de treinamento, configuração dos bots de treino,
+            configuração de mira, viewmodel e outros comandos úteis que o jogo fornece."/>
+                <p:outputLabel styleClass="console-text"
+                               value="No final da página vamos mostrar como criar sua CFG de treinamento!"/>
+            </p:panelGrid>
         </p:panel>
 
         <br></br>
+        <br></br>
 
-        <p:panel header="Configuração de Mira" style="margin-bottom:10px;">
-            <h:panelGrid columns="1" cellpadding="5">
-                <p:outputLabel value="Country: "/>
-                <p:outputLabel value="City: "/>
-            </h:panelGrid>
+        <p:panel header="Sessão de Treinamento"
+                 style="margin-bottom:10px;"
+                 class="panel">
+            <h:outputLabel value="sv_cheats 1 = Ativar comandos especiais"/>
+            <p:divider/>
+            <h:outputLabel value="bind 'tecla' noclip = Habilidade de voar"/>
+            <p:divider/>
+            <h:outputLabel value="sv_infinite_ammo 1 = Munição infinita"/>
+            <p:divider/>
+            <h:outputLabel value="sv_showimpacts 1 = Mostra marcas dos tiros"/>
+            <p:divider/>
+            <h:outputLabel value="sv_showbullethits 1 = Mostra os pontos onde as balas dos tiros atingiram"/>
+            <p:divider/>
+            <h:outputLabel value="mp_warmup_end = Finaliza o aquecimento"/>
+            <p:divider/>
+            <h:outputLabel
+                    value="mp_freezetime ( 0 a 999) = Reduz a duração do tempo de congelamento para um valor especificado"/>
+            <p:divider/>
+            <h:outputLabel value="mp_buy_anywhere 1 = Permite comprar equipamentos em qualquer lugar"/>
+            <p:divider/>
+            <h:outputLabel value="mp_buytime 9999 = Tempo para comprar equipamento infinito"/>
+            <p:divider/>
+            <h:outputLabel value="mp_maxmoney 14000 = Define a quantia máxima possível de dinheiro"/>
+            <p:divider/>
+            <h:outputLabel value="mp_startmoney 6000 = Define a quantidade de dinheiro no início do jogo"/>
+            <p:divider/>
+            <h:outputLabel
+                    value="sv_grenade_trajectory_prac_pipreview 1 = Trajetória da granada após ser lançada e inclui uma câmera separada"/>
+            <p:divider/>
+            <h:outputLabel value="sv_rethrow_last_grenade = Lança automaticamente a última granada lançada"/>
+            <p:divider/>
+            <h:outputLabel value="mp_warmup_start = Inicia o aquecimento"/>
+            <p:divider/>
+            <h:outputLabel value="mp_warmuptime 55555555 = Altera o tempo de aquecimento"/>
+            <p:divider/>
+            <h:outputLabel value="mp_restartgame 1 = Reinicia a rodada"/>
+            <p:divider/>
+            <h:outputLabel value="impulse 101 = Adiciona o valor máximo de dinheiro ao saldo"/>
+            <p:divider/>
+            <h:outputLabel value="mp_roundtime 5 = Indica a duração da rodada"/>
+            <p:divider/>
+            <h:outputLabel
+                    value="mp_roundtime_defuse 0 = Escreva este comando para que o anterior funcione corretamente"/>
+            <p:divider/>
+            <h:outputLabel value="mp_maxrounds 155 = Indica o limite de rodadas (número máximo possível)"/>
+            <p:divider/>
+            <h:outputLabel value="mp_timelimit 45 = Indica o tempo máximo da partida"/>
+            <p:divider/>
+            <h:outputLabel value="mp_c4timer 45 = Temporizador de explosão da bomba"/>
+            <p:divider/>
+            <h:outputLabel value="sv_visiblemaxplayers 25 = Define o número máximo possível de jogadores no mapa"/>
+            <p:divider/>
+            <h:outputLabel
+                    value="sv_specnoclip 1 = Permite que os espectadores voem através de paredes e objetos no mapa"/>
+            <p:divider/>
+            <h:outputLabel value="sv_specspeed 1.5 = Altera a velocidade no modo observador"/>
+            <p:divider/>
+            <h:outputLabel value="cl_showpos 1 = Mostra as coordenadas"/>
+            <p:divider/>
         </p:panel>
 
         <br></br>
+        <br></br>
 
-        <p:panel header="Configuração de Posição da Mão" style="margin-bottom:10px;">
-            <h:panelGrid columns="1" cellpadding="5">
-                <p:outputLabel value="Country: "/>
-                <p:outputLabel value="City: "/>
-            </h:panelGrid>
+        <p:panel header="Configuração dos Bots"
+                 style="margin-bottom:10px;"
+                 class="panel">
+            <h:outputLabel value="bot_add_ct = Adiciona um bot para CT"/>
+            <p:divider/>
+            <h:outputLabel value="bot_add_t = Adiciona um bot para T"/>
+            <p:divider/>
+            <h:outputLabel value="bot_add = Adiciona um bot a uma das equipes"/>
+            <p:divider/>
+            <h:outputLabel value="bot_kick = Expulsa os bots do servidor"/>
+            <p:divider/>
+            <h:outputLabel value="bot_dont_shoot 1 = Bots não atiram"/>
+            <p:divider/>
+            <h:outputLabel value="mp_autoteambalance 0 = Desabilita o equilíbrio automático"/>
+            <p:divider/>
+            <h:outputLabel value="bot_difficulty (0, 1, 2 ou 3) = Nível dos bots"/>
+            <p:divider/>
+            <h:outputLabel value="bot_add mimic 1 = O bot repete todos os movimentos depois do jogador"/>
+            <p:divider/>
+            <h:outputLabel value="bot_zombie 1 = Bots não se movem"/>
+            <p:divider/>
+            <h:outputLabel value="bot_crouch 1 = Os bots estão sentados"/>
+            <p:divider/>
+            <h:outputLabel value="bot_place = Coloca o bot no local para onde a mira está apontada"/>
+            <p:divider/>
         </p:panel>
 
         <br></br>
+        <br></br>
 
-        <p:panel header="Outros Comandos" style="margin-bottom:10px;">
-            <h:panelGrid columns="1" cellpadding="5">
-                <p:outputLabel value="Country: "/>
-                <p:outputLabel value="City: "/>
-            </h:panelGrid>
+        <p:panel header="Configuração de Mira"
+                 style="margin-bottom:10px;"
+                 class="panel">
+            <h:outputLabel value="cl_crosshairstyle 0 = Mira padrão"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshairstyle 1 = Mira estática padrão"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshairstyle 2 = Mira clássica"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshairstyle 4 = Mira clássica estática"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshairstyle 5 = Mira clássica dinâmica"/>
+            <p:divider/>
+            <h:outputLabel value="сl_crosshairsize (de 0 a 10 ) = Tamanho da mira"/>
+            <p:divider/>
+            <h:outputLabel value="сl_crosshairgap (de -5 a 5) = Gap"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshairdot (0 ou 1) = Liga ou desliga o ponto"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshair_t (0 ou 1) = Desabilita ou habilita a mira em forma de T"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshairalpha (de 0 a 255) = Transparência"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshairthickness (de 0 a 6) = Espessura"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshair_drawoutline (0 ou1) = Desativa ou ativa o contorno da mira"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshaircolor 0 = Vermelho"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshaircolor 1 = Verde"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshaircolor 2 = Amarelo"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshaircolor 3 = Azul"/>
+            <p:divider/>
+            <h:outputLabel value="сl_crosshaircolor 4 = Turquesa"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshaircolor 5 = Branco"/>
+            <p:divider/>
+            <h:outputLabel value="сl_crosshaircolor r (de 0 a 255) = Quantidade de vermelho"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshair_drawoutline (0 ou1) = Desativa ou ativa o contorno da mira"/>
+            <p:divider/>
+            <h:outputLabel value="сl_crosshaircolor g (de 0 a 255) = Quantidade de verde"/>
+            <p:divider/>
+            <h:outputLabel value="сl_crosshaircolor b (de 0 a 255) = Quantidade de azul"/>
+            <p:divider/>
+            <h:outputLabel value="cl_crosshair_sniper_width = Espessura da mira na mira de sniper"/>
+            <p:divider/>
+        </p:panel>
+
+        <br></br>
+        <br></br>
+
+        <p:panel header="Configuração de Posição da Mão"
+                 style="margin-bottom:10px;"
+                 class="panel">
+            <h:outputLabel value="viewmodel_presetpos 1 = Tipo normal de arma em mãos"/>
+            <p:divider/>
+            <h:outputLabel value="viewmodel_presetpos 2 = Visão ampla da arma em mãos"/>
+            <p:divider/>
+            <h:outputLabel value="viewmodel_presetpos 3 = Visão clássica de uma arma em mãos"/>
+            <p:divider/>
+            <h:outputLabel value="viewmodel_fov (de 54 a 68) = Altera o ângulo de visão"/>
+            <p:divider/>
+        </p:panel>
+
+        <br></br>
+        <br></br>
+
+        <p:panel header="Jump Throw Bind"
+                 style="margin-bottom:10px;"
+                 class="panel">
+            <h:outputLabel value='alias "+jt" "+jump;" ;'/>
+            <p:divider/>
+            <h:outputLabel value='alias "+ta" "-attack; -attack2"; '/>
+            <p:divider/>
+            <h:outputLabel value='alias "-jt" "-jump";'/>
+            <p:divider/>
+            <h:outputLabel value='bind alt "+jt;+ta;" '/>
+            <p:divider/>
+            <h:outputLabel value="Execute esses comandos em ordem, você pode escolher outra tecla no lugar do 'alt'"/>
+            <p:divider/>
+        </p:panel>
+
+        <br></br>
+        <br></br>
+
+        <p:panel header="Outros Comandos"
+                 style="margin-bottom:10px;"
+                 class="panel">
+            <p:divider/>
+            <h:outputLabel value="bind mwheelup +jump = Pular ao rolar o scroll para cima"/>
+            <p:divider/>
+            <h:outputLabel value="bind mwheeldown +jump = Pular ao rolar o scroll para baixo"/>
+            <p:divider/>
+            <h:outputLabel value="clear = Limpa o console"/>
+            <p:divider/>
+            <h:outputLabel value="disconnect = Desconectar do servidor"/>
+            <p:divider/>
+            <h:outputLabel value="quit = Sair do jogo"/>
+            <p:divider/>
+            <h:outputLabel value="status = Mostra informações sobre o servidor"/>
+            <p:divider/>
+            <h:outputLabel value="buddha 1 = O jogador perde dano de até 1 HP, mas não morre"/>
+            <p:divider/>
+            <h:outputLabel value="god 1 = Imortalidade"/>
+            <p:divider/>
+            <h:outputLabel value="binddefaults = Todos os binds são revertidos para o padrão"/>
+            <p:divider/>
+            <h:outputLabel value="cl_draw_only_deathnotices 1 = Desativa a hud, deixando apenas a mira"/>
+            <p:divider/>
+            <h:outputLabel value="cl_drawhud = Desativa completamente a hud"/>
+            <p:divider/>
+            <h:outputLabel value="thirdperson = Visão em terceira pessoa"/>
+            <p:divider/>
+            <h:outputLabel value="firtsperson = Visão em primeira pessoa"/>
+            <p:divider/>
+            <h:outputLabel value="connect 'endereço IP do servidor' = Conecte-se ao servidor se você tiver um ip"/>
+            <p:divider/>
+            <h:outputLabel value="cl_showfps (1, 2, 3 ou 4) = Exibe o FPS"/>
+            <p:divider/>
+            <h:outputLabel value="fps_max (valor padrão – 400) = Habilita a limitação de FPS"/>
+            <p:divider/>
+            <h:outputLabel value="kill = Mate-se"/>
+            <p:divider/>
+            <h:outputLabel value="map de_dust2 = Carrega o mapa desejado"/>
+            <p:divider/>
+            <h:outputLabel value="unbind alt = Remove uma ligação de uma chave específica, nesse caso, a da tecla ALT"/>
+            <p:divider/>
+            <h:outputLabel value="alias = Cria versões alternativas de comandos regulares"/>
+            <p:divider/>
+            <h:outputLabel value="sensitivivy = Sensibilidade do mouse"/>
+            <p:divider/>
+            <h:outputLabel value="zoom_sensitivity_ratio = Sensibilidade do mouse no zoom da sniper"/>
+            <p:divider/>
+            <h:outputLabel value="exec 'nome da configuração' = Carrega a exec desejada"/>
+            <p:divider/>
+            <h:outputLabel value="cl_hud_color (de 0 a 11) = Cor do hud"/>
+            <p:divider/>
+            <h:outputLabel value="callvote = Comece a votar"/>
+            <p:divider/>
+            <h:outputLabel value="cl_ent_hitbox = Habilita hitboxes"/>
+            <p:divider/>
+            <h:outputLabel
+                    value="rate 1000000 (valor máximo) = Define o limite de velocidade para a conexão à internet entre o servidor e o jogador"/>
+            <p:divider/>
+            <h:outputLabel value="record (nome) = Grava uma demo"/>
+            <p:divider/>
+            <h:outputLabel value="demoui = Desativa e ativa a reprodução da demo"/>
+            <p:divider/>
+        </p:panel>
+
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <p:panel header="CFG de Treinamento"
+                 style="margin-bottom:10px;"
+                 class="panel-video">
+            <br></br>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/M4w4sFsi3ZY?si=knrrYHzCTkMLDSnf"
+                        frameborder="0"
+                        allowfullscreen="allowfullscreen"
+                        style="margin-left: 57px; margin-top: 20px;">
+                </iframe>
+            </div>
         </p:panel>
     </h:form>
-
 </div>
 </body>
-
 </html>

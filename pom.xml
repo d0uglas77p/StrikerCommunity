@@ -40,13 +40,6 @@
             <version>2.3.9</version>
         </dependency>
 
-        <!-- Dependência do Jakarta Faces API -->
-        <dependency>
-            <groupId>jakarta.faces</groupId>
-            <artifactId>jakarta.faces-api</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
@@ -60,18 +53,18 @@
             <version>13.0.0</version>
         </dependency>
 
+        <!-- Dependência do OWASP Java HTML Sanitizer -->
+        <dependency>
+            <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
+            <artifactId>owasp-java-html-sanitizer</artifactId>
+            <version>20211018.2</version>
+        </dependency>
+
         <!-- Dependência da API de validação -->
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
             <version>2.0.1.Final</version>
-        </dependency>
-
-        <!-- Dependência do Commons FileUpload -->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-            <version>1.5</version>
         </dependency>
 
     </dependencies>

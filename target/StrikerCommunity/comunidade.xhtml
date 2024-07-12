@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
     <title>Striker Community</title>
+    <h:outputStylesheet name="css/comunidade.css"/>
 </h:head>
 
 <body>
@@ -25,26 +27,46 @@
                         <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
                     </p:submenu>
 
-                    <p:menuitem value="Fórum"
-                                action="#{navegacaoBean.irForum}"/>
-
-                    <p:menuitem value="Ranking"
-                                action="#{navegacaoBean.irRanking}"/>
-
-                    <p:menuitem value="Vip"
-                                action="#{navegacaoBean.irVip}"/>
+                    <p:menuitem value="Comunidade"
+                                action="#{navegacaoBean.irComunidade}"/>
 
                     <p:menuitem value="Meu Perfil"
                                 action="#{navegacaoBean.irMeuPerfil}"/>
 
                 </p:menubar>
 
-                <p:panelGrid style="margin-left: 535px; margin-top: -61px;">
+                <p:panelGrid style="margin-left: 460px; margin-top: -61px;">
                     <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
                                      action="#{navegacaoBean.irLogin}"/>
                 </p:panelGrid>
             </h:panelGrid>
         </p:panelGrid>
+    </h:form>
+
+    <h:form id="comunidadeForm">
+        <p:growl id="messages"
+                 showDetail="true" />
+
+        <br /><br />
+
+        <p:panel header="Publicação"
+                 class="panel-publicacao">
+            <p:textEditor id="mensagem"
+                          value="#{comunidadeBean.mensagem}"
+                          widgetVar="editorWidget"
+                          width="600"/>
+            <br /><br />
+
+            <h:panelGrid columns="2">
+                <p:outputLabel style="margin-left: 300px;"
+                               styleClass="placeholder-text"
+                               value="Interaja com a comunidade, retire suas dúvidas, compartilhe os seus Highlights..." />
+
+                <p:commandButton value="Publicar"
+                                 style="left: 35px;"
+                                 action="#{comunidadeBean.publicar}"/>
+            </h:panelGrid>
+        </p:panel>
     </h:form>
 </div>
 </body>

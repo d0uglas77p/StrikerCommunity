@@ -1,10 +1,9 @@
 package application.bean.ct.smoke;
 
-import application.bean.tr.smoke.VideoSmokeOverpassTRBean;
 import application.model.Video;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.view.ViewScoped;
+import javax.faces.bean.ViewScoped;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import java.io.IOException;

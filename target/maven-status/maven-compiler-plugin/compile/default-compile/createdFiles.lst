@@ -22,6 +22,7 @@ application\bean\tr\he\VideoHeNukeTRBean.class
 application\bean\ct\smoke\VideoSmokeVertigoCTBean.class
 application\bean\tr\molotov\VideoMolotovAncientTRBean.class
 application\bean\ct\flash\VideoFlashAnubisCTBean.class
+application\model\Publicacao.class
 application\bean\tr\he\VideoHeOverpassTRBean.class
 application\bean\tr\smoke\VideoSmokeOverpassTRBean.class
 application\bean\ct\he\VideoHeOverpassCTBean.class
@@ -63,6 +64,7 @@ application\bean\tr\molotov\VideoMolotovNukeTRBean.class
 application\bean\ct\he\VideoHeNukeCTBean.class
 application\bean\tr\smoke\VideoSmokeAncientTRBean.class
 application\bean\ct\flash\VideoFlashNukeCTBean.class
+application\bean\ComunidadeBean.class
 application\model\Video.class
 application\bean\tr\flash\VideoFlashAncientTRBean.class
 application\bean\tr\flash\VideoFlashOverpassTRBean.class
