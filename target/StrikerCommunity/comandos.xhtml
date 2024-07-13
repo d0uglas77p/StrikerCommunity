@@ -9,39 +9,38 @@
 </h:head>
 
 <body>
-<div>
-    <!-- MENU DE NAVEGAÇÃO -->
-    <h:form>
-        <p:panelGrid columns="2">
-            <h:panelGrid style="margin-left: 60px;">
-                <p:graphicImage name="images/logo.png" width="340" height="60"/>
-            </h:panelGrid>
+<div><!-- MENU DE NAVEGAÇÃO -->
+    <p:panelGrid columns="2">
+        <h:panelGrid style="margin-left: 60px;">
+            <p:graphicImage name="images/logo.png" width="340" height="60"/>
+        </h:panelGrid>
 
-            <h:panelGrid style="margin-left: -70px;">
-                <p:menubar orientation="horizontal" autoDisplay="false">
-                    <p:menuitem value="Início"
-                                action="#{navegacaoBean.irInicio}"/>
+        <h:panelGrid style="margin-left: -70px;">
+            <p:menubar orientation="horizontal" autoDisplay="false">
+                <p:menuitem value="Início"
+                            action="#{navegacaoBean.irInicio}"/>
 
-                    <p:submenu label="Counter Strike 2">
-                        <p:menuitem value="Utilitários" action="#{navegacaoBean.irUtilitario}"/>
-                        <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
-                    </p:submenu>
+                <p:submenu label="Comunidade">
+                    <p:menuitem value="Feed" action="#{navegacaoBean.irFeed}"/>
+                    <p:menuitem value="Fórum" action="#{navegacaoBean.irForum}"/>
+                </p:submenu>
 
-                    <p:menuitem value="Comunidade"
-                                action="#{navegacaoBean.irComunidade}"/>
+                <p:submenu label="Counter Strike 2">
+                    <p:menuitem value="Utilitários" action="#{navegacaoBean.irUtilitario}"/>
+                    <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
+                </p:submenu>
 
-                    <p:menuitem value="Meu Perfil"
-                                action="#{navegacaoBean.irMeuPerfil}"/>
+                <p:menuitem value="Meu Perfil"
+                            action="#{navegacaoBean.irMeuPerfil}"/>
 
-                </p:menubar>
+            </p:menubar>
 
-                <p:panelGrid style="margin-left: 460px; margin-top: -61px;">
-                    <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
-                                     action="#{navegacaoBean.irLogin}"/>
-                </p:panelGrid>
-            </h:panelGrid>
-        </p:panelGrid>
-    </h:form>
+            <p:panelGrid style="margin-left: 460px; margin-top: -61px;">
+                <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
+                                 action="#{navegacaoBean.irLogin}"/>
+            </p:panelGrid>
+        </h:panelGrid>
+    </p:panelGrid>
     <!-- MENU DE NAVEGAÇÃO -->
     <h:form>
         <br></br>

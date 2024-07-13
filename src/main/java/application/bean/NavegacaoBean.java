@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @ManagedBean
 @ViewScoped
-public class NavegacaoBean implements Serializable{
+public class NavegacaoBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public String irInicio() {
@@ -17,16 +17,20 @@ public class NavegacaoBean implements Serializable{
         return "/login.xhtml?faces-redirect=true";
     }
 
+    public String irFeed() {
+        return "/feed.xhtml?faces-redirect=true";
+    }
+
+    public String irForum() {
+        return "/forum.xhtml?faces-redirect=true";
+    }
+
     public String irUtilitario() {
         return "/utilitario.xhtml?faces-redirect=true";
     }
 
     public String irComandos() {
         return "/comandos.xhtml?faces-redirect=true";
-    }
-
-    public String irComunidade() {
-        return "/comunidade.xhtml?faces-redirect=true";
     }
 
     public String irMeuPerfil() {

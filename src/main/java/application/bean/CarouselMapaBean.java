@@ -3,14 +3,14 @@ package application.bean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 @ManagedBean
 @ViewScoped
 public class CarouselMapaBean implements Serializable {
     private static final long serialVersionUID = 1L;
-    private List<String> imagesMapa;
+    private final List<String> imagesMapa;
 
     public CarouselMapaBean() {
         imagesMapa = new ArrayList<>();
@@ -23,6 +23,7 @@ public class CarouselMapaBean implements Serializable {
         imagesMapa.add("Ancient");
         imagesMapa.add("Anubis");
     }
+
     public List<String> getImagesMapa() {
         return imagesMapa;
     }

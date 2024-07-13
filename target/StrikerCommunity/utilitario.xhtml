@@ -22,13 +22,15 @@
                     <p:menuitem value="Início"
                                 action="#{navegacaoBean.irInicio}"/>
 
+                    <p:submenu label="Comunidade">
+                        <p:menuitem value="Feed" action="#{navegacaoBean.irFeed}"/>
+                        <p:menuitem value="Fórum" action="#{navegacaoBean.irForum}"/>
+                    </p:submenu>
+
                     <p:submenu label="Counter Strike 2">
                         <p:menuitem value="Utilitários" action="#{navegacaoBean.irUtilitario}"/>
                         <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
                     </p:submenu>
-
-                    <p:menuitem value="Comunidade"
-                                action="#{navegacaoBean.irComunidade}"/>
 
                     <p:menuitem value="Meu Perfil"
                                 action="#{navegacaoBean.irMeuPerfil}"/>
