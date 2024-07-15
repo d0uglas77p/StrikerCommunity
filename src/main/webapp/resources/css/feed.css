@@ -1,7 +1,18 @@
+.fixed-buttons {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
 .panel-publicacao {
-    width: 1020px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.editor {
+    height: 200px !important
 }
 
 .placeholder-text {
@@ -10,7 +21,7 @@
     color: #999999;
 }
 
-.postagem-panel {
+.postagem-dataScroller {
     width: 1020px;
     margin-left: auto;
     margin-right: auto;
@@ -30,3 +41,12 @@
     height: auto;
 }
 
+.postagem-grid {
+    padding-left: 850px;
+    position: relative;
+}
+
+.postagem-panel {
+    border: 1px solid black;
+    border-radius: 5px;
+}

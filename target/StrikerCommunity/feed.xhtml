@@ -91,21 +91,29 @@
 
         <br></br>
 
-        <h:panelGroup id="postagensContainer">
-            <ui:repeat value="#{feedBean.postagens}"
-                       var="postagem"
-                       varStatus="status">
-                <br></br>
+        <p:dataList value="#{feedBean.postagens}" var="postagem" itemType="div" rows="10" paginator="true" paginatorPosition="bottom">
+            <p:panel styleClass="postagem-panel" style="margin-top: 10px;">
+                <h:outputText value="#{postagem}"
+                              escape="false"
+                              styleClass="postagem-content"/>
+            </p:panel>
+        </p:dataList>
 
-                <p:panel id="postagemPanel#{status.index}"
-                         class="postagem-panel"
-                         style="margin-top: 10px;">
-                    <h:outputText value="#{postagem}"
-                                  escape="false"
-                                  styleClass="postagem-content"/>
-                </p:panel>
-            </ui:repeat>
-        </h:panelGroup>
+        <p:dataScroller id="dataScroller"
+                        value="#{feedBean.postagens}"
+                        var="postagem"
+                        itemType="div"
+                        rows="10"
+                        paginator="true"
+                        paginatorPosition="bottom"
+                        scroll="true"
+                        step="10">
+            <p:panel styleClass="postagem-panel" style="margin-top: 10px;">
+                <h:outputText value="#{postagem}"
+                              escape="false"
+                              styleClass="postagem-content"/>
+            </p:panel>
+        </p:dataScroller>
     </h:form>
 </div>
 </body>

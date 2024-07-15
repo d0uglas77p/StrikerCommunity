@@ -2,21 +2,33 @@ package application.bean;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class FeedBean implements Serializable {
     private static final long serialVersionUID = 1L;
     private static final int MAX_LENGTH = 1507;
     private static final Logger LOGGER = Logger.getLogger(FeedBean.class.getName());
+    private LocalDate dataPublicacao;
     private String mensagem;
     private List<String> postagens = new ArrayList<>();
+
+    public LocalDate getDataPublicacao() {
+        return dataPublicacao;
+    }
+
+    public void setDataPublicacao(LocalDate dataPublicacao) {
+        this.dataPublicacao = dataPublicacao;
+    }
 
     public String getMensagem() {
         return mensagem;
@@ -47,6 +59,10 @@ public class FeedBean implements Serializable {
                 return; // Impede a publicação se o texto exceder o limite
             }
 
+            // Captura a data da publicação
+            LocalDate dataAtual = LocalDate.now();
+            dataPublicacao = dataAtual;
+
             // Adiciona a postagem (texto e imagem, se houver)
             postagens.add(0, mensagem);
             mensagem = null;
@@ -74,6 +90,13 @@ public class FeedBean implements Serializable {
         LOGGER.info("FEED ATUALIZADO");
     }
 
+    public String formatarDataPublicacao() {
+        if (dataPublicacao != null) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            return dataPublicacao.format(formatter);
+        }
+        return "";
+    }
 
     // TESTE ----> RETIRAR DEPOIS <-----
     public void limparPostagens() {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
@@ -48,64 +48,125 @@
     </h:form>
 
     <h:form id="feedForm">
-        <p:growl id="messages" showDetail="true"/>
+        <div class="fixed-buttons">
+            <h:panelGroup columns="2">
+                <p:commandButton id="tooltipPublicarButton"
+                                 value="Publicar"
+                                 styleClass="rounded-button"
+                                 style="right: 10px;"
+                                 oncomplete="PF('publicacaoDialog').show()"/>
+                <p:tooltip for="tooltipPublicarButton"
+                           value="Publicar conteúdo"
+                           showEffect="clip"
+                           hideEffect="fold"
+                           my="right center"
+                           at="left center"/>
 
-        <br/>
+                <p:commandButton id="tooltipFeedButton"
+                                 icon="pi pi-refresh"
+                                 styleClass="rounded-button"
+                                 style="left: 10px;"
+                                 action="#{feedBean.atualizarFeed}"
+                                 update=":feedForm:postagensContainer :feedForm:messages"/>
+                <p:tooltip for="tooltipFeedButton"
+                           value="Atualizar o feed de postagens"
+                           showEffect="clip"
+                           hideEffect="fold"/>
+            </h:panelGroup>
+        </div>
 
-        <p:panel header="Publicação" class="panel-publicacao">
-            <p:textEditor id="mensagem"
-                          value="#{feedBean.mensagem}"
-                          widgetVar="editorWidget"
-                          width="600"/>
-            <br/>
+        <div>
+            <p:dialog header="Publicação"
+                      widgetVar="publicacaoDialog"
+                      modal="true"
+                      resizable="false"
+                      width="1040"
+                      height="307">
 
-            <h:panelGrid columns="2">
-                <p:outputLabel style="margin-left: 300px;"
-                               styleClass="placeholder-text"
-                               value="Interaja com a comunidade, retire suas dúvidas, compartilhe os seus Highlights..."/>
+                <p:growl id="messages" showDetail="true"/>
 
-                <p:commandButton value="Publicar"
-                                 style="left: 35px;"
-                                 action="#{feedBean.publicar}"
-                                 update=":feedForm:postagensContainer :feedForm:mensagem :feedForm:messages"/>
+                <p:outputPanel header="Publicação" class="panel-publicacao">
+                    <p:textEditor id="mensagem"
+                                  value="#{feedBean.mensagem}"
+                                  widgetVar="editorWidget"
+                                  width="600"
+                                  styleClass="editor"/>
 
-                <p:commandButton value="Limpar Postagens"
-                                 style="left: 35px;"
-                                 action="#{feedBean.limparPostagens}"
-                                 update=":feedForm:postagensContainer"/>
-            </h:panelGrid>
-        </p:panel>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+                    <h:panelGrid columns="2">
+                        <p:outputLabel style="margin-left: 317px;"
+                                       styleClass="placeholder-text"
+                                       value="Interaja com a comunidade, retire suas dúvidas, compartilhe os seus Highlights..."/>
+
+                        <p:commandButton value="Publicar"
+                                         style="left: 35px; top: -5px;"
+                                         action="#{feedBean.publicar}"
+                                         update=":feedForm:postagensContainer :feedForm:mensagem :feedForm:messages"
+                                         oncomplete="PF('publicacaoDialog').hide()"/>
+
+                    </h:panelGrid>
+                </p:outputPanel>
+            </p:dialog>
+        </div>
 
         <br></br>
-
-        <p:commandButton id="updateFeedButton"
-                         icon="pi pi-refresh"
-                         style="left: 640px;"
-                         action="#{feedBean.atualizarFeed}"
-                         update=":feedForm:postagensContainer :feedForm:messages"/>
-
-        <p:tooltip for="updateFeedButton"
-                   value="Atualizar o feed de postagens"
-                   showEffect="clip"
-                   hideEffect="fold"/>
-
         <br></br>
 
         <h:panelGroup id="postagensContainer">
-            <ui:repeat value="#{feedBean.postagens}"
-                       var="postagem"
-                       varStatus="status">
-                <br></br>
+            <p:dataScroller widgetVar="ds"
+                            value="#{feedBean.postagens}"
+                            var="postagem"
+                            chunkSize="10"
+                            styleClass="postagem-dataScroller">
 
-                <p:panel id="postagemPanel#{status.index}"
-                         class="postagem-panel"
-                         style="margin-top: 10px;">
+                <f:facet name="loading">
+                    <div>
+                        <p:skeleton height="100px" width="100%" style="margin-bottom: 10px;"/>
+                    </div>
+                </f:facet>
+
+                <p:panel id="postagemPanel"
+                         style="margin-top: 10px;"
+                         class="postagem-panel">
+
+                    <p:panelGrid columns="2" styleClass="postagem-grid">
+                        <h:outputText value="#{feedBean.formatarDataPublicacao()}"
+                                      styleClass="placeholder-text"
+                                      style="margin-left: -50px;"/>
+
+                        <p:avatar styleClass="mr-2"
+                                  size="medium"
+                                  shape="circle"
+                                  style="margin-top: -8px;">
+                            <p:graphicImage name="images/avatar.png"/>
+                        </p:avatar>
+                    </p:panelGrid>
+
                     <h:outputText value="#{postagem}"
                                   escape="false"
                                   styleClass="postagem-content"/>
                 </p:panel>
-            </ui:repeat>
+
+                <br></br>
+
+                <f:facet name="loader">
+                    <div>
+                        <p:commandButton type="button"
+                                         value="Ver Mais"
+                                         icon="pi pi-refresh"
+                                         style="left: 450px;"
+                                         styleClass="scroller-button"
+                                         onclick="PF('ds').loadChunk()"/>
+                    </div>
+                </f:facet>
+            </p:dataScroller>
         </h:panelGroup>
+        <br></br>
+        <br></br>
+        <br></br>
     </h:form>
 </div>
 </body>
