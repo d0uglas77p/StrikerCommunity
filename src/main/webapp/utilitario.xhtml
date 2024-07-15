@@ -13,18 +13,15 @@
     <h:form>
         <!-- MENU DE NAVEGAÇÃO -->
         <p:panelGrid columns="2">
-            <h:panelGrid style="margin-left: 60px;">
-                <p:graphicImage name="images/logo.png" width="340" height="60"/>
-            </h:panelGrid>
-
-            <h:panelGrid style="margin-left: -70px;">
+            <p:graphicImage name="images/logo.png" width="350" height="60" style="margin-left: 0px; margin-top: 0px;"/>
+            <h:panelGrid style="margin-left: -160px;">
                 <p:menubar orientation="horizontal" autoDisplay="false">
                     <p:menuitem value="Início"
                                 action="#{navegacaoBean.irInicio}"/>
 
                     <p:submenu label="Comunidade">
-                        <p:menuitem value="Feed" action="#{navegacaoBean.irFeed}"/>
-                        <p:menuitem value="Fórum" action="#{navegacaoBean.irForum}"/>
+                        <p:menuitem value="Feeds" action="#{navegacaoBean.irFeed}"/>
+                        <p:menuitem value="Tópicos" action="#{navegacaoBean.irTopico}"/>
                     </p:submenu>
 
                     <p:submenu label="Counter Strike 2">
@@ -32,12 +29,16 @@
                         <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
                     </p:submenu>
 
+                    <p:submenu label="Mercado de Skins">
+                        <p:menuitem value="Compra"/>
+                        <p:menuitem value="Venda"/>
+                    </p:submenu>
+
                     <p:menuitem value="Meu Perfil"
                                 action="#{navegacaoBean.irMeuPerfil}"/>
-
                 </p:menubar>
 
-                <p:panelGrid style="margin-left: 460px; margin-top: -61px;">
+                <p:panelGrid style="margin-left: 650px; margin-top: -70px;">
                     <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
                                      action="#{navegacaoBean.irLogin}"/>
                 </p:panelGrid>
@@ -49,177 +50,181 @@
 
         <!-- PAINEL ESCOLHER O LADO -->
         <p:outputPanel id="Lado">
-            <p:panel id="panelLadoContent"
-                     rendered="#{utilitarioPanelBean.exibirPanelLado}"
-                     class="panel"
-                     style="margin-left: 220px;">
+            <p:outputPanel id="panelLadoContent"
+                           rendered="#{utilitarioPanelBean.exibirPanelLado}"
+                           class="panel"
+                           style="margin-left: 220px;">
+
                 <p:tag value="Escolha um lado"
-                       style="font-size: 20px; margin-left: 335px; margin-bottom: 10px; margin-top: 5px;"
+                       style="font-size: 20px; margin-left: 350px;"
                        severity="success"/>
 
-                <p:panelGrid columns="2">
-                    <p:commandLink actionListener="#{utilitarioPanelBean.exibirPanelUtilitarioCt}"
-                                   update="@form">
-                        <p:graphicImage name="images/ct-lado.png"
-                                        class="image-grid-border image-filter"
-                                        width="210"
-                                        height="360"
-                                        style="margin-left: 90px;"/>
-                    </p:commandLink>
+                <div>
+                    <h:panelGroup columns="2">
+                        <p:commandLink actionListener="#{utilitarioPanelBean.exibirPanelUtilitarioCt}"
+                                       update="@form">
+                            <p:graphicImage name="images/ct-lado.png"
+                                            class="image-grid-border image-filter"
+                                            width="210"
+                                            height="360"
+                                            style="margin-left: 100px; margin-top: 30px;"/>
+                        </p:commandLink>
 
-                    <p:commandLink actionListener="#{utilitarioPanelBean.exibirPanelUtilitarioTr}"
-                                   update="@form">
-                        <p:graphicImage name="images/tr-lado.png"
-                                        class="image-grid-border image-filter"
-                                        width="210"
-                                        height="360"
-                                        style="margin-left: 80px;"/>
-                    </p:commandLink>
+                        <p:commandLink actionListener="#{utilitarioPanelBean.exibirPanelUtilitarioTr}"
+                                       update="@form">
+                            <p:graphicImage name="images/tr-lado.png"
+                                            class="image-grid-border image-filter"
+                                            width="210"
+                                            height="360"
+                                            style="margin-left: 248px;"/>
+                        </p:commandLink>
+                    </h:panelGroup>
+                    <h:panelGroup columns="2">
+                        <p:tag value="Contra-terrorista"
+                               style="font-size: 20px; margin-left: 115px; margin-top: 30px;;"
+                               severity="info"/>
 
-                    <p:tag value="Contra-terrorista"
-                           style="font-size: 20px; margin-left: 110px;"
-                           severity="info"/>
+                        <p:tag value="Terrorista"
+                               style="font-size: 20px; margin-left: 320px;"
+                               severity="warning"/>
+                    </h:panelGroup>
+                </div>
 
-                    <p:tag value="Terrorista"
-                           style="font-size: 20px; margin-left: 135px;"
-                           severity="warning"/>
-                </p:panelGrid>
-            </p:panel>
+
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER O LADO -->
 
 
         <!-- PAINEL ESCOLHER UTILITARIO CT-->
         <p:outputPanel id="UtilitarioCt">
-            <p:panel id="panelUtilitarioCtContent"
-                     rendered="#{utilitarioPanelBean.exibirPanelUtilitarioCt}"
-                     class="panel"
-                     style="margin-left: 220px;">
+            <p:outputPanel id="panelUtilitarioCtContent"
+                           rendered="#{utilitarioPanelBean.exibirPanelUtilitarioCt}"
+                           class="panel"
+                           style="margin-left: 220px;">
 
                 <p:commandButton
                         value="Voltar"
-                        styleClass="rounded-button ui-button-secondary"
+                        styleClass="ui-button-outlined ui-button-info"
                         action="#{utilitarioPanelBean.exibirPanelLado}"
-                        update="@form"/>
+                        update="@form"
+                        style="margin-left: -200px;"/>
 
                 <p:tag value="Escolha um utilitário CT"
-                       style="font-size: 20px; margin-left: 240px; margin-bottom: 10px; margin-top: 5px;"
-                       severity="success"/>
+                       style="font-size: 20px; margin-left: 420px;"
+                       severity="info"/>
 
-                <p:panelGrid columns="4">
-                    <p:commandLink onclick="window.open('pagina-video/smokeCt.xhtml', '_blank'); return false;"
-                                   update="@form">
-                        <p:graphicImage name="images/smoke.png"
-                                        class="utilitario-grid-border utilitario-filter"
-                                        width="150"
-                                        height="150"
-                                        style="margin-left: -15px;"/>
-                    </p:commandLink>
+                <div>
+                    <h:panelGroup columns="4">
+                        <p:commandLink onclick="window.open('pagina-video/smokeCt.xhtml', '_blank'); return false;"
+                                       update="@form">
+                            <p:graphicImage name="images/smoke.png"
+                                            class="utilitario-grid-border utilitario-filter"
+                                            width="150"
+                                            height="150"
+                                            style="margin-left: 50px; margin-top: 60px;"/>
+                        </p:commandLink>
 
-                    <p:commandLink onclick="window.open('pagina-video/molotovCt.xhtml', '_blank'); return false;"
-                                   update="@form">
-                        <p:graphicImage name="images/incendiaria.png"
-                                        class="utilitario-grid-border utilitario-filter"
-                                        width="150"
-                                        height="150"
-                                        style="margin-left: 05px;"/>
-                    </p:commandLink>
+                        <p:commandLink onclick="window.open('pagina-video/molotovCt.xhtml', '_blank'); return false;"
+                                       update="@form">
+                            <p:graphicImage name="images/incendiaria.png"
+                                            class="utilitario-grid-border utilitario-filter"
+                                            width="150"
+                                            height="150"
+                                            style="margin-left: 50px;"/>
+                        </p:commandLink>
 
-                    <p:commandLink onclick="window.open('pagina-video/flashCt.xhtml', '_blank'); return false;"
-                                   update="@form">
-                        <p:graphicImage name="images/flash.png"
-                                        class="utilitario-grid-border utilitario-filter"
-                                        width="150"
-                                        height="150"
-                                        style="margin-left: 25px;"/>
-                    </p:commandLink>
+                        <p:commandLink onclick="window.open('pagina-video/flashCt.xhtml', '_blank'); return false;"
+                                       update="@form">
+                            <p:graphicImage name="images/flash.png"
+                                            class="utilitario-grid-border utilitario-filter"
+                                            width="150"
+                                            height="150"
+                                            style="margin-left: 50px;"/>
+                        </p:commandLink>
 
-                    <p:commandLink onclick="window.open('pagina-video/heCt.xhtml', '_blank'); return false;"
-                                   update="@form">
-                        <p:graphicImage name="images/he.png"
-                                        class="utilitario-grid-border utilitario-filter"
-                                        width="150"
-                                        height="150"
-                                        style="margin-left: 45px;"/>
-                    </p:commandLink>
-
-                    <p:tag value="Você escolheu o lado Contra-terrorista!"
-                           style="font-size: 20px; margin-left: 20px; margin-top: 80px; position: absolute;"
-                           severity="info"/>
+                        <p:commandLink onclick="window.open('pagina-video/heCt.xhtml', '_blank'); return false;"
+                                       update="@form">
+                            <p:graphicImage name="images/he.png"
+                                            class="utilitario-grid-border utilitario-filter"
+                                            width="150"
+                                            height="150"
+                                            style="margin-left: 50px;"/>
+                        </p:commandLink>
+                    </h:panelGroup>
 
                     <p:graphicImage name="images/ladoCt.png"
-                                    width="410"
-                                    height="244"
-                                    style="margin-left: 180px;"/>
-                </p:panelGrid>
-            </p:panel>
+                                    width="350"
+                                    height="200"
+                                    style="margin-left: 230px; margin-top: 50px;"/>
+                </div>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER UTILITARIO CT-->
 
         <!-- PAINEL ESCOLHER UTILITARIO TR-->
         <p:outputPanel id="UtilitarioTr">
-            <p:panel id="panelUtilitarioTrContent"
-                     rendered="#{utilitarioPanelBean.exibirPanelUtilitarioTr}"
-                     class="panel"
-                     style="margin-left: 220px;">
+            <p:outputPanel id="panelUtilitarioTrContent"
+                           rendered="#{utilitarioPanelBean.exibirPanelUtilitarioTr}"
+                           class="panel"
+                           style="margin-left: 220px;">
 
                 <p:commandButton
                         value="Voltar"
-                        styleClass="rounded-button ui-button-secondary"
+                        styleClass="ui-button-outlined ui-button-info"
                         action="#{utilitarioPanelBean.exibirPanelLado}"
-                        update="@form"/>
+                        update="@form"
+                        style="margin-left: -200px;"/>
 
                 <p:tag value="Escolha um utilitário TR"
-                       style="font-size: 20px; margin-left: 240px; margin-bottom: 10px; margin-top: 5px;"
-                       severity="success"/>
-
-                <p:panelGrid columns="4">
-                    <p:commandLink onclick="window.open('pagina-video/smokeTr.xhtml', '_blank'); return false;"
-                                   update="@form">
-                        <p:graphicImage name="images/smoke.png"
-                                        class="utilitario-grid-border utilitario-filter"
-                                        width="150"
-                                        height="150"
-                                        style="margin-left: -15px;"/>
-                    </p:commandLink>
-
-                    <p:commandLink onclick="window.open('pagina-video/molotovTr.xhtml', '_blank'); return false;"
-                                   update="@form">
-                        <p:graphicImage name="images/molotov.png"
-                                        class="utilitario-grid-border utilitario-filter"
-                                        width="150"
-                                        height="150"
-                                        style="margin-left: 05px;"/>
-                    </p:commandLink>
-
-                    <p:commandLink onclick="window.open('pagina-video/flashTr.xhtml', '_blank'); return false;"
-                                   update="@form">
-                        <p:graphicImage name="images/flash.png"
-                                        class="utilitario-grid-border utilitario-filter"
-                                        width="150"
-                                        height="150"
-                                        style="margin-left: 25px;"/>
-                    </p:commandLink>
-
-                    <p:commandLink onclick="window.open('pagina-video/heTr.xhtml', '_blank'); return false;"
-                                   update="@form">
-                        <p:graphicImage name="images/he.png"
-                                        class="utilitario-grid-border utilitario-filter"
-                                        width="150"
-                                        height="150"
-                                        style="margin-left: 45px;"/>
-                    </p:commandLink>
-                </p:panelGrid>
-
-                <p:tag value="Você escolheu o lado Terrorista!"
-                       style="font-size: 20px; margin-left: 40px; margin-top: 90px; position: absolute;"
+                       style="font-size: 20px; margin-left: 420px;"
                        severity="warning"/>
 
-                <p:graphicImage name="images/ladoTr.png"
-                                width="400"
-                                height="262"
-                                style="margin-left: 400px;"/>
-            </p:panel>
+                <div>
+                    <h:panelGroup columns="4">
+                        <p:commandLink onclick="window.open('pagina-video/smokeTr.xhtml', '_blank'); return false;"
+                                       update="@form">
+                            <p:graphicImage name="images/smoke.png"
+                                            class="utilitario-grid-border utilitario-filter"
+                                            width="150"
+                                            height="150"
+                                            style="margin-left: 50px; margin-top: 60px;"/>
+                        </p:commandLink>
+
+                        <p:commandLink onclick="window.open('pagina-video/molotovTr.xhtml', '_blank'); return false;"
+                                       update="@form">
+                            <p:graphicImage name="images/molotov.png"
+                                            class="utilitario-grid-border utilitario-filter"
+                                            width="150"
+                                            height="150"
+                                            style="margin-left: 50px;"/>
+                        </p:commandLink>
+
+                        <p:commandLink onclick="window.open('pagina-video/flashTr.xhtml', '_blank'); return false;"
+                                       update="@form">
+                            <p:graphicImage name="images/flash.png"
+                                            class="utilitario-grid-border utilitario-filter"
+                                            width="150"
+                                            height="150"
+                                            style="margin-left: 50px;"/>
+                        </p:commandLink>
+
+                        <p:commandLink onclick="window.open('pagina-video/heTr.xhtml', '_blank'); return false;"
+                                       update="@form">
+                            <p:graphicImage name="images/he.png"
+                                            class="utilitario-grid-border utilitario-filter"
+                                            width="150"
+                                            height="150"
+                                            style="margin-left: 50px;"/>
+                        </p:commandLink>
+                    </h:panelGroup>
+
+                    <p:graphicImage name="images/ladoTr.png"
+                                    width="350"
+                                    height="200"
+                                    style="margin-left: 230px; margin-top: 50px;"/>
+                </div>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER UTILITARIO TR-->
     </h:form>

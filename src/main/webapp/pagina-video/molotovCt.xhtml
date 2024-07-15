@@ -14,18 +14,15 @@
     <h:form>
         <!-- MENU DE NAVEGAÇÃO -->
         <p:panelGrid columns="2">
-            <h:panelGrid style="margin-left: 60px;">
-                <p:graphicImage name="images/logo.png" width="340" height="60"/>
-            </h:panelGrid>
-
-            <h:panelGrid style="margin-left: -70px;">
+            <p:graphicImage name="images/logo.png" width="350" height="60" style="margin-left: 0px; margin-top: 0px;"/>
+            <h:panelGrid style="margin-left: -160px;">
                 <p:menubar orientation="horizontal" autoDisplay="false">
                     <p:menuitem value="Início"
                                 action="#{navegacaoBean.irInicio}"/>
 
                     <p:submenu label="Comunidade">
-                        <p:menuitem value="Feed" action="#{navegacaoBean.irFeed}"/>
-                        <p:menuitem value="Fórum" action="#{navegacaoBean.irForum}"/>
+                        <p:menuitem value="Feeds" action="#{navegacaoBean.irFeed}"/>
+                        <p:menuitem value="Tópicos" action="#{navegacaoBean.irTopico}"/>
                     </p:submenu>
 
                     <p:submenu label="Counter Strike 2">
@@ -33,12 +30,16 @@
                         <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
                     </p:submenu>
 
+                    <p:submenu label="Mercado de Skins">
+                        <p:menuitem value="Compra"/>
+                        <p:menuitem value="Venda"/>
+                    </p:submenu>
+
                     <p:menuitem value="Meu Perfil"
                                 action="#{navegacaoBean.irMeuPerfil}"/>
-
                 </p:menubar>
 
-                <p:panelGrid style="margin-left: 460px; margin-top: -61px;">
+                <p:panelGrid style="margin-left: 650px; margin-top: -70px;">
                     <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
                                      action="#{navegacaoBean.irLogin}"/>
                 </p:panelGrid>
@@ -51,7 +52,7 @@
 
         <p:tag value="Escolha um Mapa"
                style="font-size: 20px; margin-left: 576px; margin-bottom: 20px;"
-               severity="success"/>
+               severity="info"/>
 
         <br></br>
 
@@ -68,7 +69,7 @@
                             <div>
                                 <p:tag value="#{image}"
                                        style="font-size: 20px;"
-                                       severity="warnig"/>
+                                       severity="info"/>
                             </div>
                             <br/>
                             <div>
@@ -76,7 +77,7 @@
                                                update="formVideos">
                                     <p:graphicImage library="images"
                                                     name="#{image}.png"
-                                                    styleClass="mapa"/>
+                                                    styleClass="mapa mapa-filter"/>
                                 </p:commandLink>
                             </div>
                         </div>
@@ -93,241 +94,241 @@
     <h:form id="formVideos">
         <!-- PAINEL ESCOLHER DUST CT -->
         <p:outputPanel id="DustCt">
-            <p:panel id="panelDustCtContent"
+            <p:outputPanel id="panelDustCtContent"
                      rendered="#{mapaPanelCtBean.exibirPanelDustCt}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
                 <p:tag value="MOLOTOV CT DUST"
                        severity="warning"
-                       style="font-size: 16px; margin-left: 50px;"/>
+                       style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
                 <p:carousel id="videoMolotovDustCT"
                             value="#{videoMolotovDustCTBean.videosMolotovDust}"
-                            var="video">
+                            var="video"
+                            styleClass="ui-carousel-video">
                     <div class="video-container">
                         <iframe src="#{video.url}"
                                 frameborder="0"
                                 allowfullscreen="allowfullscreen">
                         </iframe>
-                        <div class="ui-carousel-footer"
-                             style="margin-left: 370px;">
+                        <h:panelGroup class="ui-carousel-footer">
                             #{video.titulo}
-                        </div>
+                        </h:panelGroup>
                     </div>
                 </p:carousel>
-            </p:panel>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER DUST CT -->
 
         <!-- PAINEL ESCOLHER MIRAGE CT -->
         <p:outputPanel id="MirageCt">
-            <p:panel id="panelMirageCtContent"
+            <p:outputPanel id="panelMirageCtContent"
                      rendered="#{mapaPanelCtBean.exibirPanelMirageCt}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
                 <p:tag value="MOLOTOV CT MIRAGE"
                        severity="warning"
-                       style="font-size: 16px; margin-left: 50px;"/>
+                       style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
                 <p:carousel id="videoMolotovMirageCT"
                             value="#{videoMolotovMirageCTBean.videosMolotovMirage}"
-                            var="video">
+                            var="video"
+                            styleClass="ui-carousel-video">
                     <div class="video-container">
                         <iframe src="#{video.url}"
                                 frameborder="0"
                                 allowfullscreen="allowfullscreen">
                         </iframe>
-                        <div class="ui-carousel-footer"
-                             style="margin-left: 370px;">
+                        <h:panelGroup class="ui-carousel-footer">
                             #{video.titulo}
-                        </div>
+                        </h:panelGroup>
                     </div>
                 </p:carousel>
-            </p:panel>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER MIRAGE CT -->
 
         <!-- PAINEL ESCOLHER INFERNO CT -->
         <p:outputPanel id="InfernoCt">
-            <p:panel id="panelInfernoCtContent"
+            <p:outputPanel id="panelInfernoCtContent"
                      rendered="#{mapaPanelCtBean.exibirPanelInfernoCt}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
                 <p:tag value="MOLOTOV CT INFERNO"
                        severity="warning"
-                       style="font-size: 16px; margin-left: 50px;"/>
+                       style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
                 <p:carousel id="videoMolotovInfernoCT"
                             value="#{videoMolotovInfernoCTBean.videosMolotovInferno}"
-                            var="video">
+                            var="video"
+                            styleClass="ui-carousel-video">
                     <div class="video-container">
                         <iframe src="#{video.url}"
                                 frameborder="0"
                                 allowfullscreen="allowfullscreen">
                         </iframe>
-                        <div class="ui-carousel-footer"
-                             style="margin-left: 370px;">
+                        <h:panelGroup class="ui-carousel-footer">
                             #{video.titulo}
-                        </div>
+                        </h:panelGroup>
                     </div>
                 </p:carousel>
-            </p:panel>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER INFERNO CT -->
 
         <!-- PAINEL ESCOLHER NUKE CT -->
         <p:outputPanel id="NukeCt">
-            <p:panel id="panelNukeCtContent"
+            <p:outputPanel id="panelNukeCtContent"
                      rendered="#{mapaPanelCtBean.exibirPanelNukeCt}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
                 <p:tag value="MOLOTOV CT NUKE"
                        severity="warning"
-                       style="font-size: 16px; margin-left: 50px;"/>
+                       style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
                 <p:carousel id="videoMolotovNukeCT"
                             value="#{videoMolotovNukeCTBean.videosMolotovNuke}"
-                            var="video">
+                            var="video"
+                            styleClass="ui-carousel-video">
                     <div class="video-container">
                         <iframe src="#{video.url}"
                                 frameborder="0"
                                 allowfullscreen="allowfullscreen">
                         </iframe>
-                        <div class="ui-carousel-footer"
-                             style="margin-left: 370px;">
+                        <h:panelGroup class="ui-carousel-footer">
                             #{video.titulo}
-                        </div>
+                        </h:panelGroup>
                     </div>
                 </p:carousel>
-            </p:panel>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER NUKE CT -->
 
         <!-- PAINEL ESCOLHER OVERPASS CT -->
         <p:outputPanel id="OverpassCt">
-            <p:panel id="panelOverpassCtContent"
+            <p:outputPanel id="panelOverpassCtContent"
                      rendered="#{mapaPanelCtBean.exibirPanelOverpassCt}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
                 <p:tag value="MOLOTOV CT OVERPASS"
                        severity="warning"
-                       style="font-size: 16px; margin-left: 50px;"/>
+                       style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
                 <p:carousel id="videoMolotovOverpassCT"
                             value="#{videoMolotovOverpassCTBean.videosMolotovOverpass}"
-                            var="video">
+                            var="video"
+                            styleClass="ui-carousel-video">
                     <div class="video-container">
                         <iframe src="#{video.url}"
                                 frameborder="0"
                                 allowfullscreen="allowfullscreen">
                         </iframe>
-                        <div class="ui-carousel-footer"
-                             style="margin-left: 370px;">
+                        <h:panelGroup class="ui-carousel-footer">
                             #{video.titulo}
-                        </div>
+                        </h:panelGroup>
                     </div>
                 </p:carousel>
-            </p:panel>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER OVERPASS CT -->
 
         <!-- PAINEL ESCOLHER VERTIGO CT -->
         <p:outputPanel id="VertigoCt">
-            <p:panel id="panelVertigoCtContent"
+            <p:outputPanel id="panelVertigoCtContent"
                      rendered="#{mapaPanelCtBean.exibirPanelVertigoCt}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
                 <p:tag value="MOLOTOV CT VERTIGO"
                        severity="warning"
-                       style="font-size: 16px; margin-left: 50px;"/>
+                       style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
                 <p:carousel id="videoMolotovVertigoCT"
                             value="#{videoMolotovVertigoCTBean.videosMolotovVertigo}"
-                            var="video">
+                            var="video"
+                            styleClass="ui-carousel-video">
                     <div class="video-container">
                         <iframe src="#{video.url}"
                                 frameborder="0"
                                 allowfullscreen="allowfullscreen">
                         </iframe>
-                        <div class="ui-carousel-footer"
-                             style="margin-left: 370px;">
+                        <h:panelGroup class="ui-carousel-footer">
                             #{video.titulo}
-                        </div>
+                        </h:panelGroup>
                     </div>
                 </p:carousel>
-            </p:panel>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER VERTIGO CT -->
 
         <!-- PAINEL ESCOLHER ANCIENT CT -->
         <p:outputPanel id="AncientCt">
-            <p:panel id="panelAncientCtContent"
+            <p:outputPanel id="panelAncientCtContent"
                      rendered="#{mapaPanelCtBean.exibirPanelAncientCt}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
                 <p:tag value="MOLOTOV CT ANCIENT"
                        severity="warning"
-                       style="font-size: 16px; margin-left: 50px;"/>
+                       style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
                 <p:carousel id="videoMolotovAncientCT"
                             value="#{videoMolotovAncientCTBean.videosMolotovAncient}"
-                            var="video">
+                            var="video"
+                            styleClass="ui-carousel-video">
                     <div class="video-container">
                         <iframe src="#{video.url}"
                                 frameborder="0"
                                 allowfullscreen="allowfullscreen">
                         </iframe>
-                        <div class="ui-carousel-footer"
-                             style="margin-left: 370px;">
+                        <h:panelGroup class="ui-carousel-footer">
                             #{video.titulo}
-                        </div>
+                        </h:panelGroup>
                     </div>
                 </p:carousel>
-            </p:panel>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER ANCIENT CT -->
 
         <!-- PAINEL ESCOLHER ANUBIS CT -->
         <p:outputPanel id="AnubisCt">
-            <p:panel id="panelAnubisCtContent"
+            <p:outputPanel id="panelAnubisCtContent"
                      rendered="#{mapaPanelCtBean.exibirPanelAnubisCt}"
                      class="panel-video"
                      style="margin-left: 65px;">
                 <br/>
                 <p:tag value="MOLOTOV CT ANUBIS"
                        severity="warning"
-                       style="font-size: 16px; margin-left: 50px;"/>
+                       style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
                 <p:carousel id="videoMolotovAnubisCT"
                             value="#{videoMolotovAnubisCTBean.videosMolotovAnubis}"
-                            var="video">
+                            var="video"
+                            styleClass="ui-carousel-video">
                     <div class="video-container">
                         <iframe src="#{video.url}"
                                 frameborder="0"
                                 allowfullscreen="allowfullscreen">
                         </iframe>
-                        <div class="ui-carousel-footer"
-                             style="margin-left: 370px;">
+                        <h:panelGroup class="ui-carousel-footer">
                             #{video.titulo}
-                        </div>
+                        </h:panelGroup>
                     </div>
                 </p:carousel>
-            </p:panel>
+            </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER ANUBIS CT -->
     </h:form>

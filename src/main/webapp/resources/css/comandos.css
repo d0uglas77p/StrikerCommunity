@@ -4,6 +4,10 @@
     margin-right: auto;
 }
 
+.custom-label {
+    color: #00f2ff
+}
+
 .console-text {
     font-style: italic;
 }

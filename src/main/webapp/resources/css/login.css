@@ -25,7 +25,7 @@ body {
 }
 
 .label-conectado {
-    color: #f5d784;
+    color: #ff6600;
 }
 
 .custom-label {
@@ -42,5 +42,5 @@ body {
 }
 
 .custom-dialog {
-    width: 470px !important;
+    width: 480px !important;
 }

@@ -12,7 +12,7 @@
 }
 
 .editor {
-    height: 200px !important
+    height: 160px !important
 }
 
 .placeholder-text {
@@ -47,6 +47,6 @@
 }
 
 .postagem-panel {
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 5px;
 }

@@ -11,128 +11,78 @@
 <body>
 <div>
     <h:form class="form">
-
         <h:panelGroup>
-            <p:panelGrid columns="3">
-                <h:panelGroup></h:panelGroup>
-                <p:graphicImage name="images/logo.png" class="logo"
-                                style="margin-left: -150px;"/>
-                <h:panelGroup></h:panelGroup>
-            </p:panelGrid>
+            <p:panel>
+                <p:panelGrid>
+                    <p:graphicImage name="images/logo.png"
+                                    style="margin-left: -25px; width: 400px; height: 70px;"/>
+                </p:panelGrid>
 
-            <p:panelGrid columns="2">
-                <p:outputLabel value="Login" styleClass="custom-label" style="margin-left: -90px;"/>
-                <p:inputText maxlength="30" size="30" style="margin-left: -130px; margin-top: -8px;"/>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Login" styleClass="custom-label" style="margin-left: -90px;"/>
+                    <p:inputText maxlength="30" size="30" style="margin-left: -130px; margin-top: -8px;"/>
 
-                <h:panelGroup></h:panelGroup>
-                <h:panelGroup></h:panelGroup>
+                    <p:outputLabel value="Senha" styleClass="custom-label" style="margin-left: -90px;"/>
+                    <p:password maxlength="8" size="30" style="margin-left: -130px; margin-top: -8px;"/>
+                </p:panelGrid>
 
-                <p:outputLabel value="Senha" styleClass="custom-label" style="margin-left: -90px;"/>
-                <p:password maxlength="8" size="30" style="margin-left: -130px; margin-top: -8px;"/>
+                <p:panelGrid columns="3">
+                    <p:selectBooleanCheckbox id="checkbox" style="margin-left: -35px; top: -1px;"/>
+                    <p:outputLabel for="checkbox" value="Manter-me conectado" styleClass="label-conectado"
+                                   style="margin-left: -100px;"/>
+                    <p:commandLink value="Recuperar Senha" style="margin-left: -55px;"/>
+                </p:panelGrid>
 
-                <h:panelGroup></h:panelGroup>
-                <h:panelGroup></h:panelGroup>
-            </p:panelGrid>
+                <p:panelGrid columns="2">
+                    <p:commandButton value="Entrar" action="#{navegacaoBean.irInicio}" style="margin-left: 150px;"
+                                     styleClass="rounded-button"/>
 
-            <p:panelGrid columns="3">
-                <p:selectBooleanCheckbox id="checkbox" style="margin-left: -35px;"/>
-                <p:outputLabel for="checkbox" value="Manter-me conectado" styleClass="label-conectado"
-                               style="margin-left: -120px;"/>
-                <p:commandLink value="Recuperar Senha" style="margin-left: -55px;"/>
-            </p:panelGrid>
+                    <p:commandButton value="Criar Conta" style="margin-left: 20px;"
+                                     styleClass="rounded-button"
+                                     oncomplete="PF('cadastroDialog').show()"/>
+                </p:panelGrid>
+            </p:panel>
 
-            <p:panelGrid columns="2">
-                <h:panelGroup></h:panelGroup>
-                <h:panelGroup></h:panelGroup>
+            <!-- Modal para cadastro -->
+            <p:dialog header="Criar Conta" widgetVar="cadastroDialog" modal="true" resizable="false"
+                      styleClass="custom-dialog">
+                <!-- Conteúdo do formulário de cadastro -->
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nome" for="nome" styleClass="custom-label"
+                                   style="margin-top: -10px; margin-left: -90px;"/>
+                    <p:inputText id="nome" maxlength="50" size="30" style="margin-top: -10px; margin-left: -80px;"/>
 
-                <p:commandButton value="Entrar" action="#{navegacaoBean.irInicio}" style="margin-left: 150px;"
-                                 styleClass="rounded-button"/>
+                    <p:outputLabel value="E-mail" for="email" styleClass="custom-label"
+                                   style="margin-top: -10px; margin-left: -90px;"/>
+                    <p:inputText id="email" maxlength="50" size="30" style="margin-top: -10px; margin-left: -80px;"/>
 
-                <p:commandButton value="Criar Conta" style="margin-left: 20px;"
-                                 styleClass="rounded-button"
-                                 oncomplete="PF('cadastroDialog').show()"/>
+                    <p:outputLabel value="Login" for="login" styleClass="custom-label"
+                                   style="margin-top: -10px; margin-left: -90px;"/>
+                    <p:inputText id="login" maxlength="50" size="30" style="margin-top: -10px; margin-left: -80px;"/>
 
-                <!-- Modal para cadastro -->
-                <p:dialog header="Cadastro" widgetVar="cadastroDialog" modal="true" resizable="false"
-                          styleClass="custom-dialog">
-                    <!-- Conteúdo do formulário de cadastro -->
-                    <h:panelGrid columns="2">
-                        <p:outputLabel value="Nome" for="nome" styleClass="custom-label"/>
-                        <p:inputText id="nome" maxlength="50" size="30" style="margin-left: 10px;"/>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
+                    <p:outputLabel value="Senha" for="senha" styleClass="custom-label"
+                                   style="margin-top: -10px; margin-left: -90px;"/>
+                    <p:password id="senha" maxlength="8" size="30" style="margin-top: -10px; margin-left: -80px;"/>
 
-                        <p:outputLabel value="E-mail" for="email" styleClass="custom-label"/>
-                        <p:inputText id="email" maxlength="50" size="30" style="margin-left: 10px;"/>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
+                    <p:outputLabel value="Repetir Senha" for="repetirSenha" styleClass="custom-label"
+                                   style="margin-top: -10px; margin-left: -90px;"/>
+                    <p:password id="repetirSenha" maxlength="8" size="30"
+                                style="margin-top: -10px; margin-left: -80px;"/>
+                </p:panelGrid>
 
-                        <p:outputLabel value="Login" for="login" styleClass="custom-label"/>
-                        <p:inputText id="login" maxlength="50" size="30" style="margin-left: 10px;"/>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-
-                        <p:outputLabel value="Senha" for="senha" styleClass="custom-label"/>
-                        <p:password id="senha" maxlength="8" size="30" style="margin-left: 10px;"/>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-
-                        <p:outputLabel value="Repetir Senha" for="repetirSenha" styleClass="custom-label"/>
-                        <p:password id="repetirSenha" maxlength="8" size="30" style="margin-left: 10px;"/>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-                        <h:panelGroup></h:panelGroup>
-
-                        <h:panelGroup></h:panelGroup>
-                        <p:commandButton value="Cadastrar" styleClass="rounded-button" style="margin-left: -50px;"
-                                         oncomplete="if (!args.validationFailed) {PF('cadastroDialog').hide(); PF('sucessoDialog').show();}"/>
-                    </h:panelGrid>
-                </p:dialog>
-            </p:panelGrid>
-
-            <p:panelGrid columns="3">
-                <h:panelGroup></h:panelGroup>
-                <h:panelGroup></h:panelGroup>
-                <h:panelGroup></h:panelGroup>
-            </p:panelGrid>
-
-            <p:dialog header="" widgetVar="sucessoDialog" modal="true" resizable="false">
-                <h:panelGrid>
-                    <p:outputLabel value="Cadastro efetuado com sucesso!" styleClass="custom-label-green"/>
-                    <p:outputLabel value="Seja bem-vindo a Comunidade de Counter Striker!"/>
-                </h:panelGrid>
+                <p:commandButton value="Cadastrar" styleClass="rounded-button" style="top: 10px; margin-right: -310px;"
+                                 oncomplete="if (!args.validationFailed) {PF('cadastroDialog').hide(); PF('sucessoDialog').show();}"/>
             </p:dialog>
-
         </h:panelGroup>
+    </h:form>
+
+    <h:form>
+        <p:dialog header="Cadastrado" widgetVar="sucessoDialog" modal="true" resizable="false">
+            <h:panelGrid>
+                <p:outputLabel value="Cadastro efetuado com sucesso!" styleClass="custom-label-green"/>
+                <p:outputLabel value="Seja bem-vindo a Comunidade de Counter Striker!"/>
+            </h:panelGrid>
+        </p:dialog>
     </h:form>
 </div>
 </body>
