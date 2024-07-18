@@ -33,8 +33,8 @@ public class NavegacaoBean implements Serializable {
         return "/comandos.xhtml?faces-redirect=true";
     }
 
-    public String irMeuPerfil() {
-        return "/meuperfil.xhtml?faces-redirect=true";
+    public String irPerfil() {
+        return "/perfil.xhtml?faces-redirect=true";
     }
 
 }

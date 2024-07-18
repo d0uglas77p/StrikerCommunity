@@ -12,7 +12,7 @@
 }
 
 .editor {
-    height: 160px !important
+    height: 260px !important
 }
 
 .placeholder-text {
@@ -49,4 +49,25 @@
 .postagem-panel {
     border: 3px solid black;
     border-radius: 5px;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+}
+
+.avatar-filter {
+    transition: filter 0.3s ease;
+}
+
+.avatar-filter:hover {
+    filter: brightness(70%);
+}
+
+.icon-filter {
+    transition: filter 0.3s ease;
+}
+
+.icon-filter:hover {
+    filter: brightness(65%);
 }

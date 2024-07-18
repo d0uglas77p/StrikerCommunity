@@ -8,7 +8,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -16,35 +15,15 @@ import java.util.logging.Logger;
 @SessionScoped
 public class FeedBean implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static final int MAX_LENGTH = 1507;
     private static final Logger LOGGER = Logger.getLogger(FeedBean.class.getName());
+    private static final int MAX_LENGTH = 1507;
+
     private LocalDate dataPublicacao;
     private String mensagem;
     private List<String> postagens = new ArrayList<>();
+    private int curtidas = 0;
+    private boolean curtiu = false;
 
-    public LocalDate getDataPublicacao() {
-        return dataPublicacao;
-    }
-
-    public void setDataPublicacao(LocalDate dataPublicacao) {
-        this.dataPublicacao = dataPublicacao;
-    }
-
-    public String getMensagem() {
-        return mensagem;
-    }
-
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
-    }
-
-    public List<String> getPostagens() {
-        return postagens;
-    }
-
-    public void setPostagens(List<String> postagens) {
-        this.postagens = postagens;
-    }
 
     public void publicar() {
         FacesContext context = FacesContext.getCurrentInstance();
@@ -98,8 +77,53 @@ public class FeedBean implements Serializable {
         return "";
     }
 
-    // TESTE ----> RETIRAR DEPOIS <-----
-    public void limparPostagens() {
-        postagens.clear(); // Limpa todas as postagens
+    public void toggleCurtida() {
+        if (curtiu) {
+            curtidas--;
+        } else {
+            curtidas++;
+        }
+        curtiu = !curtiu;
     }
+
+    public LocalDate getDataPublicacao() {
+        return dataPublicacao;
+    }
+
+    public void setDataPublicacao(LocalDate dataPublicacao) {
+        this.dataPublicacao = dataPublicacao;
+    }
+
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
+
+    public List<String> getPostagens() {
+        return postagens;
+    }
+
+    public void setPostagens(List<String> postagens) {
+        this.postagens = postagens;
+    }
+
+    public int getCurtidas() {
+        return curtidas;
+    }
+
+    public void setCurtidas(int curtidas) {
+        this.curtidas = curtidas;
+    }
+
+    public boolean isCurtiu() {
+        return curtiu;
+    }
+
+    public void setCurtiu(boolean curtiu) {
+        this.curtiu = curtiu;
+    }
+
 }

@@ -15,31 +15,80 @@
         <!-- MENU DE NAVEGAÇÃO -->
         <p:panelGrid columns="2">
             <p:graphicImage name="images/logo.png" width="350" height="60" style="margin-left: 0px; margin-top: 0px;"/>
-            <h:panelGrid style="margin-left: -160px;">
+            <h:panelGrid style="margin-left: -210px;">
                 <p:menubar orientation="horizontal" autoDisplay="false">
-                    <p:menuitem value="Início"
-                                action="#{navegacaoBean.irInicio}"/>
+                    <p:menuitem value="Início" action="#{navegacaoBean.irInicio}"/>
 
                     <p:submenu label="Comunidade">
-                        <p:menuitem value="Feeds" action="#{navegacaoBean.irFeed}"/>
-                        <p:menuitem value="Tópicos" action="#{navegacaoBean.irTopico}"/>
+                        <p:menuitem action="#{navegacaoBean.irFeed}">
+                            <div>
+                                <p:graphicImage name="images/logoTr.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Feeds" style="margin-left: 10px; vertical-align: 8px; "/>
+                            </div>
+                        </p:menuitem>
+                        <p:menuitem action="#{navegacaoBean.irTopico}">
+                            <div>
+                                <p:graphicImage name="images/logoCt.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Tópicos" style="margin-left: 10px; vertical-align: 10px; "/>
+                            </div>
+                        </p:menuitem>
                     </p:submenu>
 
                     <p:submenu label="Counter Strike 2">
-                        <p:menuitem value="Utilitários" action="#{navegacaoBean.irUtilitario}"/>
-                        <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
+                        <p:menuitem action="#{navegacaoBean.irUtilitario}">
+                            <div>
+                                <p:graphicImage name="images/smoke-grenade.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Utilitários" style="margin-left: 10px; vertical-align: 8px; "/>
+                            </div>
+                        </p:menuitem>
+                        <p:menuitem action="#{navegacaoBean.irComandos}">
+                            <div>
+                                <p:graphicImage name="images/cfg.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Comandos" style="margin-left: 10px; vertical-align: 10px; "/>
+                            </div>
+                        </p:menuitem>
                     </p:submenu>
 
                     <p:submenu label="Mercado de Skins">
-                        <p:menuitem value="Compra"/>
-                        <p:menuitem value="Venda"/>
+                        <p:menuitem>
+                            <div>
+                                <p:graphicImage name="images/compra.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Compra" style="margin-left: 10px; vertical-align: 8px; "/>
+                            </div>
+                        </p:menuitem>
+                        <p:menuitem>
+                            <div>
+                                <p:graphicImage name="images/venda.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Venda" style="margin-left: 10px; vertical-align: 10px; "/>
+                            </div>
+                        </p:menuitem>
                     </p:submenu>
 
-                    <p:menuitem value="Meu Perfil"
-                                action="#{navegacaoBean.irMeuPerfil}"/>
+                    <p:submenu label="Meu Perfil">
+                        <p:menuitem action="#{navegacaoBean.irPerfil}">
+                            <div>
+                                <p:graphicImage name="images/perfil.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Perfil" style="margin-left: 10px; vertical-align: 8px; "/>
+                            </div>
+                        </p:menuitem>
+                    </p:submenu>
                 </p:menubar>
 
-                <p:panelGrid style="margin-left: 650px; margin-top: -70px;">
+                <p:panelGrid style="margin-left: 670px; margin-top: -70px;">
                     <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
                                      action="#{navegacaoBean.irLogin}"/>
                 </p:panelGrid>

@@ -44,3 +44,18 @@ body {
 .custom-dialog {
     width: 480px !important;
 }
+
+.custom-logo {
+    position: fixed;
+    top: 105px; /* Ajuste conforme necessário */
+    left: 3px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Garante que a imagem fique acima de outros elementos */
+}
+
+.custom-logo2 {
+    position: fixed;
+    top: 150px; /* Ajuste conforme necessário */
+    left: 930px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Garante que a imagem fique acima de outros elementos */
+}
+

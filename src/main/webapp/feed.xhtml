@@ -15,31 +15,80 @@
         <!-- MENU DE NAVEGAÇÃO -->
         <p:panelGrid columns="2">
             <p:graphicImage name="images/logo.png" width="350" height="60" style="margin-left: 0px; margin-top: 0px;"/>
-            <h:panelGrid style="margin-left: -160px;">
+            <h:panelGrid style="margin-left: -210px;">
                 <p:menubar orientation="horizontal" autoDisplay="false">
-                    <p:menuitem value="Início"
-                                action="#{navegacaoBean.irInicio}"/>
+                    <p:menuitem value="Início" action="#{navegacaoBean.irInicio}"/>
 
                     <p:submenu label="Comunidade">
-                        <p:menuitem value="Feeds" action="#{navegacaoBean.irFeed}"/>
-                        <p:menuitem value="Tópicos" action="#{navegacaoBean.irTopico}"/>
+                        <p:menuitem action="#{navegacaoBean.irFeed}">
+                            <div>
+                                <p:graphicImage name="images/logoTr.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Feeds" style="margin-left: 10px; vertical-align: 8px; "/>
+                            </div>
+                        </p:menuitem>
+                        <p:menuitem action="#{navegacaoBean.irTopico}">
+                            <div>
+                                <p:graphicImage name="images/logoCt.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Tópicos" style="margin-left: 10px; vertical-align: 10px; "/>
+                            </div>
+                        </p:menuitem>
                     </p:submenu>
 
                     <p:submenu label="Counter Strike 2">
-                        <p:menuitem value="Utilitários" action="#{navegacaoBean.irUtilitario}"/>
-                        <p:menuitem value="Comandos" action="#{navegacaoBean.irComandos}"/>
+                        <p:menuitem action="#{navegacaoBean.irUtilitario}">
+                            <div>
+                                <p:graphicImage name="images/smoke-grenade.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Utilitários" style="margin-left: 10px; vertical-align: 8px; "/>
+                            </div>
+                        </p:menuitem>
+                        <p:menuitem action="#{navegacaoBean.irComandos}">
+                            <div>
+                                <p:graphicImage name="images/cfg.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Comandos" style="margin-left: 10px; vertical-align: 10px; "/>
+                            </div>
+                        </p:menuitem>
                     </p:submenu>
 
                     <p:submenu label="Mercado de Skins">
-                        <p:menuitem value="Compra"/>
-                        <p:menuitem value="Venda"/>
+                        <p:menuitem>
+                            <div>
+                                <p:graphicImage name="images/compra.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Compra" style="margin-left: 10px; vertical-align: 8px; "/>
+                            </div>
+                        </p:menuitem>
+                        <p:menuitem>
+                            <div>
+                                <p:graphicImage name="images/venda.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Venda" style="margin-left: 10px; vertical-align: 10px; "/>
+                            </div>
+                        </p:menuitem>
                     </p:submenu>
 
-                    <p:menuitem value="Meu Perfil"
-                                action="#{navegacaoBean.irMeuPerfil}"/>
+                    <p:submenu label="Meu Perfil">
+                        <p:menuitem action="#{navegacaoBean.irPerfil}">
+                            <div>
+                                <p:graphicImage name="images/perfil.png"
+                                                width="30"
+                                                height="30"/>
+                                <h:outputText value="Perfil" style="margin-left: 10px; vertical-align: 8px; "/>
+                            </div>
+                        </p:menuitem>
+                    </p:submenu>
                 </p:menubar>
 
-                <p:panelGrid style="margin-left: 650px; margin-top: -70px;">
+                <p:panelGrid style="margin-left: 670px; margin-top: -70px;">
                     <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
                                      action="#{navegacaoBean.irLogin}"/>
                 </p:panelGrid>
@@ -49,6 +98,7 @@
     </h:form>
 
     <h:form id="feedForm">
+        <!-- BOTÕES FIXOS NA TELA -->
         <div class="fixed-buttons">
             <h:panelGroup columns="2">
                 <p:commandButton id="tooltipPublicarButton"
@@ -71,18 +121,21 @@
                                  update=":feedForm:postagensContainer :feedForm:messages"/>
                 <p:tooltip for="tooltipFeedButton"
                            value="Atualizar o feed de postagens"
+                           style="margin-button: 50px;"
                            showEffect="clip"
                            hideEffect="fold"/>
             </h:panelGroup>
         </div>
+        <!-- BOTÕES FIXOS NA TELA -->
 
+        <!-- MODAL DE PUBLICAÇÃO -->
         <div>
             <p:dialog header="Publicação"
                       widgetVar="publicacaoDialog"
                       modal="true"
-                      resizable="false"
-                      width="1040"
-                      height="280">
+                      resizable="true"
+                      width="100%"
+                      height="350">
 
                 <p:growl id="messages" showDetail="true"/>
 
@@ -97,7 +150,7 @@
                     <br></br>
                     <br></br>
 
-                    <h:panelGrid columns="2" style="margin-left: 300px; margin-top: 10px;">
+                    <h:panelGrid columns="2" style="margin-left: 600px; margin-top: 10px;">
                         <p:outputLabel style="left: 288px;"
                                        styleClass="placeholder-text"
                                        value="Interaja com a comunidade, retire suas dúvidas, compartilhe os seus Highlights..."/>
@@ -108,15 +161,16 @@
                                          action="#{feedBean.publicar}"
                                          update=":feedForm:postagensContainer :feedForm:mensagem :feedForm:messages"
                                          oncomplete="PF('publicacaoDialog').hide()"/>
-
                     </h:panelGrid>
                 </p:outputPanel>
             </p:dialog>
         </div>
+        <!-- MODAL DE PUBLICAÇÃO -->
 
         <br></br>
         <br></br>
 
+        <!-- POSTAGENS -->
         <h:panelGroup id="postagensContainer">
             <p:dataScroller widgetVar="ds"
                             value="#{feedBean.postagens}"
@@ -134,27 +188,49 @@
                          style="margin-top: 10px;"
                          class="postagem-panel">
 
-                    <h:panelGroup>
+                    <h:panelGroup columns="2">
+                        <p:commandLink>
+                            <p:graphicImage id="salvar"
+                                            name="images/disket.png"
+                                            width="32"
+                                            height="32"
+                                            style="top: -15px; margin-left: 10px;"
+                                            class="icon-grid-border icon-filter"/>
+                        </p:commandLink>
 
-                        <p:avatar styleClass="mr-2"
-                                  size="medium"
-                                  shape="circle"
-                                  style="left: 915px;">
-                            <p:graphicImage name="images/avatar.png"/>
-                        </p:avatar>
+                        <p:tooltip for="salvar"
+                                   value="Salvar publicação"
+                                   showEffect="clip"
+                                   hideEffect="fold"/>
+
+                        <p:commandLink id="perfil" style="margin-left: 860px;">
+                            <p:graphicImage name="images/avatar.png"
+                                            styleClass="avatar avatar-filter"/>
+                        </p:commandLink>
                     </h:panelGroup>
 
                     <h:outputText value="#{postagem}"
                                   escape="false"
                                   styleClass="postagem-content"/>
 
-                    <h:panelGroup columns="3">
+                    <h:panelGroup columns="5">
                         <h:outputText value="#{feedBean.formatarDataPublicacao()}"
                                       styleClass="placeholder-text"
                                       style="margin-left: 10px;"/>
 
-                        <p:commandLink value="Comentários" style="margin-left: 685px;"/>
-                        <p:commandLink value="Curtidas" style="margin-left: 20px;"/>
+                        <h:outputText id="curtidaCount"
+                                      value="#{feedBean.curtidas}"
+                                      style="margin-left: 797px;" />
+
+                        <p:commandLink id="curtida"
+                                       action="#{feedBean.toggleCurtida}"
+                                       update="curtidaCount">
+                            <p:graphicImage name="images/ak.png"
+                                            width="36"
+                                            height="32"
+                                            style="margin-left: 15px;"
+                                            class="icon-grid-border icon-filter"/>
+                        </p:commandLink>
                     </h:panelGroup>
                 </p:panel>
 
@@ -162,16 +238,28 @@
 
                 <f:facet name="loader">
                     <div>
-                        <p:commandButton type="button"
-                                         value="Ver Mais"
-                                         icon="pi pi-refresh"
-                                         style="left: 450px;"
-                                         styleClass="scroller-button"
-                                         onclick="PF('ds').loadChunk()"/>
+                        <p:commandLink onclick="PF('ds').loadChunk()"
+                                       styleClass="scroller-button"
+                                       action="#{feedBean.toggleCurtida}"
+                                       update="curtidaCount">
+                            <p:graphicImage id="ver"
+                                            name="images/mira.png"
+                                            width="50"
+                                            height="50"
+                                            style="margin-left: 480px;"
+                                            class="icon-grid-border icon-filter"/>
+                        </p:commandLink>
+
+                        <p:tooltip for="ver"
+                                   value="Ver Mais"
+                                   showEffect="clip"
+                                   hideEffect="fold"/>
                     </div>
                 </f:facet>
             </p:dataScroller>
         </h:panelGroup>
+        <!-- POSTAGENS -->
+
         <br></br>
         <br></br>
         <br></br>
