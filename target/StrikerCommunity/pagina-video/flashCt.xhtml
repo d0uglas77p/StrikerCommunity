@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<h:head>
+    <title>Striker Community</title>
+    <h:outputStylesheet name="css/mapa.css"/>
+    <h:outputStylesheet name="css/video.css"/>
+</h:head>
+
+<body>
+<div>
+    <ui:include src="/templates/menu.xhtml"/>
+
+    <h:form>
+        <br></br>
+        <br></br>
+
+        <p:tag value="Escolha um Mapa"
+               style="font-size: 20px; margin-left: 576px; margin-bottom: 20px;"
+               severity="info"/>
+
+        <br></br>
+
+        <p:outputPanel id="PanelMapa" rendered="#{mapaPanelCtBean.exibirPanelMapaCt}">
+            <div>
+                <p:carousel value="#{carouselMapaBean.imagesMapa}"
+                            var="image"
+                            numVisible="3"
+                            styleClass="carousel"
+                            numScroll="3">
+
+                    <div class="card-item">
+                        <div class="card-item-content">
+                            <div>
+                                <p:tag value="#{image}"
+                                       style="font-size: 20px;"
+                                       severity="info"/>
+                            </div>
+                            <br/>
+                            <div>
+                                <p:commandLink action="#{mapaPanelCtBean.exibirPanelPorNome(image)}"
+                                               update="formVideos">
+                                    <p:graphicImage library="images"
+                                                    name="#{image}.png"
+                                                    styleClass="mapa mapa-filter"/>
+                                </p:commandLink>
+                            </div>
+                        </div>
+                    </div>
+                </p:carousel>
+            </div>
+        </p:outputPanel>
+    </h:form>
+
+    <br></br>
+    <br></br>
+    <br></br>
+
+    <h:form id="formVideos">
+        <!-- PAINEL ESCOLHER DUST CT -->
+        <p:outputPanel id="DustCt">
+            <p:outputPanel id="panelDustCtContent"
+                     rendered="#{mapaPanelCtBean.exibirPanelDustCt}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="FLASH CT DUST"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 135px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoFlashDustCT"
+                            value="#{videoFlashDustCTBean.videosFlashDust}"
+                            var="video"
+                            styleClass="ui-carousel-video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <h:panelGroup class="ui-carousel-footer">
+                            #{video.titulo}
+                        </h:panelGroup>
+                    </div>
+                </p:carousel>
+            </p:outputPanel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER DUST CT -->
+
+        <!-- PAINEL ESCOLHER MIRAGE CT-->
+        <p:outputPanel id="MirageCt">
+            <p:outputPanel id="panelMirageCtContent"
+                     rendered="#{mapaPanelCtBean.exibirPanelMirageCt}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+                <p:tag value="FLASH CT MIRAGE"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 135px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoFlashMirageCT"
+                            value="#{videoFlashMirageCTBean.videosFlashMirage}"
+                            var="video"
+                            styleClass="ui-carousel-video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <h:panelGroup class="ui-carousel-footer">
+                            #{video.titulo}
+                        </h:panelGroup>
+                    </div>
+                </p:carousel>
+            </p:outputPanel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER MIRAGE CT-->
+
+        <!-- PAINEL ESCOLHER INFERNO CT-->
+        <p:outputPanel id="InfernoCt">
+            <p:outputPanel id="panelInfernoCtContent"
+                     rendered="#{mapaPanelCtBean.exibirPanelInfernoCt}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+
+                <p:tag value="FLASH CT INFERNO"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 135px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoFlashInfernoCT"
+                            value="#{videoFlashInfernoCTBean.videosFlashInferno}"
+                            var="video"
+                            styleClass="ui-carousel-video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <h:panelGroup class="ui-carousel-footer">
+                            #{video.titulo}
+                        </h:panelGroup>
+                    </div>
+                </p:carousel>
+            </p:outputPanel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER INFERNO CT-->
+
+        <!-- PAINEL ESCOLHER NUKE CT-->
+        <p:outputPanel id="NukeCt">
+            <p:outputPanel id="panelNukeCtContent"
+                     rendered="#{mapaPanelCtBean.exibirPanelNukeCt}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+
+                <p:tag value="FLASH CT NUKE"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 135px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoFlashNukeCT"
+                            value="#{videoFlashNukeCTBean.videosFlashNuke}"
+                            var="video"
+                            styleClass="ui-carousel-video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <h:panelGroup class="ui-carousel-footer">
+                            #{video.titulo}
+                        </h:panelGroup>
+                    </div>
+                </p:carousel>
+            </p:outputPanel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER NUKE CT-->
+
+        <!-- PAINEL ESCOLHER OVERPASS CT-->
+        <p:outputPanel id="OverpassCt">
+            <p:outputPanel id="panelOverpassCtContent"
+                     rendered="#{mapaPanelCtBean.exibirPanelOverpassCt}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+
+                <p:tag value="FLASH CT OVERPASS"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 135px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoFlashOverpassCT"
+                            value="#{videoFlashOverpassCTBean.videosFlashOverpass}"
+                            var="video"
+                            styleClass="ui-carousel-video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <h:panelGroup class="ui-carousel-footer">
+                            #{video.titulo}
+                        </h:panelGroup>
+                    </div>
+                </p:carousel>
+            </p:outputPanel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER OVERPASS CT-->
+
+        <!-- PAINEL ESCOLHER VERTIGO CT-->
+        <p:outputPanel id="VertigoCt">
+            <p:outputPanel id="panelVertigoCtContent"
+                     rendered="#{mapaPanelCtBean.exibirPanelVertigoCt}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+
+                <p:tag value="FLASH CT VERTIGO"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 135px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoFlashVertigoCT"
+                            value="#{videoFlashVertigoCTBean.videosFlashVertigo}"
+                            var="video"
+                            styleClass="ui-carousel-video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <h:panelGroup class="ui-carousel-footer">
+                            #{video.titulo}
+                        </h:panelGroup>
+                    </div>
+                </p:carousel>
+            </p:outputPanel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER VERTIGO CT-->
+
+        <!-- PAINEL ESCOLHER ANCIENT CT-->
+        <p:outputPanel id="AncientCt">
+            <p:outputPanel id="panelAncientCtContent"
+                     rendered="#{mapaPanelCtBean.exibirPanelAncientCt}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+
+                <p:tag value="FLASH CT ANCIENT"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 135px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoFlashAncientCT"
+                            value="#{videoFlashAncientCTBean.videosFlashAncient}"
+                            var="video"
+                            styleClass="ui-carousel-video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <h:panelGroup class="ui-carousel-footer">
+                            #{video.titulo}
+                        </h:panelGroup>
+                    </div>
+                </p:carousel>
+            </p:outputPanel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER ANCIENT CT-->
+
+        <!-- PAINEL ESCOLHER ANUBIS CT-->
+        <p:outputPanel id="AnubisCt">
+            <p:outputPanel id="panelAnubisCtContent"
+                     rendered="#{mapaPanelCtBean.exibirPanelAnubisCt}"
+                     class="panel-video"
+                     style="margin-left: 65px;">
+                <br/>
+
+                <p:tag value="FLASH CT ANUBIS"
+                       severity="warning"
+                       style="font-size: 16px; margin-left: 135px;"/>
+                <br/><br/>
+
+                <p:carousel id="videoFlashAnubisCT"
+                            value="#{videoFlashAnubisCTBean.videosFlashAnubis}"
+                            var="video"
+                            styleClass="ui-carousel-video">
+                    <div class="video-container">
+                        <iframe src="#{video.url}"
+                                frameborder="0"
+                                allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <h:panelGroup class="ui-carousel-footer">
+                            #{video.titulo}
+                        </h:panelGroup>
+                    </div>
+                </p:carousel>
+            </p:outputPanel>
+        </p:outputPanel>
+        <!-- PAINEL ESCOLHER ANUBIS CT-->
+    </h:form>
+</div>
+</body>
+</html>

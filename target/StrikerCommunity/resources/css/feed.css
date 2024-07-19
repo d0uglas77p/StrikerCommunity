@@ -1,0 +1,73 @@
+.fixed-buttons {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.panel-publicacao {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editor {
+    height: 260px !important
+}
+
+.placeholder-text {
+    font-style: italic;
+    font-size: 14px;
+    color: #999999;
+}
+
+.postagem-dataScroller {
+    width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.postagem-content {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.postagem-content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.postagem-grid {
+    padding-left: 850px;
+    position: relative;
+}
+
+.postagem-panel {
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+}
+
+.avatar-filter {
+    transition: filter 0.3s ease;
+}
+
+.avatar-filter:hover {
+    filter: brightness(70%);
+}
+
+.icon-filter {
+    transition: filter 0.3s ease;
+}
+
+.icon-filter:hover {
+    filter: brightness(65%);
+}
