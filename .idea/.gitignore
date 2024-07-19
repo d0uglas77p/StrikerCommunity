@@ -1,3 +1,21 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.log
+*.tmp
+
+# IDE
+.idea/
+*.iml
+
+# Pasta de build do Maven
+/target/
+
+# Config Banco de Dados
+/src/main/webapp/resources/properties/config.properties
