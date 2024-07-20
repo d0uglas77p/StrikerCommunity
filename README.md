@@ -7,6 +7,7 @@ Sistema Web para comunidade de Counter Strike.
 - Intellij IDEA Community, 2023.2.7 (Community Edition)
 - Java, JDK - 20.0 Amazon Corretto
 - MySQL Connector, 8.3.0
+- MySQL Workbench, 8.0.38
 - Maven. 4.0.0
 - Maven, plugin 3.3.0
 - TomCat 7, plugin 2.2
