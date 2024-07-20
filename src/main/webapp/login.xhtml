@@ -86,10 +86,10 @@
                                           showWeek="false"
                                           size="15"
                                           placeholder="Data de Nascimento"
-                                          style="margin-right: 110px;">
+                                          style="margin-right: 110px;"
+                                          onkeyup="this.value = this.value.replace(/[^0-9/]/g, '')">
                                 <f:convertDateTime pattern="dd/MM/yyyy"/>
                             </p:datePicker>
-
                         </div>
 
                     </h:panelGrid>
