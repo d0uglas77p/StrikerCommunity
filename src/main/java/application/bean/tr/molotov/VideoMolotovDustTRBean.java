@@ -5,18 +5,18 @@ import application.model.Video;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import java.io.Serializable;
-import java.io.InputStream;
-import java.io.IOException;
 import javax.faces.context.FacesContext;
-import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.Logger;
 
 @ManagedBean
 @ViewScoped
-public class VideoMolotovDustTRBean implements Serializable{
+public class VideoMolotovDustTRBean implements Serializable {
     private static final long serialVersionUID = 1L;
     private static final Logger LOGGER = Logger.getLogger(VideoMolotovDustTRBean.class.getName());
     private List<Video> videosMolotovDust;

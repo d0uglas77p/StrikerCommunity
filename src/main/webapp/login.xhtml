@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
@@ -53,38 +54,107 @@
                       styleClass="custom-dialog">
 
                 <!-- Conteúdo do formulário de cadastro -->
-                    <p:panelGrid columns="2">
-                        <p:outputLabel value="Nome" for="nome" styleClass="custom-label"
-                                       style="margin-top: -10px; margin-left: -90px;"/>
-                        <p:inputText id="nome" value="#{usuarioBean.nome}" maxlength="50" size="30"
-                                     style="margin-top: -10px; margin-left: -80px;"/>
+                <h:panelGrid columns="2">
+                    <h:panelGrid>
+                        <div>
+                            <p:inputText id="nomeCompleto" value="#{usuarioBean.nomeCompleto}"
+                                         maxlength="50" size="30"
+                                         placeholder="Nome Completo"/>
+                        </div>
 
-                        <p:outputLabel value="E-mail" for="email" styleClass="custom-label"
-                                       style="margin-top: -10px; margin-left: -90px;"/>
-                        <p:inputText id="email" value="#{usuarioBean.email}" maxlength="50" size="30"
-                                     style="margin-top: -10px; margin-left: -80px;"/>
+                        <div>
+                            <p:inputText id="nomePerfil" value="#{usuarioBean.nomePerfil}"
+                                         maxlength="50" size="30"
+                                         placeholder="Nome de Perfil"/>
+                        </div>
 
-                        <p:outputLabel value="Login" for="login" styleClass="custom-label"
-                                       style="margin-top: -10px; margin-left: -90px;"/>
-                        <p:inputText id="login" value="#{usuarioBean.login}" maxlength="50" size="30"
-                                     style="margin-top: -10px; margin-left: -80px;"/>
+                        <div>
+                            <p:inputMask id="telefone" value="#{usuarioBean.telefone}"
+                                         mask="(99) 99999-9999" validateMask="true" size="15"
+                                         placeholder="Telefone"
+                                         style="margin-right: 110px;"/>
+                        </div>
 
-                        <p:outputLabel value="Senha" for="senha" styleClass="custom-label"
-                                       style="margin-top: -10px; margin-left: -90px;"/>
-                        <p:password id="senha" value="#{usuarioBean.senha}" maxlength="8" size="30"
-                                    style="margin-top: -10px; margin-left: -80px;"/>
+                        <div>
+                            <p:datePicker id="data"
+                                          value="#{usuarioBean.dtNascimento}"
+                                          pattern="dd/MM/yyyy"
+                                          yearNavigator="true"
+                                          monthNavigator="true"
+                                          yearRange="1900:2024"
+                                          showButtonPanel="true"
+                                          showWeek="false"
+                                          size="15"
+                                          placeholder="Data de Nascimento"
+                                          style="margin-right: 110px;">
+                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </p:datePicker>
 
-                        <p:outputLabel value="Repetir Senha" for="repetirSenha" styleClass="custom-label"
-                                       style="margin-top: -10px; margin-left: -90px;"/>
-                        <p:password id="repetirSenha" value="#{usuarioBean.repetirSenha}" maxlength="8" size="30"
-                                    style="margin-top: -10px; margin-left: -80px;"/>
-                    </p:panelGrid>
+                        </div>
+
+                    </h:panelGrid>
+
+                    <h:panelGrid style="margin-left: 20px;">
+                        <div>
+                            <p:inputText id="email" value="#{usuarioBean.email}"
+                                         maxlength="50" size="30"
+                                         placeholder="E-mail"/>
+                        </div>
+
+                        <div>
+                            <p:inputText id="login" value="#{usuarioBean.login}"
+                                         maxlength="50" size="30"
+                                         placeholder="Login de Usuário"/>
+                        </div>
+
+                        <div>
+                            <p:password id="senha" value="#{usuarioBean.senha}"
+                                        maxlength="20" size="20"
+                                        placeholder="Senha de Usuário"
+                                        style="margin-right: 72px;"/>
+                        </div>
+
+                        <div>
+                            <p:password id="repetirSenha" value="#{usuarioBean.repetirSenha}"
+                                        maxlength="20" size="20"
+                                        placeholder="Repetir Senha"
+                                        style="margin-right: 72px;"/>
+                        </div>
+                    </h:panelGrid>
+                </h:panelGrid>
+
+                <br></br>
+
+                <h:panelGrid columns="2" style="margin-left: 370px;">
+                    <p:commandButton value="Aviso" styleClass="rounded-button ui-button-warning"
+                                     icon="pi pi-external-link" onclick="PF('dlg1').show()"/>
 
                     <p:commandButton value="Cadastrar" action="#{usuarioBean.cadastrar()}"
                                      update="growl"
                                      styleClass="rounded-button"
-                                     style="top: 10px; margin-right: -310px;"
+                                     style="margin-left: 10px;"
                                      oncomplete="if (!args.validationFailed) {PF('cadastroDialog').hide(); clearCadastroModal();}"/>
+
+                </h:panelGrid>
+            </p:dialog>
+
+            <p:dialog header="Aviso" widgetVar="dlg1"
+                      minHeight="40" width="350"
+                      showEffect="fade"
+                      closeOnEscape="true">
+                <p style="text-align: left;">
+                    Nosso sistema é independente!<br/>
+                    <br></br>
+                    Não solicitamos que informe os dados de outras plataformas relacionadas ao Counter Strike, Steam e
+                    outros serviços da Valve Corporation,
+                    mas sim apenas os dados cadastrais necessários para acessar nossa comunidade.<br/>
+                    <br></br>
+                    Reforçamos para garantir a segurança e a integridade de suas informações sem vínculos com terceiros.
+                    Caso encontre qualquer atividade suspeita que comprometa nossa integridade, por favor, denuncie
+                    imediatamente.<br/>
+                    <br></br>
+                    Agradecemos pela confiança e esperamos que tenha uma excelente experiência em nossa comunidade.
+                </p>
             </p:dialog>
         </h:form>
     </div>

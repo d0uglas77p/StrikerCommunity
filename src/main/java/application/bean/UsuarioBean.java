@@ -6,13 +6,14 @@ import application.exception.CadastroException;
 import application.exception.CadastroUtils;
 import application.model.Usuario;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Logger;
 
 @ManagedBean
@@ -21,7 +22,10 @@ public class UsuarioBean implements Serializable {
     private static final long serialVersionUID = 1L;
     private static final Logger LOGGER = Logger.getLogger(UsuarioBean.class.getName());
 
-    private String nome;
+    private String nomeCompleto;
+    private String nomePerfil;
+    private String telefone;
+    private Date dtNascimento;
     private String email;
     private String login;
     private String senha;
@@ -31,54 +35,87 @@ public class UsuarioBean implements Serializable {
         LOGGER.info("INICIANDO PROCESSO DE CADASTRO.");
 
         Usuario u = new Usuario();
-        u.setNome(nome);
+        u.setNomeCompleto(nomeCompleto);
+        u.setNomePerfil(nomePerfil);
+        u.setTelefone(telefone);
+        u.setDtNascimento(dtNascimento);
         u.setEmail(email);
         u.setLogin(login);
         u.setSenha(senha);
 
         try {
-            CadastroUtils.validarCamposPreenchidos(u.getNome(), u.getEmail(), u.getLogin(), u.getSenha(), repetirSenha);
-            CadastroUtils.validarSenhas(u.getSenha(), repetirSenha);
+            // Validação dos campos
+            CadastroUtils.validarCamposPreenchidos(nomeCompleto, nomePerfil, telefone, dtNascimento, email, login, senha, repetirSenha);
+            CadastroUtils.validarSenhas(senha, repetirSenha);
 
+            // Inserção no banco de dados
             try (Connection con = CriarConexao.getConexao()) {
                 UsuarioDAO usuarioDAO = new UsuarioDAO(con);
                 usuarioDAO.adicionarUsuario(u);
 
                 FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Usuário cadastrado com sucesso.");
                 FacesContext.getCurrentInstance().addMessage(null, message);
-                LOGGER.info("USUÁRIO CADASTRADO!");
+                LOGGER.info("USUÁRIO CADASTRADO COM SUCESSO!");
 
                 limparCampos();
-
             } catch (SQLException e) {
+                LOGGER.severe("Erro ao cadastrar usuário: " + e.getMessage());
                 throw new RuntimeException("Erro ao cadastrar usuário.", e);
             }
 
         } catch (CadastroException e) {
             CadastroUtils.adicionarMensagemErro(e.getMessage());
-            LOGGER.info("VALIDAÇÃO FALHOU: " + e.getMessage());
+            LOGGER.warning("VALIDAÇÃO FALHOU: " + e.getMessage());
 
         } catch (RuntimeException e) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ocorreu.");
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ocorreu: " + e.getMessage());
             FacesContext.getCurrentInstance().addMessage(null, message);
             LOGGER.severe("ERRO INESPERADO: " + e.getMessage());
         }
     }
 
     private void limparCampos() {
-        nome = null;
+        nomeCompleto = null;
+        nomePerfil = null;
+        telefone = null;
+        dtNascimento = null;
         email = null;
         login = null;
         senha = null;
         repetirSenha = null;
     }
 
-    public String getNome() {
-        return nome;
+    // Getters e Setters
+    public String getNomeCompleto() {
+        return nomeCompleto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getNomePerfil() {
+        return nomePerfil;
+    }
+
+    public void setNomePerfil(String nomePerfil) {
+        this.nomePerfil = nomePerfil;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public Date getDtNascimento() {
+        return dtNascimento;
+    }
+
+    public void setDtNascimento(Date dtNascimento) {
+        this.dtNascimento = dtNascimento;
     }
 
     public String getEmail() {

@@ -15,16 +15,23 @@ public class UsuarioDAO {
     }
 
     public void adicionarUsuario(Usuario u) throws SQLException {
-        String sql = "INSERT INTO tbl_usuario (nome, email, login, senha) VALUES (?,?,?,?)";
-        try {
-            PreparedStatement state = con.prepareStatement(sql);
+        String sql = "INSERT INTO tbl_usuario (nomeCompleto, nomePerfil, telefone, dtNascimento, email, login, senha) VALUES (?,?,?,?,?,?,?)";
+        try (PreparedStatement state = con.prepareStatement(sql)) {
+            state.setString(1, u.getNomeCompleto());
+            state.setString(2, u.getNomePerfil());
+            state.setString(3, u.getTelefone());
 
-            state.setString(1, u.getNome());
-            state.setString(2, u.getEmail());
-            state.setString(3, u.getLogin());
-            state.setString(4, u.getSenha());
-            state.execute();
-            state.close();
+            // Converter java.util.Date para java.sql.Date
+            if (u.getDtNascimento() != null) {
+                state.setDate(4, new java.sql.Date(u.getDtNascimento().getTime()));
+            } else {
+                state.setNull(4, java.sql.Types.DATE);
+            }
+
+            state.setString(5, u.getEmail());
+            state.setString(6, u.getLogin());
+            state.setString(7, u.getSenha());
+            state.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();

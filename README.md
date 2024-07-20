@@ -3,6 +3,7 @@
 Sistema Web para comunidade de Counter Strike.
 
 ### Ferramentas
+
 - Intellij IDEA Community, 2023.2.7 (Community Edition)
 - Java, JDK - 20.0 Amazon Corretto
 - Maven. 4.0.0
@@ -16,6 +17,7 @@ Sistema Web para comunidade de Counter Strike.
 ## Telas
 
 ### 1 - Login.
+
 <div>
 <img align="center"
 <img src="\screens\1.login.png" />
@@ -24,6 +26,7 @@ Sistema Web para comunidade de Counter Strike.
 #
 
 ### 2 - Cadastro.
+
 <div>
 <img align="center"
 <img src="\screens\2.cadastro.png" />
@@ -32,6 +35,7 @@ Sistema Web para comunidade de Counter Strike.
 #
 
 ### 3 - Lado.
+
 <div>
 <img align="center"
 <img src="\screens\3.lado.png" />
@@ -40,6 +44,7 @@ Sistema Web para comunidade de Counter Strike.
 #
 
 ### 4 - Lado CT.
+
 <div>
 <img align="center"
 <img src="\screens\4.ladoCt.png" />
@@ -48,6 +53,7 @@ Sistema Web para comunidade de Counter Strike.
 #
 
 ### 5 - Lado TR.
+
 <div>
 <img align="center"
 <img src="\screens\5.ladoTr.png" />
@@ -56,6 +62,7 @@ Sistema Web para comunidade de Counter Strike.
 #
 
 ### 6 - Mapa TR.
+
 <div>
 <img align="center"
 <img src="\screens\6.escolherMapa.png" />
@@ -64,6 +71,7 @@ Sistema Web para comunidade de Counter Strike.
 #
 
 ### 7 - Video Utilitários.
+
 <div>
 <img align="center"
 <img src="\screens\7.videoUtilitarios.png" />
@@ -72,6 +80,7 @@ Sistema Web para comunidade de Counter Strike.
 #
 
 ### 8 - Comandos.
+
 <div>
 <img align="center"
 <img src="\screens\8.comandos.png" />
@@ -80,6 +89,7 @@ Sistema Web para comunidade de Counter Strike.
 #
 
 ### 9 - Video CFG.
+
 <div>
 <img align="center"
 <img src="\screens\9.videoCFG.png" />

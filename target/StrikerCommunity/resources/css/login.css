@@ -44,3 +44,7 @@ body {
 .custom-dialog {
     width: 480px !important;
 }
+
+.ui-datepicker .ui-datepicker-calendar thead {
+    display: none;
+}

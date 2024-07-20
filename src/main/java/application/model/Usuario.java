@@ -1,9 +1,15 @@
 package application.model;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class Usuario {
 
     private int id_usuario;
-    private String nome;
+    private String nomeCompleto;
+    private String nomePerfil;
+    private String telefone;
+    private Date dtNascimento;
     private String email;
     private String login;
     private String senha;
@@ -16,12 +22,36 @@ public class Usuario {
         this.id_usuario = id_usuario;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeCompleto() {
+        return nomeCompleto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getNomePerfil() {
+        return nomePerfil;
+    }
+
+    public void setNomePerfil(String nomePerfil) {
+        this.nomePerfil = nomePerfil;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public Date getDtNascimento() {
+        return dtNascimento;
+    }
+
+    public void setDtNascimento(Date dtNascimento) {
+        this.dtNascimento = dtNascimento;
     }
 
     public String getEmail() {

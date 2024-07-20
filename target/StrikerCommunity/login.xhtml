@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
@@ -53,12 +54,37 @@
                       styleClass="custom-dialog">
 
                 <!-- Conteúdo do formulário de cadastro -->
+                <p:panelGrid columns="2">
                     <p:panelGrid columns="2">
                         <p:outputLabel value="Nome" for="nome" styleClass="custom-label"
                                        style="margin-top: -10px; margin-left: -90px;"/>
                         <p:inputText id="nome" value="#{usuarioBean.nome}" maxlength="50" size="30"
                                      style="margin-top: -10px; margin-left: -80px;"/>
 
+                        <p:outputLabel value="Nome" for="nome" styleClass="custom-label"
+                                       style="margin-top: -10px; margin-left: -90px;"/>
+                        <p:inputText id="nome" value="#{usuarioBean.nome}" maxlength="50" size="30"
+                                     style="margin-top: -10px; margin-left: -80px;"/>
+
+                        <h:outputLabel value="Data de Nascimento" for="data" styleClass="custom-label"/>
+                        <p:datePicker id="data" value="#{usuarioBean.dtNascimento}" pattern="dd/MM/yyyy"
+                                      yearNavigator="true" monthNavigator="true" yearRange="1900:2024"
+                                      showButtonPanel="true" showWeek="false">
+                            <f:convertDateTime pattern="dd/MM/yyyy"/>
+                        </p:datePicker>
+
+                        <p:outputLabel value="Telefone" for="telefone" styleClass="custom-label"/>
+                        <p:inputMask id="telefone" value="#{usuarioBean.telefone}" mask="(99) 99999-9999"
+                                     validateMask="true"/>
+
+                        <p:messages showDetail="true"/>
+                        <p:captcha label="Captcha"/>
+                        <br/>
+                        <p:commandButton value="Check" action="#{usuarioBean.submit}" ajax="false" icon="pi pi-check"/>
+
+                    </p:panelGrid>
+
+                    <p:panelGrid columns="2">
                         <p:outputLabel value="E-mail" for="email" styleClass="custom-label"
                                        style="margin-top: -10px; margin-left: -90px;"/>
                         <p:inputText id="email" value="#{usuarioBean.email}" maxlength="50" size="30"
@@ -78,13 +104,17 @@
                                        style="margin-top: -10px; margin-left: -90px;"/>
                         <p:password id="repetirSenha" value="#{usuarioBean.repetirSenha}" maxlength="8" size="30"
                                     style="margin-top: -10px; margin-left: -80px;"/>
+
                     </p:panelGrid>
 
-                    <p:commandButton value="Cadastrar" action="#{usuarioBean.cadastrar()}"
-                                     update="growl"
-                                     styleClass="rounded-button"
-                                     style="top: 10px; margin-right: -310px;"
-                                     oncomplete="if (!args.validationFailed) {PF('cadastroDialog').hide(); clearCadastroModal();}"/>
+
+                </p:panelGrid>
+
+                <p:commandButton value="Cadastrar" action="#{usuarioBean.cadastrar()}"
+                                 update="growl"
+                                 styleClass="rounded-button"
+                                 style="top: 10px; margin-right: -310px;"
+                                 oncomplete="if (!args.validationFailed) {PF('cadastroDialog').hide(); clearCadastroModal();}"/>
             </p:dialog>
         </h:form>
     </div>
