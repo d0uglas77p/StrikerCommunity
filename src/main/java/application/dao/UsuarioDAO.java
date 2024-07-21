@@ -4,6 +4,7 @@ import application.model.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UsuarioDAO {
@@ -15,6 +16,14 @@ public class UsuarioDAO {
     }
 
     public void adicionarUsuario(Usuario u) throws SQLException {
+        if (existeLogin(u.getLogin())) {
+            throw new SQLException("Login já cadastrado.");
+        }
+
+        if (existeEmail(u.getEmail())) {
+            throw new SQLException("Email já cadastrado.");
+        }
+
         String sql = "INSERT INTO tbl_usuario (nomeCompleto, nomePerfil, telefone, dtNascimento, email, login, senha) VALUES (?,?,?,?,?,?,?)";
         try (PreparedStatement state = con.prepareStatement(sql)) {
             state.setString(1, u.getNomeCompleto());
@@ -36,5 +45,33 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean existeLogin(String login) throws SQLException {
+
+        String sql = "SELECT COUNT(*) FROM tbl_usuario WHERE login = ?";
+        try (PreparedStatement state = con.prepareStatement(sql)) {
+            state.setString(1, login);
+            try (ResultSet rs = state.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1) > 0;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean existeEmail(String email) throws SQLException {
+
+        String sql = "SELECT COUNT(*) FROM tbl_usuario WHERE email = ?";
+        try (PreparedStatement state = con.prepareStatement(sql)) {
+            state.setString(1, email);
+            try (ResultSet rs = state.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1) > 0;
+                }
+            }
+        }
+        return false;
     }
 }

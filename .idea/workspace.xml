@@ -5,117 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5641cb-872c-4fea-b9f2-4aed4ba126b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/properties/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashAncientCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashAncientCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashAnubisCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashAnubisCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashDustCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashDustCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashInfernoCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashInfernoCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashMirageCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashMirageCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashNukeCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashNukeCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashOverpassCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashOverpassCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashVertigoCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/flash/VideoFlashVertigoCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeAncientCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeAncientCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeAnubisCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeAnubisCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeDustCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeDustCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeInfernoCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeInfernoCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeMirageCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeMirageCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeNukeCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeNukeCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeOverpassCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeOverpassCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeVertigoCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/he/VideoHeVertigoCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovAncientCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovAncientCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovAnubisCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovAnubisCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovDustCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovDustCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovInfernoCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovInfernoCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovMirageCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovMirageCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovNukeCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovNukeCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovOverpassCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovOverpassCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovVertigoCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/molotov/VideoMolotovVertigoCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeAncientCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeAncientCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeAnubisCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeAnubisCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeDustCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeDustCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeInfernoCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeInfernoCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeMirageCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeMirageCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeNukeCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeNukeCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeOverpassCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeOverpassCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeVertigoCTBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/ct/smoke/VideoSmokeVertigoCTBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashAncientTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashAncientTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashAnubisTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashAnubisTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashDustTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashDustTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashInfernoTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashInfernoTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashMirageTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashMirageTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashNukeTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashNukeTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashOverpassTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashOverpassTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashVertigoTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/flash/VideoFlashVertigoTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeAncientTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeAncientTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeAnubisTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeAnubisTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeDustTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeDustTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeInfernoTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeInfernoTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeMirageTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeMirageTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeNukeTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeNukeTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeOverpassTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeOverpassTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeVertigoTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/he/VideoHeVertigoTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovAncientTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovAncientTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovAnubisTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovAnubisTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovDustTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovDustTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovInfernoTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovInfernoTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovMirageTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovMirageTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovNukeTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovNukeTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovOverpassTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovOverpassTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovVertigoTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/molotov/VideoMolotovVertigoTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeAncientTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeAncientTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeAnubisTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeAnubisTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeDustTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeDustTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeInfernoTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeInfernoTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeMirageTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeMirageTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeNukeTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeNukeTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeOverpassTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeOverpassTRBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeVertigoTRBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/tr/smoke/VideoSmokeVertigoTRBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/exception/CadastroUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/exception/CadastroUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/comandos.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/comandos.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/feed.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/feed.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/inicio.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/inicio.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pagina-video/flashCt.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pagina-video/flashCt.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pagina-video/flashTr.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pagina-video/flashTr.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pagina-video/heCt.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pagina-video/heCt.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pagina-video/heTr.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pagina-video/heTr.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pagina-video/molotovCt.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pagina-video/molotovCt.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pagina-video/molotovTr.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pagina-video/molotovTr.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pagina-video/smokeCt.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pagina-video/smokeCt.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/perfil.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/perfil.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/topico.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/topico.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/UsuarioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/UsuarioBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/dao/UsuarioDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/CadastroUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/CadastroUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/properties/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/comandos.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/comandos.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/feed.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/feed.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/inicio.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/inicio.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/login.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/flashCt.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/flashCt.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/flashTr.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/flashTr.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/heCt.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/heCt.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/heTr.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/heTr.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/molotovCt.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/molotovCt.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/molotovTr.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/molotovTr.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/smokeCt.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/pagina-video/smokeCt.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/perfil.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/perfil.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/resources/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/topico.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/topico.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/dao/UsuarioDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application/exception/CadastroUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/exception/CadastroUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/properties/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-20" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/StrikerCommunity/SESSIONS.ser" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/StrikerCommunity/SESSIONS.ser" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +81,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.42643678&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -275,21 +178,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/application/service/FeedService.java</url>
           <line>8</line>
           <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/exception/CadastroUtils.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/exception/CadastroUtils.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/exception/CadastroUtils.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

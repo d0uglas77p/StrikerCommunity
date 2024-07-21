@@ -51,6 +51,22 @@ public class UsuarioBean implements Serializable {
             // Inserção no banco de dados
             try (Connection con = CriarConexao.getConexao()) {
                 UsuarioDAO usuarioDAO = new UsuarioDAO(con);
+
+                // Verificar se o login ou email já estão cadastrados
+                if (usuarioDAO.existeLogin(login)) {
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Login já cadastrado.");
+                    FacesContext.getCurrentInstance().addMessage(null, message);
+                    LOGGER.warning("Login já cadastrado: " + login);
+                    return;
+                }
+
+                if (usuarioDAO.existeEmail(email)) {
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Email já cadastrado.");
+                    FacesContext.getCurrentInstance().addMessage(null, message);
+                    LOGGER.warning("Email já cadastrado: " + email);
+                    return;
+                }
+
                 usuarioDAO.adicionarUsuario(u);
 
                 FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Usuário cadastrado com sucesso.");
