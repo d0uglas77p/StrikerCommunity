@@ -1,5 +1,6 @@
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\CarouselMapaBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\smoke\VideoSmokeMirageCTBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\exception\ApplicationException.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\smoke\VideoSmokeVertigoCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\he\VideoHeNukeCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\molotov\VideoMolotovAnubisTRBean.java
@@ -30,9 +31,7 @@ C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\smoke\VideoSmoke
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\flash\VideoFlashDustCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\he\VideoHeOverpassCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\molotov\VideoMolotovOverpassTRBean.java
-C:\Workspace\StrikerCommunity\src\main\java\application\exception\Exception.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\smoke\VideoSmokeInfernoCTBean.java
-C:\Workspace\StrikerCommunity\src\main\java\application\exception\CadastroExceptions.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\molotov\VideoMolotovAncientCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\molotov\VideoMolotovDustCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\smoke\VideoSmokeMirageTRBean.java
@@ -70,6 +69,7 @@ C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\he\VideoHeInfern
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\flash\VideoFlashAncientCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\he\VideoHeAnubisCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\he\VideoHeAncientTRBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\exception\ValidarCadastro.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\he\VideoHeMirageCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\molotov\VideoMolotovOverpassCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\smoke\VideoSmokeAnubisCTBean.java

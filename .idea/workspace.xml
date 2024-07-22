@@ -5,32 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5641cb-872c-4fea-b9f2-4aed4ba126b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/exception/ApplicationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/exception/ValidarCadastro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/logoemail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/email.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/exception/CadastroException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/exception/CadastroUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/UsuarioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/UsuarioBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/CadastroException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/CadastroUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/model/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/exception/CadastroException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/exception/CadastroUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/model/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-22" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-22" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/StrikerCommunity/SESSIONS.ser" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,33 +62,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/StrikerCommunity&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.42643678&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Workspace/StrikerCommunity/src/main/webapp/resources/images",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.42643678",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="application.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\resources\images" />
+      <recent name="C:\Workspace\StrikerCommunity\src\main\java\application" />
       <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\resources\ico" />
       <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\WEB-INF\lib" />
       <recent name="C:\Workspace\StrikerCommunity\screens" />
-      <recent name="C:\Workspace\StrikerCommunity\src\main\java\application\bean" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Workspace\StrikerCommunity\src\main\resources\properties" />

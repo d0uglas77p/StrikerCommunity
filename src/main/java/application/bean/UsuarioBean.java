@@ -5,6 +5,7 @@ import application.dao.UsuarioDAO;
 import application.exception.ApplicationException;
 import application.exception.ValidarCadastro;
 import application.model.Usuario;
+import application.util.EmailSender;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -70,9 +71,16 @@ public class UsuarioBean implements Serializable {
                 // Adicionar o usuário ao banco de dados
                 usuarioDAO.adicionarUsuario(u);
 
-                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Usuário cadastrado com sucesso.");
+                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Usuário cadastrado com sucesso. Verifique o seu e-mail!");
                 FacesContext.getCurrentInstance().addMessage(null, message);
                 LOGGER.info("USUÁRIO CADASTRADO COM SUCESSO!");
+
+                // Enviar e-mail de boas-vindas com template HTML
+                String assunto = "Bomb Has Been Planted!";
+                String templatePath = "src/main/webapp/templates/email.html";
+                String corpo = EmailSender.loadEmailTemplate(templatePath, nomePerfil);
+                String imagePath = "src/main/webapp/resources/images/logoemail.png";
+                EmailSender.sendEmail(email, assunto, corpo, imagePath);
 
                 limparCampos();
             } catch (SQLException e) {
