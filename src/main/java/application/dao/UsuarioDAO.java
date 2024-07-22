@@ -1,6 +1,7 @@
 package application.dao;
 
 import application.model.Usuario;
+import application.util.PasswordUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -39,7 +40,11 @@ public class UsuarioDAO {
 
             state.setString(5, u.getEmail());
             state.setString(6, u.getLogin());
-            state.setString(7, u.getSenha());
+
+            // Hash da senha antes de salvar no banco de dados
+            String hashedPassword = PasswordUtil.hashPassword(u.getSenha());
+            state.setString(7, hashedPassword);
+
             state.executeUpdate();
 
         } catch (SQLException e) {
@@ -67,6 +72,20 @@ public class UsuarioDAO {
             try (ResultSet rs = state.executeQuery()) {
                 if (rs.next()) {
                     return rs.getInt(1) > 0;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean autenticarUsuario(String login, String senha) throws SQLException {
+        String sql = "SELECT senha FROM tbl_usuario WHERE login = ?";
+        try (PreparedStatement state = con.prepareStatement(sql)) {
+            state.setString(1, login);
+            try (ResultSet rs = state.executeQuery()) {
+                if (rs.next()) {
+                    String hashedPassword = rs.getString("senha");
+                    return PasswordUtil.checkPassword(senha, hashedPassword);
                 }
             }
         }

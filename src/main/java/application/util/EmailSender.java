@@ -13,8 +13,8 @@ import javax.mail.internet.*;
 
 public class EmailSender {
 
-    private static final String USERNAME = "EMAIL";
-    private static final String PASSWORD = "SENHA";
+    private static final String USERNAME = "";
+    private static final String PASSWORD = "";
 
     public static void sendEmail(String to, String subject, String body, String imagePath) {
         // Configura propriedades do e-mail
