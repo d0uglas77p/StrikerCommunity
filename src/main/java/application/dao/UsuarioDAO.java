@@ -48,7 +48,6 @@ public class UsuarioDAO {
     }
 
     public boolean existeLogin(String login) throws SQLException {
-
         String sql = "SELECT COUNT(*) FROM tbl_usuario WHERE login = ?";
         try (PreparedStatement state = con.prepareStatement(sql)) {
             state.setString(1, login);
@@ -62,7 +61,6 @@ public class UsuarioDAO {
     }
 
     public boolean existeEmail(String email) throws SQLException {
-
         String sql = "SELECT COUNT(*) FROM tbl_usuario WHERE email = ?";
         try (PreparedStatement state = con.prepareStatement(sql)) {
             state.setString(1, email);

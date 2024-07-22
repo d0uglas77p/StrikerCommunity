@@ -3,10 +3,10 @@ application\bean\ct\he\VideoHeAncientCTBean.class
 application\bean\tr\molotov\VideoMolotovMirageTRBean.class
 application\bean\ct\flash\VideoFlashAncientCTBean.class
 application\bean\ct\molotov\VideoMolotovAncientCTBean.class
-application\exception\CadastroUtils.class
 application\bean\CarouselMapaBean.class
 application\bean\ct\smoke\VideoSmokeNukeCTBean.class
 application\conexao\CriarConexao.class
+application\exception\ApplicationException.class
 application\bean\tr\he\VideoHeMirageTRBean.class
 application\bean\ct\molotov\VideoMolotovAnubisCTBean.class
 application\bean\ct\smoke\VideoSmokeDustCTBean.class
@@ -23,6 +23,7 @@ application\bean\ct\molotov\VideoMolotovVertigoCTBean.class
 application\bean\ct\flash\VideoFlashMirageCTBean.class
 application\bean\tr\he\VideoHeNukeTRBean.class
 application\bean\ct\smoke\VideoSmokeVertigoCTBean.class
+application\exception\ValidarCadastro.class
 application\bean\tr\molotov\VideoMolotovAncientTRBean.class
 application\bean\ct\flash\VideoFlashAnubisCTBean.class
 application\bean\tr\he\VideoHeOverpassTRBean.class
@@ -74,4 +75,3 @@ application\bean\tr\flash\VideoFlashAncientTRBean.class
 application\bean\tr\flash\VideoFlashOverpassTRBean.class
 application\bean\tr\he\VideoHeDustTRBean.class
 application\bean\ct\smoke\VideoSmokeOverpassCTBean.class
-application\exception\CadastroException.class

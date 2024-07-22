@@ -5,21 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5641cb-872c-4fea-b9f2-4aed4ba126b0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/exception/ApplicationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/exception/ValidarCadastro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/exception/CadastroException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/exception/CadastroUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/model/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/UsuarioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/UsuarioBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/CadastroUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/CadastroUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/CadastroException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/CadastroUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/login.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/resources/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/exception/CadastroUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/exception/CadastroUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/StrikerCommunity/SESSIONS.ser" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/StrikerCommunity/SESSIONS.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application/exception/CadastroException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application/exception/CadastroUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/StrikerCommunity/SESSIONS.ser" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

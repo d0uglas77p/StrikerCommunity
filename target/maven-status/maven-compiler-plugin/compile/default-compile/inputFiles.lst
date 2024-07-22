@@ -3,6 +3,7 @@ C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\smoke\VideoSmoke
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\smoke\VideoSmokeVertigoCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\he\VideoHeNukeCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\molotov\VideoMolotovAnubisTRBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\util\EmailSender.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\flash\VideoFlashNukeCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\he\VideoHeVertigoTRBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\smoke\VideoSmokeAncientTRBean.java
@@ -17,7 +18,6 @@ C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\molotov\VideoMol
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\he\VideoHeNukeTRBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\molotov\VideoMolotovDustTRBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\flash\VideoFlashVertigoCTBean.java
-C:\Workspace\StrikerCommunity\src\main\java\application\exception\CadastroUtils.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\flash\VideoFlashAnubisTRBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\NavegacaoBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\flash\VideoFlashOverpassCTBean.java
@@ -30,7 +30,9 @@ C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\smoke\VideoSmoke
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\flash\VideoFlashDustCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\he\VideoHeOverpassCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\molotov\VideoMolotovOverpassTRBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\exception\Exception.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\smoke\VideoSmokeInfernoCTBean.java
+C:\Workspace\StrikerCommunity\src\main\java\application\exception\CadastroExceptions.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\molotov\VideoMolotovAncientCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\molotov\VideoMolotovDustCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\smoke\VideoSmokeMirageTRBean.java
@@ -44,7 +46,6 @@ C:\Workspace\StrikerCommunity\src\main\java\application\dao\UsuarioDAO.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\molotov\VideoMolotovVertigoCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\model\Usuario.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\smoke\VideoSmokeInfernoTRBean.java
-C:\Workspace\StrikerCommunity\src\main\java\application\exception\CadastroException.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\ct\smoke\VideoSmokeDustCTBean.java
 C:\Workspace\StrikerCommunity\src\main\java\application\conexao\CriarConexao.java
 C:\Workspace\StrikerCommunity\src\main\java\application\bean\tr\flash\VideoFlashInfernoTRBean.java

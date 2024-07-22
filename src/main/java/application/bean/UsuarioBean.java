@@ -2,8 +2,8 @@ package application.bean;
 
 import application.conexao.CriarConexao;
 import application.dao.UsuarioDAO;
-import application.exception.CadastroException;
-import application.exception.CadastroUtils;
+import application.exception.ApplicationException;
+import application.exception.ValidarCadastro;
 import application.model.Usuario;
 
 import javax.faces.application.FacesMessage;
@@ -45,8 +45,8 @@ public class UsuarioBean implements Serializable {
 
         try {
             // Validação dos campos
-            CadastroUtils.validarCamposPreenchidos(nomeCompleto, nomePerfil, telefone, dtNascimento, email, login, senha, repetirSenha);
-            CadastroUtils.validarSenhas(senha, repetirSenha);
+            ValidarCadastro.validarCamposPreenchidos(nomeCompleto, nomePerfil, telefone, dtNascimento, email, login, senha, repetirSenha);
+            ValidarCadastro.validarSenhas(senha, repetirSenha);
 
             // Inserção no banco de dados
             try (Connection con = CriarConexao.getConexao()) {
@@ -67,6 +67,7 @@ public class UsuarioBean implements Serializable {
                     return;
                 }
 
+                // Adicionar o usuário ao banco de dados
                 usuarioDAO.adicionarUsuario(u);
 
                 FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Usuário cadastrado com sucesso.");
@@ -79,8 +80,9 @@ public class UsuarioBean implements Serializable {
                 throw new RuntimeException("Erro ao cadastrar usuário.", e);
             }
 
-        } catch (CadastroException e) {
-            CadastroUtils.adicionarMensagemErro(e.getMessage());
+        } catch (ApplicationException e) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro de validação: " + e.getMessage());
+            FacesContext.getCurrentInstance().addMessage(null, message);
             LOGGER.warning("VALIDAÇÃO FALHOU: " + e.getMessage());
 
         } catch (RuntimeException e) {
