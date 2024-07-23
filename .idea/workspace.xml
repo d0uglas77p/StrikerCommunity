@@ -5,28 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5641cb-872c-4fea-b9f2-4aed4ba126b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/util/PasswordUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/recuperarSenhaEmail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/exception/ValidarCadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/exception/ValidarCadastro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/properties/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/properties/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/UsuarioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/UsuarioBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/CadastroExceptions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/exception/Exception.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/util/EmailSender$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/util/EmailSender$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/util/EmailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/util/EmailSender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/EmailSender$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/EmailSender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-22" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/StrikerCommunity/SESSIONS.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/email.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templates/email.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +75,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.42643678",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.sourceCode"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -196,5 +183,9 @@
         <PinnedItemInfo parentTag="application.model.Video" memberName="url" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

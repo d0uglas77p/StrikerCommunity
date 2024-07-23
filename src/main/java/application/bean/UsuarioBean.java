@@ -31,6 +31,7 @@ public class UsuarioBean implements Serializable {
     private String login;
     private String senha;
     private String repetirSenha;
+    private String recuperarEmail;
 
     public void cadastrar() {
         LOGGER.info("INICIANDO PROCESSO DE CADASTRO.");
@@ -45,7 +46,6 @@ public class UsuarioBean implements Serializable {
         u.setSenha(senha);
 
         try {
-            // Validação dos campos
             ValidarCadastro.validarCamposPreenchidos(nomeCompleto, nomePerfil, telefone, dtNascimento, email, login, senha, repetirSenha);
             ValidarCadastro.validarSenhas(senha, repetirSenha);
 
@@ -57,46 +57,89 @@ public class UsuarioBean implements Serializable {
                 if (usuarioDAO.existeLogin(login)) {
                     FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Login já cadastrado.");
                     FacesContext.getCurrentInstance().addMessage(null, message);
-                    LOGGER.warning("Login já cadastrado: " + login);
                     return;
                 }
 
                 if (usuarioDAO.existeEmail(email)) {
                     FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Email já cadastrado.");
                     FacesContext.getCurrentInstance().addMessage(null, message);
-                    LOGGER.warning("Email já cadastrado: " + email);
                     return;
                 }
 
                 // Adicionar o usuário ao banco de dados
                 usuarioDAO.adicionarUsuario(u);
 
-                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Usuário cadastrado com sucesso. Verifique o seu e-mail!");
+                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Usuário cadastrado. Verifique o seu e-mail!");
                 FacesContext.getCurrentInstance().addMessage(null, message);
                 LOGGER.info("USUÁRIO CADASTRADO COM SUCESSO!");
 
-                // Enviar e-mail de boas-vindas com template HTML
+                // Enviar e-mail de boas-vindas
                 String assunto = "Bomb Has Been Planted!";
                 String templatePath = "src/main/webapp/templates/email.html";
                 String corpo = EmailSender.loadEmailTemplate(templatePath, nomePerfil);
                 String imagePath = "src/main/webapp/resources/images/logoemail.png";
                 EmailSender.sendEmail(email, assunto, corpo, imagePath);
-
                 limparCampos();
+
             } catch (SQLException e) {
-                LOGGER.severe("Erro ao cadastrar usuário: " + e.getMessage());
-                throw new RuntimeException("Erro ao cadastrar usuário.", e);
+                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro ao cadastrar usuário no banco de dados.");
+                FacesContext.getCurrentInstance().addMessage(null, message);
+
+            } catch (Exception e) {
+                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ao cadastrar usuário.");
+                FacesContext.getCurrentInstance().addMessage(null, message);
             }
 
         } catch (ApplicationException e) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro de validação: " + e.getMessage());
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro: " + e.getMessage());
             FacesContext.getCurrentInstance().addMessage(null, message);
-            LOGGER.warning("VALIDAÇÃO FALHOU: " + e.getMessage());
 
-        } catch (RuntimeException e) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ocorreu: " + e.getMessage());
+        } catch (Exception e) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ao processar o cadastro.");
             FacesContext.getCurrentInstance().addMessage(null, message);
-            LOGGER.severe("ERRO INESPERADO: " + e.getMessage());
+        }
+    }
+
+    public void recuperarCadastro() {
+        LOGGER.info("INICIANDO PROCESSO PARA RECUPERAÇÃO DE CADASTRO");
+
+        try {
+            ValidarCadastro.validarCampoRecuperarEmail(recuperarEmail);
+
+            // Criar conexão com o banco de dados
+            try (Connection con = CriarConexao.getConexao()) {
+                UsuarioDAO usuarioDAO = new UsuarioDAO(con);
+
+                // Verificar se o e-mail existe no banco de dados
+                if (!usuarioDAO.existeEmail(recuperarEmail)) {
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "E-mail não encontrado.");
+                    FacesContext.getCurrentInstance().addMessage(null, message);
+                    return;
+                }
+
+                // Enviar e-mail de recuperação de senha
+                String assunto = "Recuperar Senha";
+                String templatePath = "src/main/webapp/templates/recuperarSenhaEmail.html";
+                String corpo = EmailSender.loadEmailTemplate(templatePath, nomePerfil);
+                String imagePath = "src/main/webapp/resources/images/logoemail.png";
+                EmailSender.sendEmail(recuperarEmail, assunto, corpo, imagePath);
+                limparCampos();
+
+                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "E-mail de verificação enviado com sucesso!");
+                FacesContext.getCurrentInstance().addMessage(null, message);
+
+            } catch (SQLException e) {
+                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro ao encontrar e-mail no banco de dados");
+                FacesContext.getCurrentInstance().addMessage(null, message);
+            }
+
+        } catch (ApplicationException e) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", e.getMessage());
+            FacesContext.getCurrentInstance().addMessage(null, message);
+
+        } catch (Exception e) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ao recuperar cadastro.");
+            FacesContext.getCurrentInstance().addMessage(null, message);
         }
     }
 
@@ -109,9 +152,9 @@ public class UsuarioBean implements Serializable {
         login = null;
         senha = null;
         repetirSenha = null;
+        recuperarEmail = null;
     }
 
-    // Getters e Setters
     public String getNomeCompleto() {
         return nomeCompleto;
     }
@@ -174,5 +217,13 @@ public class UsuarioBean implements Serializable {
 
     public void setRepetirSenha(String repetirSenha) {
         this.repetirSenha = repetirSenha;
+    }
+
+    public String getRecuperarEmail() {
+        return recuperarEmail;
+    }
+
+    public void setRecuperarEmail(String recuperarEmail) {
+        this.recuperarEmail = recuperarEmail;
     }
 }

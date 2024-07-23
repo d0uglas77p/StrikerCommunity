@@ -13,8 +13,13 @@ public class ValidarCadastro {
                 login == null || login.trim().isEmpty() ||
                 senha == null || senha.trim().isEmpty() ||
                 repetirSenha == null || repetirSenha.trim().isEmpty()) {
-
             throw new ApplicationException("Todos os campos devem ser preenchidos.");
+        }
+    }
+
+    public static void validarCampoRecuperarEmail(String recuperarEmail) {
+        if (recuperarEmail == null || recuperarEmail.trim().isEmpty()) {
+            throw new ApplicationException("Campo de E-mail deve ser preenchido.");
         }
     }
 

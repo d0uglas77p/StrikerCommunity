@@ -31,7 +31,8 @@
                         <p:selectBooleanCheckbox id="checkbox" style="margin-left: -35px; top: -1px;"/>
                         <p:outputLabel for="checkbox" value="Manter-me conectado" styleClass="label-conectado"
                                        style="margin-left: -100px;"/>
-                        <p:commandLink value="Recuperar Senha" style="margin-left: -55px;"/>
+                        <p:commandLink value="Recuperar Senha" style="margin-left: -55px;"
+                                       onclick="PF('recuperarSenhaDialog').show()"/>
                     </p:panelGrid>
 
                     <p:panelGrid columns="2">
@@ -134,7 +135,6 @@
                                      styleClass="rounded-button"
                                      style="margin-left: 10px;"
                                      oncomplete="if (!args.validationFailed) {PF('cadastroDialog').hide(); clearCadastroModal();}"/>
-
                 </h:panelGrid>
             </p:dialog>
 
@@ -156,12 +156,41 @@
                     Agradecemos pela confiança e esperamos que tenha uma excelente experiência em nossa comunidade.
                 </p>
             </p:dialog>
+
+            <!-- Modal para Recuperação de senha -->
+            <p:dialog header="Recuperação de Senha"
+                      widgetVar="recuperarSenhaDialog"
+                      modal="true" resizable="false"
+                      styleClass="recuperar-dialog">
+
+                <h:panelGrid>
+                    <h:panelGrid>
+                        <div>
+                            <p:inputText id="emailRecuperar" value="#{usuarioBean.recuperarEmail}"
+                                         maxlength="50" size="30"
+                                         placeholder="E-mail cadastrado"/>
+                        </div>
+
+                        <div>
+                            <p:commandButton value="Recuperar" action="#{usuarioBean.recuperarCadastro()}"
+                                             update="growl"
+                                             styleClass="rounded-button"
+                                             style="margin-top: 10px; margin-left: 10px;"
+                                             oncomplete="if (!args.validationFailed) {PF('recuperarSenhaDialog').hide(); clearRecuperarSenhaModal();}"/>
+                        </div>
+                    </h:panelGrid>
+                </h:panelGrid>
+            </p:dialog>
         </h:form>
     </div>
 
     <script type="text/javascript">
         function clearCadastroModal() {
             PF('cadastroDialog').jq.find('input, textarea').val('');
+        }
+
+        function clearRecuperarSenhaModal() {
+            PF('recuperarSenhaDialog').jq.find('input, textarea').val('');
         }
     </script>
 

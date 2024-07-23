@@ -48,3 +48,8 @@ body {
 .ui-datepicker .ui-datepicker-calendar thead {
     display: none;
 }
+
+.recuperar-dialog {
+    width: 340px !important;
+    height: 210px !important;
+}
