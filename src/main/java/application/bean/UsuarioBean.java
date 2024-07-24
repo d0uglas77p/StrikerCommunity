@@ -6,6 +6,7 @@ import application.exception.ApplicationException;
 import application.exception.ValidarCadastro;
 import application.model.Usuario;
 import application.util.EmailSender;
+import application.util.Token;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -15,6 +16,7 @@ import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 @ManagedBean
@@ -32,6 +34,7 @@ public class UsuarioBean implements Serializable {
     private String senha;
     private String repetirSenha;
     private String recuperarEmail;
+    private String novaSenha;
 
     public void cadastrar() {
         LOGGER.info("INICIANDO PROCESSO DE CADASTRO.");
@@ -75,7 +78,7 @@ public class UsuarioBean implements Serializable {
 
                 // Enviar e-mail de boas-vindas
                 String assunto = "Bomb Has Been Planted!";
-                String templatePath = "src/main/webapp/templates/email.html";
+                String templatePath = "src/main/webapp/templates/boasVindasEmail.html";
                 String corpo = EmailSender.loadEmailTemplate(templatePath, nomePerfil);
                 String imagePath = "src/main/webapp/resources/images/logoemail.png";
                 EmailSender.sendEmail(email, assunto, corpo, imagePath);
@@ -117,12 +120,20 @@ public class UsuarioBean implements Serializable {
                     return;
                 }
 
+                // Gerar token de recuperação
+                Token tokenGenerator = new Token();
+                String token = tokenGenerator.gerarToken();
+                usuarioDAO.armazenarTokenRecuperacao(recuperarEmail, token);
+
                 // Enviar e-mail de recuperação de senha
                 String assunto = "Recuperar Senha";
+                String linkRecuperacao = "http://localhost:8080/StrikerCommunity/recuperarSenha.xhtml?token=" + token;
                 String templatePath = "src/main/webapp/templates/recuperarSenhaEmail.html";
                 String corpo = EmailSender.loadEmailTemplate(templatePath, nomePerfil);
+                corpo = corpo.replace("LINK", linkRecuperacao);
                 String imagePath = "src/main/webapp/resources/images/logoemail.png";
-                EmailSender.sendEmail(recuperarEmail, assunto, corpo, imagePath);
+
+                EmailSender.sendEmail(recuperarEmail, assunto, corpo, imagePath); // Enviar o e-mail
                 limparCampos();
 
                 FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "E-mail de verificação enviado com sucesso!");
@@ -139,6 +150,47 @@ public class UsuarioBean implements Serializable {
 
         } catch (Exception e) {
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ao recuperar cadastro.");
+            FacesContext.getCurrentInstance().addMessage(null, message);
+        }
+    }
+
+    public void redefinirSenha() {
+        LOGGER.info("INICIANDO PROCESSO PARA RECUPERAR SENHA");
+        String token = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("token");
+
+        if (token == null || token.isEmpty()) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Link inválido.");
+            FacesContext.getCurrentInstance().addMessage(null, message);
+            return;
+        }
+
+        try {
+            ValidarCadastro.validarCampoRecuperarSenha(novaSenha);
+
+            // Verificar e usar o token para redefinir a senha
+            try (Connection con = CriarConexao.getConexao()) {
+                UsuarioDAO usuarioDAO = new UsuarioDAO(con);
+
+                if (usuarioDAO.verificarTokenValido(token)) {
+                    usuarioDAO.redefinirSenha(token, novaSenha);
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Senha redefinida com sucesso!");
+                    FacesContext.getCurrentInstance().addMessage(null, message);
+                } else {
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Link inválido ou expirado.");
+                    FacesContext.getCurrentInstance().addMessage(null, message);
+                }
+
+            } catch (SQLException e) {
+                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro ao redefinir a senha no banco de dados");
+                FacesContext.getCurrentInstance().addMessage(null, message);
+            }
+
+        } catch (ApplicationException e) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", e.getMessage());
+            FacesContext.getCurrentInstance().addMessage(null, message);
+
+        } catch (Exception e) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ao recuperar senha.");
             FacesContext.getCurrentInstance().addMessage(null, message);
         }
     }
@@ -225,5 +277,13 @@ public class UsuarioBean implements Serializable {
 
     public void setRecuperarEmail(String recuperarEmail) {
         this.recuperarEmail = recuperarEmail;
+    }
+
+    public String getNovaSenha() {
+        return novaSenha;
+    }
+
+    public void setNovaSenha(String novaSenha) {
+        this.novaSenha = novaSenha;
     }
 }

@@ -23,6 +23,12 @@ public class ValidarCadastro {
         }
     }
 
+    public static void validarCampoRecuperarSenha(String token) {
+        if (token == null || token.trim().isEmpty()) {
+            throw new ApplicationException("Campo de Senha deve ser preenchido.");
+        }
+    }
+
     public static void validarSenhas(String senha, String repetirSenha) {
         if (senha == null || repetirSenha == null || !senha.equals(repetirSenha)) {
             throw new ApplicationException("As senhas não conferem.");

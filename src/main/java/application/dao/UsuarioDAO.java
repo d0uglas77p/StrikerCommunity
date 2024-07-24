@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Date;
 
 public class UsuarioDAO {
 
@@ -90,5 +92,45 @@ public class UsuarioDAO {
             }
         }
         return false;
+    }
+
+    // Método para armazenar o token de recuperação no banco de dados
+    public void armazenarTokenRecuperacao(String email, String token) throws SQLException {
+        // Atualiza o token de recuperação e define sua expiração
+        String sql = "UPDATE tbl_usuario SET token_recuperacao = ?, token_expiracao = ? WHERE email = ?";
+        try (PreparedStatement state = con.prepareStatement(sql)) {
+            state.setString(1, token);
+
+            // Define a expiração do token como 1 hora a partir de agora
+            Timestamp expiracao = new Timestamp(new Date().getTime() + 3600 * 1000);
+            state.setTimestamp(2, expiracao);
+
+            state.setString(3, email);
+            state.executeUpdate();
+        }
+    }
+
+    // Método para verificar se o token é válido
+    public boolean verificarTokenValido(String token) throws SQLException {
+        String sql = "SELECT email FROM tbl_usuario WHERE token_recuperacao = ? AND token_expiracao > ?";
+        try (PreparedStatement state = con.prepareStatement(sql)) {
+            state.setString(1, token);
+            state.setTimestamp(2, new Timestamp(new Date().getTime()));
+            try (ResultSet rs = state.executeQuery()) {
+                return rs.next(); // Se houver um resultado, o token é válido
+            }
+        }
+    }
+
+    // Método para redefinir a senha do usuário
+    public void redefinirSenha(String token, String novaSenha) throws SQLException {
+        String sql = "UPDATE tbl_usuario SET senha = ?, token_recuperacao = NULL, token_expiracao = NULL WHERE token_recuperacao = ?";
+        try (PreparedStatement state = con.prepareStatement(sql)) {
+            // Hash da nova senha
+            String hashedPassword = PasswordUtil.hashPassword(novaSenha);
+            state.setString(1, hashedPassword);
+            state.setString(2, token);
+            state.executeUpdate();
+        }
     }
 }

@@ -53,3 +53,19 @@ body {
     width: 340px !important;
     height: 210px !important;
 }
+
+.form-recuperar-senha {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 500px;
+    margin: 600px;
+}
+
+.recuperar-senha-image {
+    position: absolute;
+    left: 830px;
+    top: 230px;
+    width: 200px;
+    height: 200px;
+}

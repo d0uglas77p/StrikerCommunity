@@ -1,5 +1,6 @@
 package application.model;
 
+import java.sql.Timestamp; // Importar Timestamp para o campo token_expiracao
 import java.util.Date;
 
 public class Usuario {
@@ -12,6 +13,8 @@ public class Usuario {
     private String email;
     private String login;
     private String senha;
+    private String tokenRecuperacao; // Novo campo
+    private Timestamp tokenExpiracao; // Novo campo
 
     public int getId_usuario() {
         return id_usuario;
@@ -75,5 +78,21 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getTokenRecuperacao() {
+        return tokenRecuperacao;
+    }
+
+    public void setTokenRecuperacao(String tokenRecuperacao) {
+        this.tokenRecuperacao = tokenRecuperacao;
+    }
+
+    public Timestamp getTokenExpiracao() {
+        return tokenExpiracao;
+    }
+
+    public void setTokenExpiracao(Timestamp tokenExpiracao) {
+        this.tokenExpiracao = tokenExpiracao;
     }
 }
