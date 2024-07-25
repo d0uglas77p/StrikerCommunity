@@ -2,6 +2,7 @@
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
@@ -15,6 +16,10 @@
     <ui:include src="/templates/menu.xhtml"/>
 
     <h:form>
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{autenticacaoBean.init}" />
+        </f:metadata>
+
         <br></br>
         <br></br>
 
@@ -67,13 +72,13 @@
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
-                <p:tag value="HE CT DUST"
+                <p:tag value="SMOKE CT DUST"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeDustCT"
-                            value="#{videoHeDustCTBean.videosHeDust}"
+                <p:carousel id="videoSmokeDustCT"
+                            value="#{videoSmokeDustCTBean.videosSmokeDust}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -90,20 +95,20 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER DUST CT -->
 
-        <!-- PAINEL ESCOLHER MIRAGE CT-->
+        <!-- PAINEL ESCOLHER MIRAGE CT -->
         <p:outputPanel id="MirageCt">
             <p:outputPanel id="panelMirageCtContent"
                            rendered="#{mapaPanelCtBean.exibirPanelMirageCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
-                <p:tag value="HE CT MIRAGE"
+                <p:tag value="SMOKE CT MIRAGE"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeMirageCT"
-                            value="#{videoHeMirageCTBean.videosHeMirage}"
+                <p:carousel id="videoSmokeMirageCT"
+                            value="#{videoSmokeMirageCTBean.videosSmokeMirage}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -128,13 +133,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE CT INFERNO"
+                <p:tag value="SMOKE CT INFERNO"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeInfernoCT"
-                            value="#{videoHeInfernoCTBean.videosHeInferno}"
+                <p:carousel id="videoSmokeInfernoCT"
+                            value="#{videoSmokeInfernoCTBean.videosSmokeInferno}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -151,7 +156,7 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER INFERNO CT-->
 
-        <!-- PAINEL ESCOLHER NUKE CT-->
+        <!-- PAINEL ESCOLHER NUKE CT -->
         <p:outputPanel id="NukeCt">
             <p:outputPanel id="panelNukeCtContent"
                            rendered="#{mapaPanelCtBean.exibirPanelNukeCt}"
@@ -159,13 +164,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE CT NUKE"
+                <p:tag value="SMOKE CT NUKE"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeNukeCT"
-                            value="#{videoHeNukeCTBean.videosHeNuke}"
+                <p:carousel id="videoSmokeNukeCT"
+                            value="#{videoSmokeNukeCTBean.videosSmokeNuke}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -182,7 +187,7 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER NUKE CT-->
 
-        <!-- PAINEL ESCOLHER OVERPASS CT-->
+        <!-- PAINEL ESCOLHER OVERPASS CT -->
         <p:outputPanel id="OverpassCt">
             <p:outputPanel id="panelOverpassCtContent"
                            rendered="#{mapaPanelCtBean.exibirPanelOverpassCt}"
@@ -190,13 +195,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE CT OVERPASS"
+                <p:tag value="SMOKE CT OVERPASS"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeOverpassCT"
-                            value="#{videoHeOverpassCTBean.videosHeOverpass}"
+                <p:carousel id="videoSmokeOverpassCT"
+                            value="#{videoSmokeOverpassCTBean.videosSmokeOverpass}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -221,13 +226,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE CT VERTIGO"
+                <p:tag value="SMOKE CT VERTIGO"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeVertigoCT"
-                            value="#{videoHeVertigoCTBean.videosHeVertigo}"
+                <p:carousel id="videoSmokeVertigoCT"
+                            value="#{videoSmokeVertigoCTBean.videosSmokeVertigo}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -252,13 +257,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE CT ANCIENT"
+                <p:tag value="SMOKE CT ANCIENT"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeAncientCT"
-                            value="#{videoHeAncientCTBean.videosHeAncient}"
+                <p:carousel id="videoSmokeAncientCT"
+                            value="#{videoSmokeAncientCTBean.videosSmokeAncient}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -275,7 +280,7 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER ANCIENT CT-->
 
-        <!-- PAINEL ESCOLHER ANUBIS CT-->
+        <!-- PAINEL ESCOLHER ANUBIS CT -->
         <p:outputPanel id="AnubisCt">
             <p:outputPanel id="panelAnubisCtContent"
                            rendered="#{mapaPanelCtBean.exibirPanelAnubisCt}"
@@ -283,13 +288,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE CT ANUBIS"
+                <p:tag value="SMOKE CT ANUBIS"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeAnubisCT"
-                            value="#{videoHeAnubisCTBean.videosHeAnubis}"
+                <p:carousel id="videoSmokeAnubisCT"
+                            value="#{videoSmokeAnubisCTBean.videosSmokeAnubis}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -306,6 +311,7 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER ANUBIS CT-->
     </h:form>
+
 </div>
 </body>
 </html>

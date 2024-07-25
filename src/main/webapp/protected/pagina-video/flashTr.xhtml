@@ -2,6 +2,7 @@
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
@@ -15,6 +16,10 @@
     <ui:include src="/templates/menu.xhtml"/>
 
     <h:form>
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{autenticacaoBean.init}" />
+        </f:metadata>
+
         <br></br>
         <br></br>
 
@@ -67,13 +72,13 @@
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
-                <p:tag value="SMOKE TR DUST"
+                <p:tag value="FLASH TR DUST"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeDustTR"
-                            value="#{videoSmokeDustTRBean.videosSmokeDust}"
+                <p:carousel id="videoFlashDustTR"
+                            value="#{videoFlashDustTRBean.videosFlashDust}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -97,13 +102,13 @@
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
-                <p:tag value="SMOKE TR MIRAGE"
+                <p:tag value="FLASH TR MIRAGE"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeMirageTR"
-                            value="#{videoSmokeMirageTRBean.videosSmokeMirage}"
+                <p:carousel id="videoFlashMirageTR"
+                            value="#{videoFlashMirageTRBean.videosFlashMirage}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -128,13 +133,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE TR INFERNO"
+                <p:tag value="FLASH TR INFERNO"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeInfernoTR"
-                            value="#{videoSmokeInfernoTRBean.videosSmokeInferno}"
+                <p:carousel id="videoFlashInfernoTR"
+                            value="#{videoFlashInfernoTRBean.videosFlashInferno}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -159,13 +164,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE TR NUKE"
+                <p:tag value="FLASH TR NUKE"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeNukeTR"
-                            value="#{videoSmokeNukeTRBean.videosSmokeNuke}"
+                <p:carousel id="videoFlashNukeTR"
+                            value="#{videoFlashNukeTRBean.videosFlashNuke}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -190,13 +195,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE TR OVERPASS"
+                <p:tag value="FLASH TR OVERPASS"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeOverpassTR"
-                            value="#{videoSmokeOverpassTRBean.videosSmokeOverpass}"
+                <p:carousel id="videoFlashOverpassTR"
+                            value="#{videoFlashOverpassTRBean.videosFlashOverpass}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -221,13 +226,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE TR VERTIGO"
+                <p:tag value="FLASH TR VERTIGO"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeVertigoTR"
-                            value="#{videoSmokeVertigoTRBean.videosSmokeVertigo}"
+                <p:carousel id="videoFlashVertigoTR"
+                            value="#{videoFlashVertigoTRBean.videosFlashVertigo}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -252,13 +257,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE TR ANCIENT"
+                <p:tag value="FLASH TR ANCIENT"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeAncientTR"
-                            value="#{videoSmokeAncientTRBean.videosSmokeAncient}"
+                <p:carousel id="videoFlashAncientTR"
+                            value="#{videoFlashAncientTRBean.videosFlashAncient}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -283,13 +288,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE TR ANUBIS"
+                <p:tag value="FLASH TR ANUBIS"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeAnubisTR"
-                            value="#{videoSmokeAnubisTRBean.videosSmokeAnubis}"
+                <p:carousel id="videoFlashAnubisTR"
+                            value="#{videoFlashAnubisTRBean.videosFlashAnubis}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -305,7 +310,6 @@
             </p:outputPanel>
         </p:outputPanel>
         <!-- PAINEL ESCOLHER ANUBIS TR-->
-
     </h:form>
 </div>
 </body>

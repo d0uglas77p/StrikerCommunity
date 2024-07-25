@@ -2,6 +2,7 @@
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
@@ -14,8 +15,11 @@
     <ui:include src="/templates/menu.xhtml"/>
 
     <h:form>
-        <br></br>
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{autenticacaoBean.init}" />
+        </f:metadata>
 
+        <br></br>
         <!-- PAINEL ESCOLHER O LADO -->
         <p:outputPanel id="Lado">
             <p:outputPanel id="panelLadoContent"
@@ -84,7 +88,7 @@
 
                 <div>
                     <h:panelGroup columns="4">
-                        <p:commandLink onclick="window.open('pagina-video/smokeCt.xhtml', '_blank'); return false;"
+                        <p:commandLink onclick="window.open('#{request.contextPath}/protected/pagina-video/smokeCt.xhtml', '_blank'); return false;"
                                        update="@form">
                             <p:graphicImage name="images/smoke.png"
                                             class="utilitario-grid-border utilitario-filter"
@@ -93,7 +97,7 @@
                                             style="margin-left: 50px; margin-top: 60px;"/>
                         </p:commandLink>
 
-                        <p:commandLink onclick="window.open('pagina-video/molotovCt.xhtml', '_blank'); return false;"
+                        <p:commandLink onclick="window.open('#{request.contextPath}/protected/pagina-video/molotovCt.xhtml', '_blank'); return false;"
                                        update="@form">
                             <p:graphicImage name="images/incendiaria.png"
                                             class="utilitario-grid-border utilitario-filter"
@@ -102,7 +106,7 @@
                                             style="margin-left: 50px;"/>
                         </p:commandLink>
 
-                        <p:commandLink onclick="window.open('pagina-video/flashCt.xhtml', '_blank'); return false;"
+                        <p:commandLink onclick="window.open('#{request.contextPath}/protected/pagina-video/flashCt.xhtml', '_blank'); return false;"
                                        update="@form">
                             <p:graphicImage name="images/flash.png"
                                             class="utilitario-grid-border utilitario-filter"
@@ -111,7 +115,7 @@
                                             style="margin-left: 50px;"/>
                         </p:commandLink>
 
-                        <p:commandLink onclick="window.open('pagina-video/heCt.xhtml', '_blank'); return false;"
+                        <p:commandLink onclick="window.open('#{request.contextPath}/protected/pagina-video/heCt.xhtml', '_blank'); return false;"
                                        update="@form">
                             <p:graphicImage name="images/he.png"
                                             class="utilitario-grid-border utilitario-filter"
@@ -150,7 +154,7 @@
 
                 <div>
                     <h:panelGroup columns="4">
-                        <p:commandLink onclick="window.open('pagina-video/smokeTr.xhtml', '_blank'); return false;"
+                        <p:commandLink onclick="window.open('#{request.contextPath}/protected/pagina-video/smokeTr.xhtml', '_blank'); return false;"
                                        update="@form">
                             <p:graphicImage name="images/smoke.png"
                                             class="utilitario-grid-border utilitario-filter"
@@ -159,7 +163,7 @@
                                             style="margin-left: 50px; margin-top: 60px;"/>
                         </p:commandLink>
 
-                        <p:commandLink onclick="window.open('pagina-video/molotovTr.xhtml', '_blank'); return false;"
+                        <p:commandLink onclick="window.open('#{request.contextPath}/protected/pagina-video/molotovTr.xhtml', '_blank'); return false;"
                                        update="@form">
                             <p:graphicImage name="images/molotov.png"
                                             class="utilitario-grid-border utilitario-filter"
@@ -168,7 +172,7 @@
                                             style="margin-left: 50px;"/>
                         </p:commandLink>
 
-                        <p:commandLink onclick="window.open('pagina-video/flashTr.xhtml', '_blank'); return false;"
+                        <p:commandLink onclick="window.open('#{request.contextPath}/protected/pagina-video/flashTr.xhtml', '_blank'); return false;"
                                        update="@form">
                             <p:graphicImage name="images/flash.png"
                                             class="utilitario-grid-border utilitario-filter"
@@ -177,7 +181,7 @@
                                             style="margin-left: 50px;"/>
                         </p:commandLink>
 
-                        <p:commandLink onclick="window.open('pagina-video/heTr.xhtml', '_blank'); return false;"
+                        <p:commandLink onclick="window.open('#{request.contextPath}/protected/pagina-video/heTr.xhtml', '_blank'); return false;"
                                        update="@form">
                             <p:graphicImage name="images/he.png"
                                             class="utilitario-grid-border utilitario-filter"

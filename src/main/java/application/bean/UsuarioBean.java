@@ -219,7 +219,7 @@ public class UsuarioBean implements Serializable {
                 ec.getSessionMap().put("usuarioLogado", usuario);
 
                 // Redirecionar para a página inicial
-                ec.redirect(ec.getRequestContextPath() + "/inicio.xhtml");
+                ec.redirect(ec.getRequestContextPath() + "/protected/inicio.xhtml?faces-redirect=true");
             } else {
                 // Login falhou
                 FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Login ou senha inválidos.");
@@ -229,12 +229,10 @@ public class UsuarioBean implements Serializable {
         } catch (SQLException e) {
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro ao processar login no banco de dados.");
             FacesContext.getCurrentInstance().addMessage(null, message);
-            LOGGER.info("Erro ao processar login no banco de dados");
 
         } catch (Exception e) {
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ao processar login.");
             FacesContext.getCurrentInstance().addMessage(null, message);
-            LOGGER.info("Erro inesperado ao processar login");
         }
     }
 

@@ -69,3 +69,19 @@ body {
     width: 200px;
     height: 200px;
 }
+
+.sem-autorizacao {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 450px;
+    margin: 600px;
+}
+
+.sem-autorizacao-image {
+    position: absolute;
+    left: 830px;
+    top: 200px;
+    width: 200px;
+    height: 200px;
+}

@@ -2,6 +2,7 @@
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
@@ -15,16 +16,20 @@
     <ui:include src="/templates/menu.xhtml"/>
 
     <h:form>
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{autenticacaoBean.init}" />
+        </f:metadata>
+
         <br></br>
         <br></br>
 
         <p:tag value="Escolha um Mapa"
                style="font-size: 20px; margin-left: 576px; margin-bottom: 20px;"
-               severity="warning"/>
+               severity="info"/>
 
         <br></br>
 
-        <p:outputPanel id="PanelMapa" rendered="#{mapaPanelTrBean.exibirPanelMapaTr}">
+        <p:outputPanel id="PanelMapa" rendered="#{mapaPanelCtBean.exibirPanelMapaCt}">
             <div>
                 <p:carousel value="#{carouselMapaBean.imagesMapa}"
                             var="image"
@@ -37,11 +42,11 @@
                             <div>
                                 <p:tag value="#{image}"
                                        style="font-size: 20px;"
-                                       severity="warning"/>
+                                       severity="info"/>
                             </div>
                             <br/>
                             <div>
-                                <p:commandLink action="#{mapaPanelTrBean.exibirPanelPorNome(image)}"
+                                <p:commandLink action="#{mapaPanelCtBean.exibirPanelPorNome(image)}"
                                                update="formVideos">
                                     <p:graphicImage library="images"
                                                     name="#{image}.png"
@@ -60,20 +65,20 @@
     <br></br>
 
     <h:form id="formVideos">
-        <!-- PAINEL ESCOLHER DUST TR -->
-        <p:outputPanel id="DustTr">
-            <p:outputPanel id="panelDustTrContent"
-                           rendered="#{mapaPanelTrBean.exibirPanelDustTr}"
+        <!-- PAINEL ESCOLHER DUST CT -->
+        <p:outputPanel id="DustCt">
+            <p:outputPanel id="panelDustCtContent"
+                           rendered="#{mapaPanelCtBean.exibirPanelDustCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
-                <p:tag value="HE TR DUST"
+                <p:tag value="HE CT DUST"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeDustTR"
-                            value="#{videoHeDustTRBean.videosHeDust}"
+                <p:carousel id="videoHeDustCT"
+                            value="#{videoHeDustCTBean.videosHeDust}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -88,22 +93,22 @@
                 </p:carousel>
             </p:outputPanel>
         </p:outputPanel>
-        <!-- PAINEL ESCOLHER DUST TR -->
+        <!-- PAINEL ESCOLHER DUST CT -->
 
-        <!-- PAINEL ESCOLHER MIRAGE TR-->
-        <p:outputPanel id="MirageTr">
-            <p:outputPanel id="panelMirageTrContent"
-                           rendered="#{mapaPanelTrBean.exibirPanelMirageTr}"
+        <!-- PAINEL ESCOLHER MIRAGE CT-->
+        <p:outputPanel id="MirageCt">
+            <p:outputPanel id="panelMirageCtContent"
+                           rendered="#{mapaPanelCtBean.exibirPanelMirageCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
-                <p:tag value="HE TR MIRAGE"
+                <p:tag value="HE CT MIRAGE"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeMirageTR"
-                            value="#{videoHeMirageTRBean.videosHeMirage}"
+                <p:carousel id="videoHeMirageCT"
+                            value="#{videoHeMirageCTBean.videosHeMirage}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -118,23 +123,23 @@
                 </p:carousel>
             </p:outputPanel>
         </p:outputPanel>
-        <!-- PAINEL ESCOLHER MIRAGE TR-->
+        <!-- PAINEL ESCOLHER MIRAGE CT-->
 
-        <!-- PAINEL ESCOLHER INFERNO TR-->
-        <p:outputPanel id="InfernoTr">
-            <p:outputPanel id="panelInfernoTrContent"
-                           rendered="#{mapaPanelTrBean.exibirPanelInfernoTr}"
+        <!-- PAINEL ESCOLHER INFERNO CT-->
+        <p:outputPanel id="InfernoCt">
+            <p:outputPanel id="panelInfernoCtContent"
+                           rendered="#{mapaPanelCtBean.exibirPanelInfernoCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE TR INFERNO"
+                <p:tag value="HE CT INFERNO"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeInfernoTR"
-                            value="#{videoHeInfernoTRBean.videosHeInferno}"
+                <p:carousel id="videoHeInfernoCT"
+                            value="#{videoHeInfernoCTBean.videosHeInferno}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -149,23 +154,23 @@
                 </p:carousel>
             </p:outputPanel>
         </p:outputPanel>
-        <!-- PAINEL ESCOLHER INFERNO TR-->
+        <!-- PAINEL ESCOLHER INFERNO CT-->
 
-        <!-- PAINEL ESCOLHER NUKE TR-->
-        <p:outputPanel id="NukeTr">
-            <p:outputPanel id="panelNukeTrContent"
-                           rendered="#{mapaPanelTrBean.exibirPanelNukeTr}"
+        <!-- PAINEL ESCOLHER NUKE CT-->
+        <p:outputPanel id="NukeCt">
+            <p:outputPanel id="panelNukeCtContent"
+                           rendered="#{mapaPanelCtBean.exibirPanelNukeCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE TR NUKE"
+                <p:tag value="HE CT NUKE"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeNukeTR"
-                            value="#{videoHeNukeTRBean.videosHeNuke}"
+                <p:carousel id="videoHeNukeCT"
+                            value="#{videoHeNukeCTBean.videosHeNuke}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -180,23 +185,23 @@
                 </p:carousel>
             </p:outputPanel>
         </p:outputPanel>
-        <!-- PAINEL ESCOLHER NUKE TR-->
+        <!-- PAINEL ESCOLHER NUKE CT-->
 
-        <!-- PAINEL ESCOLHER OVERPASS TR-->
-        <p:outputPanel id="OverpassTr">
-            <p:outputPanel id="panelOverpassTrTrContent"
-                           rendered="#{mapaPanelTrBean.exibirPanelOverpassTr}"
+        <!-- PAINEL ESCOLHER OVERPASS CT-->
+        <p:outputPanel id="OverpassCt">
+            <p:outputPanel id="panelOverpassCtContent"
+                           rendered="#{mapaPanelCtBean.exibirPanelOverpassCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE TR OVERPASS"
+                <p:tag value="HE CT OVERPASS"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeOverpassTR"
-                            value="#{videoHeOverpassTRBean.videosHeOverpass}"
+                <p:carousel id="videoHeOverpassCT"
+                            value="#{videoHeOverpassCTBean.videosHeOverpass}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -211,23 +216,23 @@
                 </p:carousel>
             </p:outputPanel>
         </p:outputPanel>
-        <!-- PAINEL ESCOLHER OVERPASS TR-->
+        <!-- PAINEL ESCOLHER OVERPASS CT-->
 
-        <!-- PAINEL ESCOLHER VERTIGO TR-->
-        <p:outputPanel id="VertigoTr">
-            <p:outputPanel id="panelVertigoTrContent"
-                           rendered="#{mapaPanelTrBean.exibirPanelVertigoTr}"
+        <!-- PAINEL ESCOLHER VERTIGO CT-->
+        <p:outputPanel id="VertigoCt">
+            <p:outputPanel id="panelVertigoCtContent"
+                           rendered="#{mapaPanelCtBean.exibirPanelVertigoCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE TR VERTIGO"
+                <p:tag value="HE CT VERTIGO"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeVertigoTR"
-                            value="#{videoHeVertigoTRBean.videosHeVertigo}"
+                <p:carousel id="videoHeVertigoCT"
+                            value="#{videoHeVertigoCTBean.videosHeVertigo}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -242,23 +247,23 @@
                 </p:carousel>
             </p:outputPanel>
         </p:outputPanel>
-        <!-- PAINEL ESCOLHER VERTIGO TR-->
+        <!-- PAINEL ESCOLHER VERTIGO CT-->
 
-        <!-- PAINEL ESCOLHER ANCIENT TR-->
-        <p:outputPanel id="AncientTr">
-            <p:outputPanel id="panelAncientTrContent"
-                           rendered="#{mapaPanelTrBean.exibirPanelAncientTr}"
+        <!-- PAINEL ESCOLHER ANCIENT CT-->
+        <p:outputPanel id="AncientCt">
+            <p:outputPanel id="panelAncientCtContent"
+                           rendered="#{mapaPanelCtBean.exibirPanelAncientCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE TR ANCIENT"
+                <p:tag value="HE CT ANCIENT"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeAncientTR"
-                            value="#{videoHeAncientTRBean.videosHeAncient}"
+                <p:carousel id="videoHeAncientCT"
+                            value="#{videoHeAncientCTBean.videosHeAncient}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -273,23 +278,23 @@
                 </p:carousel>
             </p:outputPanel>
         </p:outputPanel>
-        <!-- PAINEL ESCOLHER ANCIENT TR-->
+        <!-- PAINEL ESCOLHER ANCIENT CT-->
 
-        <!-- PAINEL ESCOLHER ANUBIS TR-->
-        <p:outputPanel id="AnubisTr">
-            <p:outputPanel id="panelAnubisTrContent"
-                           rendered="#{mapaPanelTrBean.exibirPanelAnubisTr}"
+        <!-- PAINEL ESCOLHER ANUBIS CT-->
+        <p:outputPanel id="AnubisCt">
+            <p:outputPanel id="panelAnubisCtContent"
+                           rendered="#{mapaPanelCtBean.exibirPanelAnubisCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="HE TR ANUBIS"
+                <p:tag value="HE CT ANUBIS"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoHeAnubisTR"
-                            value="#{videoHeAnubisTRBean.videosHeAnubis}"
+                <p:carousel id="videoHeAnubisCT"
+                            value="#{videoHeAnubisCTBean.videosHeAnubis}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -304,7 +309,7 @@
                 </p:carousel>
             </p:outputPanel>
         </p:outputPanel>
-        <!-- PAINEL ESCOLHER ANUBIS TR-->
+        <!-- PAINEL ESCOLHER ANUBIS CT-->
     </h:form>
 </div>
 </body>

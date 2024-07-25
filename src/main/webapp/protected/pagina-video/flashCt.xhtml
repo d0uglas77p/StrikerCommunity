@@ -2,6 +2,7 @@
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
@@ -15,6 +16,10 @@
     <ui:include src="/templates/menu.xhtml"/>
 
     <h:form>
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{autenticacaoBean.init}" />
+        </f:metadata>
+
         <br></br>
         <br></br>
 
@@ -67,13 +72,13 @@
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
-                <p:tag value="SMOKE CT DUST"
+                <p:tag value="FLASH CT DUST"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeDustCT"
-                            value="#{videoSmokeDustCTBean.videosSmokeDust}"
+                <p:carousel id="videoFlashDustCT"
+                            value="#{videoFlashDustCTBean.videosFlashDust}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -90,20 +95,20 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER DUST CT -->
 
-        <!-- PAINEL ESCOLHER MIRAGE CT -->
+        <!-- PAINEL ESCOLHER MIRAGE CT-->
         <p:outputPanel id="MirageCt">
             <p:outputPanel id="panelMirageCtContent"
                            rendered="#{mapaPanelCtBean.exibirPanelMirageCt}"
                            class="panel-video"
                            style="margin-left: 65px;">
                 <br/>
-                <p:tag value="SMOKE CT MIRAGE"
+                <p:tag value="FLASH CT MIRAGE"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeMirageCT"
-                            value="#{videoSmokeMirageCTBean.videosSmokeMirage}"
+                <p:carousel id="videoFlashMirageCT"
+                            value="#{videoFlashMirageCTBean.videosFlashMirage}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -128,13 +133,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE CT INFERNO"
+                <p:tag value="FLASH CT INFERNO"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeInfernoCT"
-                            value="#{videoSmokeInfernoCTBean.videosSmokeInferno}"
+                <p:carousel id="videoFlashInfernoCT"
+                            value="#{videoFlashInfernoCTBean.videosFlashInferno}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -151,7 +156,7 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER INFERNO CT-->
 
-        <!-- PAINEL ESCOLHER NUKE CT -->
+        <!-- PAINEL ESCOLHER NUKE CT-->
         <p:outputPanel id="NukeCt">
             <p:outputPanel id="panelNukeCtContent"
                            rendered="#{mapaPanelCtBean.exibirPanelNukeCt}"
@@ -159,13 +164,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE CT NUKE"
+                <p:tag value="FLASH CT NUKE"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeNukeCT"
-                            value="#{videoSmokeNukeCTBean.videosSmokeNuke}"
+                <p:carousel id="videoFlashNukeCT"
+                            value="#{videoFlashNukeCTBean.videosFlashNuke}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -182,7 +187,7 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER NUKE CT-->
 
-        <!-- PAINEL ESCOLHER OVERPASS CT -->
+        <!-- PAINEL ESCOLHER OVERPASS CT-->
         <p:outputPanel id="OverpassCt">
             <p:outputPanel id="panelOverpassCtContent"
                            rendered="#{mapaPanelCtBean.exibirPanelOverpassCt}"
@@ -190,13 +195,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE CT OVERPASS"
+                <p:tag value="FLASH CT OVERPASS"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeOverpassCT"
-                            value="#{videoSmokeOverpassCTBean.videosSmokeOverpass}"
+                <p:carousel id="videoFlashOverpassCT"
+                            value="#{videoFlashOverpassCTBean.videosFlashOverpass}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -221,13 +226,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE CT VERTIGO"
+                <p:tag value="FLASH CT VERTIGO"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeVertigoCT"
-                            value="#{videoSmokeVertigoCTBean.videosSmokeVertigo}"
+                <p:carousel id="videoFlashVertigoCT"
+                            value="#{videoFlashVertigoCTBean.videosFlashVertigo}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -252,13 +257,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE CT ANCIENT"
+                <p:tag value="FLASH CT ANCIENT"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeAncientCT"
-                            value="#{videoSmokeAncientCTBean.videosSmokeAncient}"
+                <p:carousel id="videoFlashAncientCT"
+                            value="#{videoFlashAncientCTBean.videosFlashAncient}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -275,7 +280,7 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER ANCIENT CT-->
 
-        <!-- PAINEL ESCOLHER ANUBIS CT -->
+        <!-- PAINEL ESCOLHER ANUBIS CT-->
         <p:outputPanel id="AnubisCt">
             <p:outputPanel id="panelAnubisCtContent"
                            rendered="#{mapaPanelCtBean.exibirPanelAnubisCt}"
@@ -283,13 +288,13 @@
                            style="margin-left: 65px;">
                 <br/>
 
-                <p:tag value="SMOKE CT ANUBIS"
+                <p:tag value="FLASH CT ANUBIS"
                        severity="warning"
                        style="font-size: 16px; margin-left: 135px;"/>
                 <br/><br/>
 
-                <p:carousel id="videoSmokeAnubisCT"
-                            value="#{videoSmokeAnubisCTBean.videosSmokeAnubis}"
+                <p:carousel id="videoFlashAnubisCT"
+                            value="#{videoFlashAnubisCTBean.videosFlashAnubis}"
                             var="video"
                             styleClass="ui-carousel-video">
                     <div class="video-container">
@@ -306,7 +311,6 @@
         </p:outputPanel>
         <!-- PAINEL ESCOLHER ANUBIS CT-->
     </h:form>
-
 </div>
 </body>
 </html>

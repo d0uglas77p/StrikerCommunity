@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
 
 <h:head>
@@ -10,10 +11,12 @@
 <body>
 <div>
     <ui:include src="/templates/menu.xhtml"/>
+
     <h:form>
-
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{autenticacaoBean.init}"/>
+        </f:metadata>
     </h:form>
-
 </div>
 </body>
 

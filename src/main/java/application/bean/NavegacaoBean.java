@@ -10,7 +10,7 @@ public class NavegacaoBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public String irInicio() {
-        return "/inicio.xhtml?faces-redirect=true";
+        return "/protected/inicio.xhtml?faces-redirect=true";
     }
 
     public String irLogin() {
@@ -18,23 +18,30 @@ public class NavegacaoBean implements Serializable {
     }
 
     public String irFeed() {
-        return "/feed.xhtml?faces-redirect=true";
+        return "/protected/feed.xhtml?faces-redirect=true";
     }
 
     public String irTopico() {
-        return "/topico.xhtml?faces-redirect=true";
+        return "/protected/topico.xhtml?faces-redirect=true";
     }
 
     public String irUtilitario() {
-        return "/utilitario.xhtml?faces-redirect=true";
+        return "/protected/utilitario.xhtml?faces-redirect=true";
     }
 
     public String irComandos() {
-        return "/comandos.xhtml?faces-redirect=true";
+        return "/protected/comandos.xhtml?faces-redirect=true";
     }
 
     public String irPerfil() {
-        return "/perfil.xhtml?faces-redirect=true";
+        return "/protected/perfil.xhtml?faces-redirect=true";
     }
 
+    public String irCompra() {
+        return "/protected/compra.xhtml?faces-redirect=true";
+    }
+
+    public String irVenda() {
+        return "/protected/venda.xhtml?faces-redirect=true";
+    }
 }

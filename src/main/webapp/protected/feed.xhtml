@@ -15,6 +15,10 @@
     <ui:include src="/templates/menu.xhtml"/>
 
     <h:form id="feedForm">
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{autenticacaoBean.init}"/>
+        </f:metadata>
+
         <!-- BOTÕES FIXOS NA TELA -->
         <div class="fixed-buttons">
             <h:panelGroup columns="2">

@@ -83,7 +83,7 @@
 
                 <p:panelGrid style="margin-left: 670px; margin-top: -70px;">
                     <p:commandButton value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"
-                                     action="#{navegacaoBean.irLogin}"/>
+                                     action="#{autenticacaoBean.logout()}" update="@form"/>
                 </p:panelGrid>
             </h:panelGrid>
         </p:panelGrid>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<h:head>
+    <title>Striker Community</title>
+    <h:outputStylesheet name="css/login.css"/>
+</h:head>
+
+<body>
+<div>
+    <h:form class="sem-autorizacao">
+        <p:graphicImage name="images/logoemail.png"
+                        styleClass="recuperar-senha-image"
+                        style="margin-left: -40px; width: 200px; height: 200px;"/>
+        <p:panel>
+            <p:outputLabel value="VOCÊ NÃO FEZ O LOGIN!"
+                           style="margin-right: 50px;"/>
+
+            <p:commandButton value="Login" action="#{navegacaoBean.irLogin}"
+                             styleClass="rounded-button ui-button-info"
+                             style="margin-top: 0px; margin-right: 70px;">
+            </p:commandButton>
+        </p:panel>
+    </h:form>
+</div>
+</body>
+</html>
