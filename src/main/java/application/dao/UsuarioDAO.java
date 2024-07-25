@@ -2,6 +2,7 @@ package application.dao;
 
 import application.model.Usuario;
 import application.util.PasswordUtil;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -80,20 +81,6 @@ public class UsuarioDAO {
         return false;
     }
 
-    public boolean autenticarUsuario(String login, String senha) throws SQLException {
-        String sql = "SELECT senha FROM tbl_usuario WHERE login = ?";
-        try (PreparedStatement state = con.prepareStatement(sql)) {
-            state.setString(1, login);
-            try (ResultSet rs = state.executeQuery()) {
-                if (rs.next()) {
-                    String hashedPassword = rs.getString("senha");
-                    return PasswordUtil.checkPassword(senha, hashedPassword);
-                }
-            }
-        }
-        return false;
-    }
-
     // Método para armazenar o token de recuperação no banco de dados
     public void armazenarTokenRecuperacao(String email, String token) throws SQLException {
         // Atualiza o token de recuperação e define sua expiração
@@ -131,6 +118,56 @@ public class UsuarioDAO {
             state.setString(1, hashedPassword);
             state.setString(2, token);
             state.executeUpdate();
+        }
+    }
+
+    public Usuario autenticarUsuario(String login, String senha) throws SQLException {
+        String sql = "SELECT * FROM tbl_usuario WHERE login = ?";
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
+            stmt.setString(1, login);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    String senhaHash = rs.getString("senha");
+
+                    // Verificar se a senha fornecida corresponde ao hash armazenado
+                    if (BCrypt.checkpw(senha, senhaHash)) {
+                        Usuario usuario = new Usuario();
+                        usuario.setId_usuario(rs.getInt("id_usuario"));
+                        usuario.setNomeCompleto(rs.getString("nomeCompleto"));
+                        usuario.setNomePerfil(rs.getString("nomePerfil"));
+                        usuario.setTelefone(rs.getString("telefone"));
+                        usuario.setDtNascimento(rs.getDate("dtNascimento"));
+                        usuario.setEmail(rs.getString("email"));
+                        usuario.setLogin(rs.getString("login"));
+                        // Não é necessário definir a senha no objeto Usuario
+                        return usuario;
+                    }
+                }
+            }
+        }
+        return null; // Retorna null se o usuário não for encontrado ou a senha não corresponder
+    }
+
+    private Usuario buscarUsuarioPorLogin(String login) throws SQLException {
+        String sql = "SELECT * FROM tbl_usuario WHERE login =?";
+
+        try (PreparedStatement state = con.prepareStatement(sql)) {
+            state.setString(1, login);
+
+            try (ResultSet rs = state.executeQuery()) {
+                if (rs.next()) {
+                    Usuario usuario = new Usuario();
+                    usuario.setNomeCompleto(rs.getString("nomeCompleto"));
+                    usuario.setNomePerfil(rs.getString("nomePerfil"));
+                    usuario.setTelefone(rs.getString("telefone"));
+                    usuario.setDtNascimento(rs.getDate("dtNascimento"));
+                    usuario.setEmail(rs.getString("email"));
+                    usuario.setLogin(rs.getString("login"));
+
+                    return usuario;
+                }
+                return null;
+            }
         }
     }
 }

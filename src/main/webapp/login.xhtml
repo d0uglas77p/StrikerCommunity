@@ -20,11 +20,13 @@
                     </p:panelGrid>
 
                     <p:panelGrid columns="2">
-                        <p:outputLabel value="Login" styleClass="custom-label" style="margin-left: -90px;"/>
-                        <p:inputText maxlength="30" size="30" style="margin-left: -130px; margin-top: -8px;"/>
+                        <p:outputLabel value="Login" for="loginInput" styleClass="custom-label" style="margin-left: -90px;"/>
+                        <p:inputText id="loginInput" value="#{usuarioBean.loginInput}"
+                                     maxlength="30" size="30" style="margin-left: -130px; margin-top: -8px;"/>
 
-                        <p:outputLabel value="Senha" styleClass="custom-label" style="margin-left: -90px;"/>
-                        <p:password maxlength="8" size="30" style="margin-left: -130px; margin-top: -8px;"/>
+                        <p:outputLabel value="Senha" for="senhaInput" styleClass="custom-label" style="margin-left: -90px;"/>
+                        <p:password id="senhaInput" value="#{usuarioBean.senhaInput}"
+                                    maxlength="8" size="30" style="margin-left: -130px; margin-top: -8px;"/>
                     </p:panelGrid>
 
                     <p:panelGrid columns="3">
@@ -36,14 +38,16 @@
                     </p:panelGrid>
 
                     <p:panelGrid columns="2">
-                        <p:commandButton value="Entrar" action="#{navegacaoBean.irInicio}" style="margin-left: 150px;"
-                                         styleClass="rounded-button"/>
+                        <p:commandButton value="Entrar" action="#{usuarioBean.login()}" style="margin-left: 150px;"
+                                         styleClass="rounded-button"
+                                         update="growl"/>
 
                         <p:commandButton value="Criar Conta" style="margin-left: 20px;"
                                          styleClass="rounded-button"
                                          oncomplete="PF('cadastroDialog').show()"/>
                     </p:panelGrid>
                 </p:panel>
+
             </h:panelGroup>
 
             <p:growl id="growl" showDetail="true" life="5000"/>

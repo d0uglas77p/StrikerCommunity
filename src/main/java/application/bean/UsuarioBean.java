@@ -11,12 +11,12 @@ import application.util.Token;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
-import java.util.UUID;
 import java.util.logging.Logger;
 
 @ManagedBean
@@ -35,6 +35,10 @@ public class UsuarioBean implements Serializable {
     private String repetirSenha;
     private String recuperarEmail;
     private String novaSenha;
+
+    // Propriedade para o login
+    private String loginInput;
+    private String senhaInput;
 
     public void cadastrar() {
         LOGGER.info("INICIANDO PROCESSO DE CADASTRO.");
@@ -69,19 +73,25 @@ public class UsuarioBean implements Serializable {
                     return;
                 }
 
+                // Enviar e-mail de boas-vindas
+                String assunto = "Bomb Has Been Planted!";
+                String templatePath = "src/main/webapp/templates/boasVindasEmail.html";
+                String corpo = EmailSender.loadEmailTemplate(templatePath, nomePerfil);
+                String imagePath = "src/main/webapp/resources/images/logoemail.png";
+                boolean emailEnviado = EmailSender.sendEmail(email, assunto, corpo, imagePath);
+
+                if (!emailEnviado) {
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Falha ao enviar e-mail. Cadastro não realizado.");
+                    FacesContext.getCurrentInstance().addMessage(null, message);
+                    return;
+                }
+
                 // Adicionar o usuário ao banco de dados
                 usuarioDAO.adicionarUsuario(u);
 
                 FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Usuário cadastrado. Verifique o seu e-mail!");
                 FacesContext.getCurrentInstance().addMessage(null, message);
                 LOGGER.info("USUÁRIO CADASTRADO COM SUCESSO!");
-
-                // Enviar e-mail de boas-vindas
-                String assunto = "Bomb Has Been Planted!";
-                String templatePath = "src/main/webapp/templates/boasVindasEmail.html";
-                String corpo = EmailSender.loadEmailTemplate(templatePath, nomePerfil);
-                String imagePath = "src/main/webapp/resources/images/logoemail.png";
-                EmailSender.sendEmail(email, assunto, corpo, imagePath);
                 limparCampos();
 
             } catch (SQLException e) {
@@ -195,6 +205,40 @@ public class UsuarioBean implements Serializable {
         }
     }
 
+    public void login() {
+        LOGGER.info("INICIANDO PROCESSO DE LOGIN.");
+        try (Connection con = CriarConexao.getConexao()) {
+            UsuarioDAO usuarioDAO = new UsuarioDAO(con);
+
+            // Verificar se o login e a senha são válidos
+            Usuario usuario = usuarioDAO.autenticarUsuario(loginInput, senhaInput);
+            if (usuario != null) {
+                // Login bem-sucedido
+                FacesContext facesContext = FacesContext.getCurrentInstance();
+                ExternalContext ec = facesContext.getExternalContext();
+                ec.getSessionMap().put("usuarioLogado", usuario);
+
+                // Redirecionar para a página inicial
+                ec.redirect(ec.getRequestContextPath() + "/inicio.xhtml");
+            } else {
+                // Login falhou
+                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Login ou senha inválidos.");
+                FacesContext.getCurrentInstance().addMessage(null, message);
+            }
+
+        } catch (SQLException e) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro ao processar login no banco de dados.");
+            FacesContext.getCurrentInstance().addMessage(null, message);
+            LOGGER.info("Erro ao processar login no banco de dados");
+
+        } catch (Exception e) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Erro inesperado ao processar login.");
+            FacesContext.getCurrentInstance().addMessage(null, message);
+            LOGGER.info("Erro inesperado ao processar login");
+        }
+    }
+
+
     private void limparCampos() {
         nomeCompleto = null;
         nomePerfil = null;
@@ -285,5 +329,21 @@ public class UsuarioBean implements Serializable {
 
     public void setNovaSenha(String novaSenha) {
         this.novaSenha = novaSenha;
+    }
+
+    public String getLoginInput() {
+        return loginInput;
+    }
+
+    public void setLoginInput(String loginInput) {
+        this.loginInput = loginInput;
+    }
+
+    public String getSenhaInput() {
+        return senhaInput;
+    }
+
+    public void setSenhaInput(String senhaInput) {
+        this.senhaInput = senhaInput;
     }
 }

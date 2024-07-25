@@ -5,26 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff5641cb-872c-4fea-b9f2-4aed4ba126b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/util/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/recuperarSenha.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/NavegacaoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/NavegacaoBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/exception/ValidarCadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/exception/ValidarCadastro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/model/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/properties/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/properties/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/logoemail.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/logoemail.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/email.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templates/boasVindasEmail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/recuperarSenhaEmail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templates/recuperarSenhaEmail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/bean/UsuarioBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-23" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-07-23" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/StrikerCommunity/SESSIONS.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,11 +90,11 @@
       <recent name="C:\Workspace\StrikerCommunity\screens" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\privado" />
+      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\a" />
       <recent name="C:\Workspace\StrikerCommunity\src\main\webapp" />
       <recent name="C:\Workspace\StrikerCommunity\src\main\resources\properties" />
       <recent name="C:\Workspace\StrikerCommunity" />
-      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\resources\properties" />
-      <recent name="C:\Workspace\StrikerCommunity\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -188,61 +177,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/application/exception/ValidarCadastro.java</url>
           <line>21</line>
           <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>130</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/dao/UsuarioDAO.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

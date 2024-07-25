@@ -16,7 +16,7 @@ public class EmailSender {
     private static final String USERNAME = "";
     private static final String PASSWORD = "";
 
-    public static void sendEmail(String to, String subject, String body, String imagePath) {
+    public static boolean sendEmail(String to, String subject, String body, String imagePath) {
         // Configura propriedades do e-mail
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -60,9 +60,11 @@ public class EmailSender {
             // Envia o e-mail
             Transport.send(message);
             System.out.println("E-mail enviado com sucesso!");
+            return true;
 
         } catch (MessagingException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
