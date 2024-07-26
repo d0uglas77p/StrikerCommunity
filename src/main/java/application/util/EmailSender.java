@@ -13,7 +13,7 @@ import javax.mail.internet.*;
 
 public class EmailSender {
 
-    private static final String USERNAME = "";
+    private static final String USERNAME = "strikercommunityweb@gmail.com";
     private static final String PASSWORD = "";
 
     public static boolean sendEmail(String to, String subject, String body, String imagePath) {

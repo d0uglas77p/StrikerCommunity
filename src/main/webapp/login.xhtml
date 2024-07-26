@@ -7,6 +7,7 @@
 <h:head>
     <title>Striker Community - Login</title>
     <h:outputStylesheet name="css/login.css"/>
+    <h:outputScript name="js/passwordStrength.js" />
 </h:head>
 
 <h:body>
@@ -20,11 +21,13 @@
                     </p:panelGrid>
 
                     <p:panelGrid columns="2">
-                        <p:outputLabel value="Login" for="loginInput" styleClass="custom-label" style="margin-left: -90px;"/>
+                        <p:outputLabel value="Login" for="loginInput" styleClass="custom-label"
+                                       style="margin-left: -90px;"/>
                         <p:inputText id="loginInput" value="#{usuarioBean.loginInput}"
                                      maxlength="30" size="30" style="margin-left: -130px; margin-top: -8px;"/>
 
-                        <p:outputLabel value="Senha" for="senhaInput" styleClass="custom-label" style="margin-left: -90px;"/>
+                        <p:outputLabel value="Senha" for="senhaInput" styleClass="custom-label"
+                                       style="margin-left: -90px;"/>
                         <p:password id="senhaInput" value="#{usuarioBean.senhaInput}"
                                     maxlength="8" size="30" style="margin-left: -130px; margin-top: -8px;"/>
                     </p:panelGrid>
@@ -96,7 +99,6 @@
                                 <f:convertDateTime pattern="dd/MM/yyyy"/>
                             </p:datePicker>
                         </div>
-
                     </h:panelGrid>
 
                     <h:panelGrid style="margin-left: 20px;">
@@ -116,7 +118,8 @@
                             <p:password id="senha" value="#{usuarioBean.senha}"
                                         maxlength="20" size="20"
                                         placeholder="Senha de Usuário"
-                                        style="margin-right: 72px;"/>
+                                        style="margin-right: 72px;"
+                                        onkeyup="checkPasswordStrength(this.value)"/>
                         </div>
 
                         <div>
@@ -125,16 +128,17 @@
                                         placeholder="Repetir Senha"
                                         style="margin-right: 72px;"/>
                         </div>
+                        <div id="password-strength" style="position: absolute; margin-right: 50px;"></div>
                     </h:panelGrid>
                 </h:panelGrid>
 
                 <br></br>
 
-                <h:panelGrid columns="2" style="margin-left: 370px;">
+                <h:panelGrid columns="2" style="margin-left: 370px; margin-top: 10px;">
                     <p:commandButton value="Aviso" styleClass="rounded-button ui-button-warning"
                                      icon="pi pi-external-link" onclick="PF('dlg1').show()"/>
 
-                    <p:commandButton value="Cadastrar" action="#{usuarioBean.cadastrar()}"
+                    <p:commandButton id="cadastrar-button" value="Cadastrar" action="#{usuarioBean.cadastrar()}"
                                      update="growl"
                                      styleClass="rounded-button"
                                      style="margin-left: 10px;"
@@ -187,16 +191,5 @@
             </p:dialog>
         </h:form>
     </div>
-
-    <script type="text/javascript">
-        function clearCadastroModal() {
-            PF('cadastroDialog').jq.find('input, textarea').val('');
-        }
-
-        function clearRecuperarSenhaModal() {
-            PF('recuperarSenhaDialog').jq.find('input, textarea').val('');
-        }
-    </script>
-
-</h:body>
+    </h:body>
 </html>

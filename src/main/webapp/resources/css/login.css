@@ -85,3 +85,8 @@ body {
     width: 200px;
     height: 200px;
 }
+
+#password-strength {
+    font-weight: bold;
+    font-size: 0.9em;
+}
