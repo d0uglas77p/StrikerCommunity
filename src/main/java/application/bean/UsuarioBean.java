@@ -75,9 +75,9 @@ public class UsuarioBean implements Serializable {
 
                 // Enviar e-mail de boas-vindas
                 String assunto = "Bomb Has Been Planted!";
-                String templatePath = "src/main/webapp/templates/boasVindasEmail.html";
+                String templatePath = FacesContext.getCurrentInstance().getExternalContext().getRealPath("/resources/boasVindasEmail.html");
                 String corpo = EmailSender.loadEmailTemplate(templatePath, nomePerfil);
-                String imagePath = "src/main/webapp/resources/images/logoemail.png";
+                String imagePath = FacesContext.getCurrentInstance().getExternalContext().getRealPath("/resources/images/logoemail.png");
                 boolean emailEnviado = EmailSender.sendEmail(email, assunto, corpo, imagePath);
 
                 if (!emailEnviado) {
@@ -137,11 +137,11 @@ public class UsuarioBean implements Serializable {
 
                 // Enviar e-mail de recuperação de senha
                 String assunto = "Recuperar Senha";
-                String linkRecuperacao = "http://localhost:8080/StrikerCommunity/recuperarSenha.xhtml?token=" + token;
-                String templatePath = "src/main/webapp/templates/recuperarSenhaEmail.html";
+                String linkRecuperacao = "http://localhost:8080/StrikerCommunity/protected/recuperarSenha.xhtml?token=" + token;
+                String templatePath = FacesContext.getCurrentInstance().getExternalContext().getRealPath("/resources/recuperarSenhaEmail.html");
                 String corpo = EmailSender.loadEmailTemplate(templatePath, nomePerfil);
                 corpo = corpo.replace("LINK", linkRecuperacao);
-                String imagePath = "src/main/webapp/resources/images/logoemail.png";
+                String imagePath = FacesContext.getCurrentInstance().getExternalContext().getRealPath("/resources/images/logoemail.png");
 
                 EmailSender.sendEmail(recuperarEmail, assunto, corpo, imagePath); // Enviar o e-mail
                 limparCampos();

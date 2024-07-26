@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ff5641cb-872c-4fea-b9f2-4aed4ba126b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/properties/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/properties/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected/recuperarSenha.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected/recuperarSenha.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/boasVindasEmail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/boasVindasEmail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/recuperarSenhaEmail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/recuperarSenhaEmail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +88,11 @@
       <recent name="C:\Workspace\StrikerCommunity\screens" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\protected" />
-      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp" />
       <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\resources" />
-      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\privado" />
-      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\a" />
+      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp" />
+      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\WEB-INF" />
+      <recent name="C:\Workspace\StrikerCommunity\src\main\resources" />
+      <recent name="C:\Workspace\StrikerCommunity\src\main\webapp\protected" />
     </key>
   </component>
   <component name="RunManager">
