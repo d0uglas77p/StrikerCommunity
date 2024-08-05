@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ff5641cb-872c-4fea-b9f2-4aed4ba126b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/bean/UsuarioBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/properties/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/properties/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected/recuperarSenha.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected/recuperarSenha.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/boasVindasEmail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/boasVindasEmail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/recuperarSenhaEmail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/recuperarSenhaEmail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +64,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/StrikerCommunity/src/main/webapp/resources/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/CountCode&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.42643678&quot;,

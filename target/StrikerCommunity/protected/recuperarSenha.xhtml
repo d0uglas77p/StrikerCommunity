@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<h:head>
+    <title>Striker Community</title>
+    <h:outputStylesheet name="css/login.css"/>
+</h:head>
+
+<body>
+<div>
+    <h:form class="form-recuperar-senha">
+        <p:graphicImage name="images/logoemail.png"
+                        styleClass="recuperar-senha-image"
+                        style="margin-left: -25px; width: 200px; height: 200px;"/>
+
+        <p:growl id="growl" showDetail="true" life="5000"/>
+        <p:panel>
+            <p:panelGrid columns="2">
+                <div>
+                    <p:password id="novaSenha" value="#{usuarioBean.novaSenha}"
+                                maxlength="20" size="20"
+                                placeholder="Nova Senha"/>
+
+                    <p:commandButton value="Redefinir" action="#{usuarioBean.redefinirSenha}"
+                                     styleClass="rounded-button ui-button-info"
+                                     style="margin-top: 16px; margin-left: 20px;"
+                                     update="growl">
+                        <f:param name="token" value="#{param.token}"/>
+                    </p:commandButton>
+                </div>
+            </p:panelGrid>
+
+            <p:outputLabel value="Sua senha é sua alma, não perca e não ofereça!" style="margin-right: 70px;"/>
+        </p:panel>
+    </h:form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<h:head>
+    <title>Striker Community - Login</title>
+    <h:outputStylesheet name="css/login.css"/>
+    <h:outputScript name="js/passwordStrength.js" />
+</h:head>
+
+<h:body>
+    <div>
+        <h:form class="form">
+            <h:panelGroup>
+                <p:panel>
+                    <p:panelGrid>
+                        <p:graphicImage name="images/logo.png"
+                                        style="margin-left: -25px; width: 400px; height: 70px;"/>
+                    </p:panelGrid>
+
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Login" for="loginInput" styleClass="custom-label"
+                                       style="margin-left: -90px;"/>
+                        <p:inputText id="loginInput" value="#{usuarioBean.loginInput}"
+                                     maxlength="30" size="30" style="margin-left: -130px; margin-top: -8px;"/>
+
+                        <p:outputLabel value="Senha" for="senhaInput" styleClass="custom-label"
+                                       style="margin-left: -90px;"/>
+                        <p:password id="senhaInput" value="#{usuarioBean.senhaInput}"
+                                    maxlength="8" size="30" style="margin-left: -130px; margin-top: -8px;"/>
+                    </p:panelGrid>
+
+                    <p:panelGrid columns="3">
+                        <p:selectBooleanCheckbox id="checkbox" style="margin-left: -35px; top: -1px;"/>
+                        <p:outputLabel for="checkbox" value="Manter-me conectado" styleClass="label-conectado"
+                                       style="margin-left: -100px;"/>
+                        <p:commandLink value="Recuperar Senha" style="margin-left: -55px;"
+                                       onclick="PF('recuperarSenhaDialog').show()"/>
+                    </p:panelGrid>
+
+                    <p:panelGrid columns="2">
+                        <p:commandButton value="Entrar" action="#{usuarioBean.login()}" style="margin-left: 150px;"
+                                         styleClass="rounded-button"
+                                         update="growl"/>
+
+                        <p:commandButton value="Criar Conta" style="margin-left: 20px;"
+                                         styleClass="rounded-button"
+                                         oncomplete="PF('cadastroDialog').show()"/>
+                    </p:panelGrid>
+                </p:panel>
+
+            </h:panelGroup>
+
+            <p:growl id="growl" showDetail="true" life="5000"/>
+
+            <!-- Modal para cadastro -->
+            <p:dialog header="Criar Conta"
+                      widgetVar="cadastroDialog"
+                      modal="true" resizable="false"
+                      styleClass="custom-dialog">
+
+                <!-- Conteúdo do formulário de cadastro -->
+                <h:panelGrid columns="2">
+                    <h:panelGrid>
+                        <div>
+                            <p:inputText id="nomeCompleto" value="#{usuarioBean.nomeCompleto}"
+                                         maxlength="50" size="30"
+                                         placeholder="Nome Completo"/>
+                        </div>
+
+                        <div>
+                            <p:inputText id="nomePerfil" value="#{usuarioBean.nomePerfil}"
+                                         maxlength="50" size="30"
+                                         placeholder="Nome de Perfil"/>
+                        </div>
+
+                        <div>
+                            <p:inputMask id="telefone" value="#{usuarioBean.telefone}"
+                                         mask="(99) 99999-9999" validateMask="true" size="15"
+                                         placeholder="Telefone"
+                                         style="margin-right: 110px;"/>
+                        </div>
+
+                        <div>
+                            <p:datePicker id="data"
+                                          value="#{usuarioBean.dtNascimento}"
+                                          pattern="dd/MM/yyyy"
+                                          yearNavigator="true"
+                                          monthNavigator="true"
+                                          yearRange="1900:2024"
+                                          showButtonPanel="true"
+                                          showWeek="false"
+                                          size="15"
+                                          placeholder="Data de Nascimento"
+                                          style="margin-right: 110px;"
+                                          onkeyup="this.value = this.value.replace(/[^0-9/]/g, '')">
+                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </p:datePicker>
+                        </div>
+                    </h:panelGrid>
+
+                    <h:panelGrid style="margin-left: 20px;">
+                        <div>
+                            <p:inputText id="email" value="#{usuarioBean.email}"
+                                         maxlength="50" size="30"
+                                         placeholder="E-mail"/>
+                        </div>
+
+                        <div>
+                            <p:inputText id="login" value="#{usuarioBean.login}"
+                                         maxlength="50" size="30"
+                                         placeholder="Login de Usuário"/>
+                        </div>
+
+                        <div>
+                            <p:password id="senha" value="#{usuarioBean.senha}"
+                                        maxlength="20" size="20"
+                                        placeholder="Senha de Usuário"
+                                        style="margin-right: 72px;"
+                                        onkeyup="checkPasswordStrength(this.value)"/>
+                        </div>
+
+                        <div>
+                            <p:password id="repetirSenha" value="#{usuarioBean.repetirSenha}"
+                                        maxlength="20" size="20"
+                                        placeholder="Repetir Senha"
+                                        style="margin-right: 72px;"/>
+                        </div>
+                        <div id="password-strength" style="position: absolute; margin-right: 50px;"></div>
+                    </h:panelGrid>
+                </h:panelGrid>
+
+                <br></br>
+
+                <h:panelGrid columns="2" style="margin-left: 370px; margin-top: 10px;">
+                    <p:commandButton value="Aviso" styleClass="rounded-button ui-button-warning"
+                                     icon="pi pi-external-link" onclick="PF('dlg1').show()"/>
+
+                    <p:commandButton id="cadastrar-button" value="Cadastrar" action="#{usuarioBean.cadastrar()}"
+                                     update="growl"
+                                     styleClass="rounded-button"
+                                     style="margin-left: 10px;"
+                                     oncomplete="if (!args.validationFailed) {PF('cadastroDialog').hide(); clearCadastroModal();}"/>
+                </h:panelGrid>
+            </p:dialog>
+
+            <p:dialog header="Aviso" widgetVar="dlg1"
+                      minHeight="40" width="350"
+                      showEffect="fade"
+                      closeOnEscape="true">
+                <p style="text-align: left;">
+                    Nosso sistema é independente!<br/>
+                    <br></br>
+                    Não solicitamos que informe os dados de outras plataformas relacionadas ao Counter Strike, Steam e
+                    outros serviços da Valve Corporation,
+                    mas sim apenas os dados cadastrais necessários para acessar nossa comunidade.<br/>
+                    <br></br>
+                    Reforçamos para garantir a segurança e a integridade de suas informações sem vínculos com terceiros.
+                    Caso encontre qualquer atividade suspeita que comprometa nossa integridade, por favor, denuncie
+                    imediatamente.<br/>
+                    <br></br>
+                    Agradecemos pela confiança e esperamos que tenha uma excelente experiência em nossa comunidade.
+                </p>
+            </p:dialog>
+
+            <!-- Modal para Recuperação de senha -->
+            <p:dialog header="Recuperação de Senha"
+                      widgetVar="recuperarSenhaDialog"
+                      modal="true" resizable="false"
+                      styleClass="recuperar-dialog">
+
+                <h:panelGrid>
+                    <h:panelGrid>
+                        <div>
+                            <p:inputText id="emailRecuperar" value="#{usuarioBean.recuperarEmail}"
+                                         maxlength="50" size="30"
+                                         placeholder="E-mail cadastrado"/>
+                        </div>
+
+                        <div>
+                            <p:commandButton value="Recuperar" action="#{usuarioBean.recuperarCadastro()}"
+                                             update="growl"
+                                             styleClass="rounded-button"
+                                             style="margin-top: 10px; margin-left: 10px;"
+                                             oncomplete="if (!args.validationFailed) {PF('recuperarSenhaDialog').hide(); clearRecuperarSenhaModal();}"/>
+                        </div>
+                    </h:panelGrid>
+                </h:panelGrid>
+            </p:dialog>
+        </h:form>
+    </div>
+    </h:body>
+</html>

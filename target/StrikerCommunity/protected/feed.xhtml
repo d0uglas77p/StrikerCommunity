@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<h:head>
+    <title>Striker Community</title>
+    <h:outputStylesheet name="css/feed.css"/>
+</h:head>
+
+<body>
+<div>
+    <ui:include src="/templates/menu.xhtml"/>
+
+    <h:form id="feedForm">
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{autenticacaoBean.init}"/>
+        </f:metadata>
+
+        <!-- BOTÕES FIXOS NA TELA -->
+        <div class="fixed-buttons">
+            <h:panelGroup columns="2">
+                <p:commandButton id="tooltipPublicarButton"
+                                 value="Publicar"
+                                 styleClass="rounded-button ui-button-info"
+                                 style="right: 10px;"
+                                 oncomplete="PF('publicacaoDialog').show()"/>
+                <p:tooltip for="tooltipPublicarButton"
+                           value="Publicar conteúdo"
+                           showEffect="clip"
+                           hideEffect="fold"
+                           my="right center"
+                           at="left center"/>
+
+                <p:commandButton id="tooltipFeedButton"
+                                 icon="pi pi-refresh"
+                                 styleClass="rounded-button ui-button-help"
+                                 style="left: 10px;"
+                                 action="#{feedBean.atualizarFeed}"
+                                 update=":feedForm:postagensContainer :feedForm:messages"/>
+                <p:tooltip for="tooltipFeedButton"
+                           value="Atualizar o feed de postagens"
+                           style="margin-button: 50px;"
+                           showEffect="clip"
+                           hideEffect="fold"/>
+            </h:panelGroup>
+        </div>
+        <!-- BOTÕES FIXOS NA TELA -->
+
+        <!-- MODAL DE PUBLICAÇÃO -->
+        <div>
+            <p:dialog header="Publicação"
+                      widgetVar="publicacaoDialog"
+                      modal="true"
+                      resizable="true"
+                      width="100%"
+                      height="350">
+
+                <p:growl id="messages" showDetail="true"/>
+
+                <p:outputPanel header="Publicação" class="panel-publicacao">
+                    <p:textEditor id="mensagem"
+                                  value="#{feedBean.mensagem}"
+                                  widgetVar="editorWidget"
+                                  width="600"
+                                  styleClass="editor"/>
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+                    <h:panelGrid columns="2" style="margin-left: 600px; margin-top: 10px;">
+                        <p:outputLabel style="left: 288px;"
+                                       styleClass="placeholder-text"
+                                       value="Interaja com a comunidade, retire suas dúvidas, compartilhe os seus Highlights..."/>
+
+                        <p:commandButton value="Publicar"
+                                         styleClass="rounded-button ui-button-info"
+                                         style="left: 35px; top: -5px;"
+                                         action="#{feedBean.publicar}"
+                                         update=":feedForm:postagensContainer :feedForm:mensagem :feedForm:messages"
+                                         oncomplete="PF('publicacaoDialog').hide()"/>
+                    </h:panelGrid>
+                </p:outputPanel>
+            </p:dialog>
+        </div>
+        <!-- MODAL DE PUBLICAÇÃO -->
+
+        <br></br>
+        <br></br>
+
+        <!-- POSTAGENS -->
+        <h:panelGroup id="postagensContainer">
+            <p:dataScroller widgetVar="ds"
+                            value="#{feedBean.postagens}"
+                            var="postagem"
+                            chunkSize="10"
+                            styleClass="postagem-dataScroller">
+
+                <f:facet name="loading">
+                    <div>
+                        <p:skeleton height="100px" width="100%" style="margin-bottom: 10px;"/>
+                    </div>
+                </f:facet>
+
+                <p:panel id="postagemPanel"
+                         style="margin-top: 10px;"
+                         class="postagem-panel">
+
+                    <h:panelGroup columns="2">
+                        <p:commandLink>
+                            <p:graphicImage id="salvar"
+                                            name="images/disket.png"
+                                            width="32"
+                                            height="32"
+                                            style="top: -15px; margin-left: 10px;"
+                                            class="icon-grid-border icon-filter"/>
+                        </p:commandLink>
+
+                        <p:tooltip for="salvar"
+                                   value="Salvar publicação"
+                                   showEffect="clip"
+                                   hideEffect="fold"/>
+
+                        <p:commandLink id="perfil" style="margin-left: 860px;">
+                            <p:graphicImage name="images/avatar.png"
+                                            styleClass="avatar avatar-filter"/>
+                        </p:commandLink>
+                    </h:panelGroup>
+
+                    <h:outputText value="#{postagem}"
+                                  escape="false"
+                                  styleClass="postagem-content"/>
+
+                    <h:panelGroup columns="5">
+                        <h:outputText value="#{feedBean.formatarDataPublicacao()}"
+                                      styleClass="placeholder-text"
+                                      style="margin-left: 10px;"/>
+
+                        <h:outputText id="curtidaCount"
+                                      value="#{feedBean.curtidas}"
+                                      style="margin-left: 797px;"/>
+
+                        <p:commandLink id="curtida"
+                                       action="#{feedBean.toggleCurtida}"
+                                       update="curtidaCount">
+                            <p:graphicImage name="images/ak.png"
+                                            width="36"
+                                            height="32"
+                                            style="margin-left: 15px;"
+                                            class="icon-grid-border icon-filter"/>
+                        </p:commandLink>
+                    </h:panelGroup>
+                </p:panel>
+
+                <br></br>
+
+                <f:facet name="loader">
+                    <div>
+                        <p:commandLink onclick="PF('ds').loadChunk()"
+                                       styleClass="scroller-button"
+                                       action="#{feedBean.toggleCurtida}"
+                                       update="curtidaCount">
+                            <p:graphicImage id="ver"
+                                            name="images/mira.png"
+                                            width="50"
+                                            height="50"
+                                            style="margin-left: 480px;"
+                                            class="icon-grid-border icon-filter"/>
+                        </p:commandLink>
+
+                        <p:tooltip for="ver"
+                                   value="Ver Mais"
+                                   showEffect="clip"
+                                   hideEffect="fold"/>
+                    </div>
+                </f:facet>
+            </p:dataScroller>
+        </h:panelGroup>
+        <!-- POSTAGENS -->
+
+        <br></br>
+        <br></br>
+        <br></br>
+    </h:form>
+</div>
+</body>
+
+</html>
