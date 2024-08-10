@@ -21,3 +21,5 @@ Sistema Web para comunidade de Counter Strike.
 - CSS
 
 ### SISTEMA EM DESENVOLVIMENTO
+
+#### Deploy de teste: [Striker Community](https://strikercommunity.com/)
