@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ff5641cb-872c-4fea-b9f2-4aed4ba126b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/util/EmailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/properties/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/properties/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity.war" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/AutenticacaoBean.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StrikerCommunity/WEB-INF/classes/application/bean/CarouselMapaBean.class" beforeDir="false" />
